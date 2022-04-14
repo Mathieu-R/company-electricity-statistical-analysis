@@ -67,4 +67,72 @@ Let's first compute the mean of $X$,
     &= - \frac{\theta_1 \theta_2^{\theta_1}}{(\theta_1 - 1)} \left[ x^{-(\theta_1 - 1)} \right]_{\theta_2}^{+\infty}
 \end{align*}
 
+Then the Gini coefficient, 
+\begin{align*}
+  G_{\theta_1, \theta_2}
+    &= 2 \left( \int_{0}^{1} p dp - \int_{0}^{1} \frac{\int_{0}^{p} Q(t) dt}{E(X)} dp \right) 
+\end{align*}
+
+We compute each integral separately,
+\begin{align*}
+  \int_0^p Q(t) dt 
+    &= \int_0^p \left( \frac{t \theta_1}{\theta_1 \theta_2^{\theta_1}} - \theta_2^{-\theta_1} \right)^{1/\theta_1} dt
+\end{align*}
+
+We use the change of variable $u = \frac{t \theta_1}{\theta_1 \theta_2^{\theta_1}} - \theta_2^{-\theta_1}$, $du = \frac{\theta_1}{\theta_1 \theta_2^{\theta_1}} dt$
+
+The boundaries becomes, 
+\begin{align*}
+  \begin{cases}
+    t = 0 &\implies u_1 \equiv - \theta_2^{-\theta_1} \\
+    t = p &\implies u_2 \equiv \frac{p \theta_1}{\theta_1 \theta_2^{\theta_1}} - \theta_2^{-\theta_1}
+  \end{cases}
+\end{align*}
+
+Then, 
+\begin{align*}
+  \int_0^p Q(t) dt 
+    &= \int_{u_1}^{u_2} u^{(1/\theta_1)} \frac{\theta_1 \theta_2^{\theta_1}}{\theta_1} du \\
+    &= \frac{\theta_1}{\theta_1 \theta_2^{\theta_1}} \left[ \frac{u^{(1/\theta_1) + 1}}{(1/\theta_1) + 1} \right]_{u_1}^{u_2} \\
+    &= \frac{\theta_1}{\theta_1 \theta_2^{\theta_1} ((1/\theta_1) + 1)} \left( \left( \frac{p \theta_1}{\theta_1 \theta_2^{\theta_1}} - \theta_2^{-\theta_1} \right)^{(1/\theta_1) + 1} - \left( - \theta_2^{-\theta_1} \right)^{(1/\theta_1) + 1} \right)
+\end{align*}
+
+Therefore, 
+\begin{align*}
+  \frac{\int_{0}^{p} Q(t) dt}{E(X)}
+    &= \frac{\theta_1(\theta_1 - 1)}{\theta_2^{(1 - \theta_1)} ((1/\theta_1) + 1)} \left( \left( \frac{p \theta_1}{\theta_1 \theta_2^{\theta_1}} - \theta_2^{-\theta_1} \right)^{(1/\theta_1) + 1} - \left( - \theta_2^{-\theta_1} \right)^{(1/\theta_1) + 1} \right)
+\end{align*}
+
+Then,
+\begin{align*}
+  \int_{0}^{1} \frac{\int_{0}^{p} Q(t) dt}{E(X)} dp 
+    &= \frac{\theta_1(\theta_1 - 1)}{\theta_2^{1 - \theta_1}} \left( \underbrace{\int_0^1 \left( \frac{p \theta_1}{\theta_1 \theta_2^{\theta_1}} - \theta_2^{-\theta_1} \right)^{(1/\theta_1) + 1} dp}_{\equiv A} - \underbrace{\int_0^1 \left( - \theta_2^{-\theta_1} \right)^{(1/\theta_1) + 1} dp}_{\equiv B} \right)
+\end{align*}
+
+Computing integral A and B. For A we use the same change of variable as before,
+\begin{align*}
+  A 
+    &= \int_{u_1}^{u_2} u^{(1/\theta_1) + 1} \frac{\theta_1 \theta_2^{\theta_1}}{\theta_1} du \\
+    &= \frac{\theta_1 \theta_2^{\theta_1}}{\theta_1} \left( \left( \frac{\theta_1}{\theta_1 \theta_2^{\theta_1}} - \theta_2^{-\theta_1} \right)^{(1/\theta_1) + 2} - \left( - \theta_2^{-\theta_1} \right)^{(1/\theta_1) + 2} \right)
+\end{align*}
+
+\begin{align*}
+  B 
+    &= \left( - \theta_2^{-\theta_1} \right)^{(1/\theta_1) + 1} \int_0^1 dp \\
+    &= \left( - \theta_2^{-\theta_1} \right)^{(1/\theta_1) + 1}
+\end{align*}
+
+Then, 
+\begin{align*}
+  \int_0^1 pdp 
+    &= \frac{1}{2}
+\end{align*}
+
+Eventually,
+\begin{align*}
+  G_{\theta_1, \theta_2} 
+    &= 2 \left( \frac{1}{2} - \frac{\theta_1(\theta_1 - 1)}{\theta_2^{(1 - \theta_1)} ((1/\theta_1) + 1)} \left[ \frac{\theta_1 \theta_2^{\theta_1}}{\theta_1} \frac{1}{(1/\theta_1) + 2} \left( \left( \frac{\theta_1}{\theta_1 \theta_2^{\theta_1}} - \theta_2^{-\theta_1} \right)^{(1/\theta_1) + 2} - \left( - \theta_2^{-\theta_1} \right)^{(1/\theta_1) + 2} \right) \\
+    & - \left( - \theta_2^{-\theta_1} \right)^{(1/\theta_1) + 1} \right] \right) 
+\end{align*}
+
 \end{document}
