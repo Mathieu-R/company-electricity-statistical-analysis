@@ -55,7 +55,7 @@ Let's solve $P(X \leq x_t) = t$ for $x_t$,
 
 The Gini coefficient is defined as, 
 \begin{equation}
-  G_{\theta_1, \theta_2}(t) = 2 \int_{0}^{1} \left( p - \frac{\int_{0}^{p} Q(t) dt}{E(X)} \right) dp
+  G_{\theta_1, \theta_2} = 2 \int_{0}^{1} \left( p - \frac{\int_{0}^{p} Q(t) dt}{E(X)} \right) dp
 \end{equation}
 
 Let's first compute the mean of $X$,
@@ -131,8 +131,63 @@ Then,
 Eventually,
 \begin{align*}
   G_{\theta_1, \theta_2} 
-    &= 2 \left( \frac{1}{2} - \frac{\theta_1(\theta_1 - 1)}{\theta_2^{(1 - \theta_1)} ((1/\theta_1) + 1)} \left[ \frac{\theta_1 \theta_2^{\theta_1}}{\theta_1} \frac{1}{(1/\theta_1) + 2} \left( \left( \frac{\theta_1}{\theta_1 \theta_2^{\theta_1}} - \theta_2^{-\theta_1} \right)^{(1/\theta_1) + 2} - \left( - \theta_2^{-\theta_1} \right)^{(1/\theta_1) + 2} \right) \\
-    & - \left( - \theta_2^{-\theta_1} \right)^{(1/\theta_1) + 1} \right] \right) 
+    &= 2 \left( \frac{1}{2} - \frac{\theta_1(\theta_1 - 1)}{\theta_2^{(1 - \theta_1)} ((1/\theta_1) + 1)} \left[ \frac{\theta_1 \theta_2^{\theta_1}}{\theta_1} \frac{1}{(1/\theta_1) + 2} \left( \left( \frac{\theta_1}{\theta_1 \theta_2^{\theta_1}} - \theta_2^{-\theta_1} \right)^{(1/\theta_1) + 2} - \left( - \theta_2^{-\theta_1} \right)^{(1/\theta_1) + 2} \right) - \left( - \theta_2^{-\theta_1} \right)^{(1/\theta_1) + 1} \right] \right) 
 \end{align*}
+
+\textbf{(c)} Derive the maximum likelihood estimator (MLE) of $G_{\theta_1, \theta_2}$. Call this estimator $\hat{G}_{\text{MLE}}$
+
+\begin{center}\rule{6cm}{0.4pt}\end{center}
+
+Let's first compute the likelihood function $L(\theta_1, \theta_2)$,
+\begin{align*}
+  L(\theta_1, \theta_2) 
+    &:= \Pi_{i=1}^{n} f_{\theta_1, \theta_2} (x) \\
+    &= \Pi_{i=1}^{n} \frac{\theta_1 \theta_2^{\theta_1}}{x^{\theta_1 + 1}} \cdot I(X_i \geq \theta_2 > 0) \\
+    &= \theta_1 \theta_2^{\theta_1} \frac{1}{\Pi_{i=1}^{n} X_i^{\theta_1 + 1}} cdot I(X_{(1)} \geq \theta_2 > 0) 
+\end{align*}
+
+where $X_{(1)} \equiv \min{(X_1,...,X_n)}$.
+
+We notice that $L(\theta_1, \theta_2)$ is not continuous along $\theta_2$ and then not differentiable in $\theta_2$. However, we observe that $L(\theta_1, \theta_2)$ increase with $\theta_2$. Therefore, we have to take $\theta_2$ the largest possible in order to maximize $L(\theta_1, \theta_2)$ respecting the condition $X_{(1)} \leq \theta_2 > 0$ otherwise we would have $L(\theta_1, \theta_2) = 0$, 
+
+\begin{equation*}
+  \hat{\theta}_2 = X_{(1)}
+\end{equation*}
+
+For $\hat{\theta}_1$ we can compute the log-likelihood function $l(\theta_1, \theta_2)$, 
+\begin{align*}
+  l(\theta_1, \theta_2) 
+    &:= \ln(L(\theta_1, \theta_2)) \\
+    &= \ln(\theta_1) +  \ln(\theta_2^{\theta_1}) + \ln(1) - \ln(\pi_{i=1}^{n} X_i^{(\theta_1 + 1)}) \\
+    &= \ln(\theta_1) + \theta_1 \ln(\theta_2) - (\sum_{i=1}^{n} \ln(X_i^{(\theta_1 + 1)})) \\
+    &= \ln(\theta_1) + \theta_1 \ln(\theta_2) - \sum_{i=1}^{n} (\theta_1 + 1))\ln(X_i)
+\end{align*}
+
+We differentiate with respect to $\theta_1$ in order to find the maximum,
+\begin{align*}
+  \pdv{l(\theta_1, \theta_2)}{\theta_1} 
+    &= \frac{1}{\theta_1} + \ln(\theta_2) - \sum_{i=1}^{n} \ln(X_i)
+\end{align*}
+
+Then, 
+\begin{align*}
+  \pdv{l(\theta_1, \theta_2)}{\theta_1} = 0 \iff \hat{\theta}_1 = \frac{1}{\sum_{i=1}^{n} \ln(X_i) - \ln(\theta_2)}
+\end{align*}
+
+Now we can compute $\hat{G}_{\text{MLE}}$,
+\begin{align*}
+  \hat{G}_{\text{MLE}}
+    &:= G_{\hat{\theta}_1, \hat{\theta}_2} \\
+    &= 
+\end{align*}
+
+\textbf{(d)} Propose a method of moment estimator of $G_{\theta_1, \theta_2}$. Call this estimator $\hat{G}_{\text{MME}}$
+
+\begin{center}\rule{6cm}{0.4pt}\end{center}
+
+We already have computed the mean of $X$,
+\begin{equation*}
+  E(X) = - \frac{\theta_1 \theta_2^{\theta_1}}{(\theta_1 - 1)} \left[ x^{-(\theta_1 - 1)} \right]_{\theta_2}^{+\infty}
+\end{equation*}
 
 \end{document}

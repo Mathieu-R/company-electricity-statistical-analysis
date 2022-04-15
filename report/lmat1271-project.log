@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.14)  14 APR 2022 09:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.14)  15 APR 2022 10:28
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1516,192 +1516,16 @@ File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ) [1{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ] [2]
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:136: Extra }, or forgotten \right.
-<template> }
-            $}\ifmeasuring@ \savefieldlength@ \fi \set@field \hfil \endtempl...
-l.136 \end{align*}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:136: Missing \right. inserted.
-<inserted text> 
-                \right .
-l.136 \end{align*}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:136: Missing \right. inserted.
-<inserted text> 
-                \right .
-l.136 \end{align*}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:136: Missing } inserted.
-<inserted text> 
-                }
-l.136 \end{align*}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:136: Missing } inserted.
-<inserted text> 
-                }
-l.136 \end{align*}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:136: Extra \right.
-<argument> ...right )^{(1/\theta _1) + 1} \right ]
-                                                   \right ) 
-l.136 \end{align*}
-                  
-I'm ignoring a \right that had no matching \left.
-
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:136: Extra \right.
-<argument> ...(1/\theta _1) + 1} \right ] \right )
-                                                   
-l.136 \end{align*}
-                  
-I'm ignoring a \right that had no matching \left.
-
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:136: Missing { inserted.
-<inserted text> 
-                {
-l.136 \end{align*}
-                  
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:136: Extra }, or forgotten \right.
-<template> }
-            $}\ifmeasuring@ \savefieldlength@ \fi \set@field \hfil \endtempl...
-l.136 \end{align*}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:136: Missing \right. inserted.
-<inserted text> 
-                \right .
-l.136 \end{align*}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:136: Missing \right. inserted.
-<inserted text> 
-                \right .
-l.136 \end{align*}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:136: Missing } inserted.
-<inserted text> 
-                }
-l.136 \end{align*}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:136: Missing } inserted.
-<inserted text> 
-                }
-l.136 \end{align*}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:136: Extra \right.
-<argument> ...right )^{(1/\theta _1) + 1} \right ]
-                                                   \right ) 
-l.136 \end{align*}
-                  
-I'm ignoring a \right that had no matching \left.
-
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:136: Extra \right.
-<argument> ...(1/\theta _1) + 1} \right ] \right )
-                                                   
-l.136 \end{align*}
-                  
-I'm ignoring a \right that had no matching \left.
-
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:136: Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.136 \end{align*}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:136: Misplaced \omit.
-\math@cr@@@ ...@ \@ne \add@amps \maxfields@ \omit 
-                                                  \kern -\alignsep@ \iftag@ ...
-l.136 \end{align*}
-                  
-I expect to see \omit only after tab marks or the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:136: Missing { inserted.
-<inserted text> 
-                {
-l.136 \end{align*}
-                  
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-
-Overfull \hbox (7.76244pt too wide) detected at line 136
+Overfull \hbox (104.8279pt too wide) detected at line 135
 []
  []
 
 
-Overfull \hbox (30.0pt too wide) in paragraph at lines 136--136
+Overfull \hbox (30.0pt too wide) in paragraph at lines 135--135
 [] 
  []
 
-[3] (./lmat1271-project.aux)
+[3] [4] (./lmat1271-project.aux)
 
 Package rerunfilecheck Warning: File `lmat1271-project.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
@@ -1712,18 +1536,18 @@ Package rerunfilecheck Info: Checksums for `lmat1271-project.out':
 (rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 48707 strings out of 478994
- 1151023 string characters out of 5858184
+ 48712 strings out of 478994
+ 1151116 string characters out of 5858184
  1751558 words of memory out of 5000000
- 65240 multiletter control sequences out of 15000+600000
+ 65244 multiletter control sequences out of 15000+600000
  414817 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  111i,20n,116p,10678b,749s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbl1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb>
-Output written on lmat1271-project.pdf (3 pages, 160644 bytes).
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbl1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb>
+Output written on lmat1271-project.pdf (4 pages, 175386 bytes).
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
- 82 compressed objects within 1 object stream
- 8 named destinations out of 1000 (max. 500000)
+ 127 PDF objects out of 1000 (max. 8388607)
+ 88 compressed objects within 1 object stream
+ 9 named destinations out of 1000 (max. 500000)
  117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
