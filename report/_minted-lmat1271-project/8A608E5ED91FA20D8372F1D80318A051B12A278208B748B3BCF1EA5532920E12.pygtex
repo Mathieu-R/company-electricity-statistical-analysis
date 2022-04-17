@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{n}{number\PYGZus{}of\PYGZus{}samples} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{l+m}{20}
+
+  \PYG{c+c1}{\PYGZsh{} generate randoms numbers from the uniform distribution U(0,1)}
+  \PYG{n}{U} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{runif}\PYG{p}{(}\PYG{n}{number\PYGZus{}of\PYGZus{}samples}\PYG{p}{)}
+
+  \PYG{c+c1}{\PYGZsh{} compute X = F\PYGZca{}\PYGZob{}\PYGZhy{}1\PYGZcb{}(u)}
+  \PYG{n}{X} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{l+m}{1} \PYG{o}{/} \PYG{p}{(}\PYG{l+m}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{U}\PYG{p}{)}\PYG{o}{\PYGZca{}}\PYG{p}{(}\PYG{l+m}{1}\PYG{o}{/}\PYG{l+m}{3}\PYG{p}{)}
+
+  \PYG{c+c1}{\PYGZsh{} compute Gini coefficients}
+  \PYG{n}{G\PYGZus{}MLE} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{l+m}{1} \PYG{o}{/} \PYG{p}{((}\PYG{l+m}{2} \PYG{o}{*} \PYG{n}{number\PYGZus{}of\PYGZus{}samples}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(}\PYG{n+nf}{sum}\PYG{p}{(}\PYG{n+nf}{log}\PYG{p}{(}\PYG{n}{X} \PYG{o}{/} \PYG{n+nf}{min}\PYG{p}{(}\PYG{n}{X}\PYG{p}{))))} \PYG{o}{\PYGZhy{}} \PYG{l+m}{1}\PYG{p}{)}
+  \PYG{n}{G\PYGZus{}MME} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{l+m}{1} \PYG{o}{/} \PYG{p}{((}\PYG{l+m}{2} \PYG{o}{*} \PYG{p}{(}\PYG{n}{number\PYGZus{}of\PYGZus{}samples}\PYG{p}{)} \PYG{o}{*} \PYG{n+nf}{mean}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n+nf}{min}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)} \PYG{p}{)}\PYG{o}{/} \PYG{p}{(}\PYG{n}{number\PYGZus{}of\PYGZus{}samples} \PYG{o}{*} \PYG{p}{(}\PYG{n+nf}{mean}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n+nf}{min}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)))} \PYG{o}{\PYGZhy{}} \PYG{l+m}{1}\PYG{p}{)}
+
+  \PYG{n}{G\PYGZus{}MLE}
+  \PYG{n}{G\PYGZus{}MME}
+\end{Verbatim}

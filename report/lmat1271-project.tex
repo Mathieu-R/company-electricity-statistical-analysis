@@ -358,9 +358,59 @@ The inverse is,
     &= \frac{1}{(1-y)^{1/3}}
 \end{align*}
 
-\textbf{(f)} Repeat this data generating process $N = 1000$ times (with the same sample size $n = 20$ and the same ($\theta_1^0$, $\theta_2^0$)) Hence, you obtain a sample of size $N$ of each estimator of $G_{\theta_1, \theta_2}$. Make a \textbf{histogram} and a \textbf{boxplot} of these two samples. What can you conclude ?
+Using the following R code,
+\begin{minted}{R}
+  number_of_samples <- 20
+
+  # generate randoms numbers from the uniform distribution U(0,1)
+  U <- runif(number_of_samples)
+
+  # compute X = F^{-1}(u)
+  X <- 1 / (1-U)^(1/3)
+
+  # compute Gini coefficients
+  G_MLE <- 1 / ((2 * number_of_samples) / (sum(log(X / min(X)))) - 1)
+  G_MME <- 1 / ((2 * (number_of_samples) * mean(X) - min(X) )/ (number_of_samples * (mean(X) - min(X))) - 1)
+
+  G_MLE
+  G_MME
+\end{minted}
+
+We get the following estimations,
+\begin{equation}
+  \begin{array}{rl}
+    \hat{G}_{\text{MLE}} = 0.1728057 \quad ; \quad \hat{G}_{\text{MME}} = 0.1770613
+  \end{array}
+\end{equation}
+
+\textbf{(f)} Repeat this data generating process $N = 1000$ times (with the same sample size $n = 20$ and the same ($\theta_1^0$, $\theta_2^0$)). Hence, you obtain a sample of size $N$ of each estimator of $G_{\theta_1, \theta_2}$. Make a \textbf{histogram} and a \textbf{boxplot} of these two samples. What can you conclude ?
 
 \begin{center}\rule{6cm}{0.4pt}\end{center}
+
+\begin{minted}{R}
+  # Generate N = 1000 times the sample
+
+  N <- 1000
+
+  G_MLE_array <- numeric(N)
+  G_MME_array <- numeric(N)
+
+  for (i in 1:1000) {
+    U <- runif(number_of_samples)
+    X <- 1 / (1-U)^(1/3)
+    G_MLE <- 1 / ((2 * number_of_samples) / (sum(log(X / min(X)))) - 1)
+    G_MME <- 1 / ((2 * (number_of_samples) * mean(X) - min(X) )/ (number_of_samples * (mean(X) - min(X))) - 1)
+
+    G_MLE_array[i] <- G_MLE
+    G_MME_array[i] <- G_MME
+  }
+
+  hist(G_MLE_array)
+  hist(G_MME_array)
+
+  boxplot(G_MLE_array)
+  boxplot(G_MME_array)
+\end{minted}
 
 
 \textbf{(g)} Use the samples obtained in (f) to estimate the \textbf{bias}, the \textbf{variance} and the \textbf{mean squared error (MSE)} of both estimators What can you conclude ?
