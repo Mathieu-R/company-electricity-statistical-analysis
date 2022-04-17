@@ -21,7 +21,7 @@ generate_random_variables_vector <- function(number_of_samples, inv_cdf) {
   # generate randoms numbers from the uniform distribution U(0,1)
   data_unif <- runif(number_of_samples)
 
-  rv_vector <- inv_cdf(data_unif)
+  rv_vector <- inv_cdf(y = data_unif)
 
   return rv_vector
 }
