@@ -1,0 +1,25 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{n}{number\PYGZus{}of\PYGZus{}iterations} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{l+m}{1000}
+
+  \PYG{n}{gini\PYGZus{}mle\PYGZus{}sample} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{numeric}\PYG{p}{(}\PYG{n}{number\PYGZus{}of\PYGZus{}iterations}\PYG{p}{)}
+  \PYG{n}{gini\PYGZus{}mme\PYGZus{}sample} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{numeric}\PYG{p}{(}\PYG{n}{number\PYGZus{}of\PYGZus{}iterations}\PYG{p}{)}
+
+  \PYG{n+nf}{for }\PYG{p}{(}\PYG{n}{i} \PYG{n}{in} \PYG{l+m}{1}\PYG{o}{:}\PYG{n}{number\PYGZus{}of\PYGZus{}iterations}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{\PYGZsh{} generate random variables}
+    \PYG{n}{rv\PYGZus{}vector} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{generate\PYGZus{}random\PYGZus{}variable}\PYG{p}{(}\PYG{n}{number\PYGZus{}of\PYGZus{}samples} \PYG{o}{=} \PYG{n}{number\PYGZus{}of\PYGZus{}samples}\PYG{p}{,} \PYG{n}{inv\PYGZus{}cdf} \PYG{o}{=} \PYG{n}{inv\PYGZus{}cdf}\PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{} compute gini coefficients}
+    \PYG{n}{gini\PYGZus{}mle} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{gini\PYGZus{}mle}\PYG{p}{(}\PYG{n}{rv\PYGZus{}vector} \PYG{o}{=} \PYG{n}{rv\PYGZus{}vector}\PYG{p}{)}
+    \PYG{n}{gini\PYGZus{}mme} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{gini\PYGZus{}mme}\PYG{p}{(}\PYG{n}{rv\PYGZus{}vector} \PYG{o}{=} \PYG{n}{rv\PYGZus{}vector}\PYG{p}{)}
+
+    \PYG{n}{gini\PYGZus{}mle\PYGZus{}sample}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{gini\PYGZus{}mle}
+    \PYG{n}{gini\PYGZus{}mme\PYGZus{}sample}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{gini\PYGZus{}mme}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{n+nf}{hist}\PYG{p}{(}\PYG{n}{gini\PYGZus{}mle\PYGZus{}sample}\PYG{p}{,} \PYG{n}{main}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{,} \PYG{n}{xlab}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}Gini MLE \PYGZam{} MME samples\PYGZdq{}}\PYG{p}{,} \PYG{n}{col}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}steelblue\PYGZdq{}}\PYG{p}{)}
+  \PYG{n+nf}{hist}\PYG{p}{(}\PYG{n}{gini\PYGZus{}mme\PYGZus{}sample}\PYG{p}{,} \PYG{n}{col}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}red\PYGZdq{}}\PYG{p}{,} \PYG{n}{add}\PYG{o}{=}\PYG{k+kc}{TRUE}\PYG{p}{)}
+  \PYG{n+nf}{legend}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}topright\PYGZsq{}}\PYG{p}{,} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}MLE\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}MME\PYGZsq{}}\PYG{p}{),} \PYG{n}{fill}\PYG{o}{=}\PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}steelblue\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}red\PYGZsq{}}\PYG{p}{))}
+
+  \PYG{n+nf}{boxplot}\PYG{p}{(}\PYG{n}{gini\PYGZus{}mle\PYGZus{}sample}\PYG{p}{)}
+  \PYG{n+nf}{boxplot}\PYG{p}{(}\PYG{n}{gini\PYGZus{}mme\PYGZus{}sample}\PYG{p}{)}
+\end{Verbatim}

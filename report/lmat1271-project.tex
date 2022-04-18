@@ -360,20 +360,55 @@ The inverse is,
 
 Using the following R code,
 \begin{minted}{R}
+  theta_1 <- 3
+  theta_2 <- 1
+  
   number_of_samples <- 20
-
-  # generate randoms numbers from the uniform distribution U(0,1)
-  U <- runif(number_of_samples)
-
-  # compute X = F^{-1}(u)
-  X <- 1 / (1-U)^(1/3)
-
+  
+  # cumulative density function
+  cdf <- function(x) {
+    return (-1 / x^3)
+  }
+  
+  # inverse of cumulative density function
+  inv_cdf <- function(y) {
+    return (1 / ((1 - y)^(1 / 3)))
+  }
+  
+  # generate random variables vector from the inverse cdf
+  generate_random_variables_vector <- function(number_of_samples, inv_cdf) {
+    # generate randoms numbers from the uniform distribution U(0,1)
+    data_unif <- runif(number_of_samples)
+  
+    rv_vector <- inv_cdf(y = data_unif)
+  
+    return rv_vector
+  }
+  
+  # maximum likelihood method for gini coefficient estimator
+  gini_mle <- function(rv_vector) {
+    number_of_samples = len(rv_vector)
+    return (1 / ((2 * number_of_samples) / (sum(log(rv_vector / min(rv_vector)))) - 1))
+  } 
+  
+  # method of moment for gini coefficient estimator
+  gini_mme <- function(rv_vector) {
+    number_of_samples = len(rv_vector)
+    return (1 / ((2 * (number_of_samples) * mean(rv_vector) - min(rv_vector) )/ (number_of_samples * (mean(rv_vector) - min(rv_vector))) - 1))
+  }
+  
+  theoretical_gini <- function(theta_1) {
+    return (1 / ((2 * theta_1) - 1)
+  }
+  
+  rv_vector = generate_random_variables_vector(number_of_samples = number_of_samples, inv_cdf = inv_cdf)
+  
+  # plot an histogram of the random variable vector
+  hist(rv_vector, freq=F, xlab="X", main="random sample")
+  
   # compute Gini coefficients
-  G_MLE <- 1 / ((2 * number_of_samples) / (sum(log(X / min(X)))) - 1)
-  G_MME <- 1 / ((2 * (number_of_samples) * mean(X) - min(X) )/ (number_of_samples * (mean(X) - min(X))) - 1)
-
-  G_MLE
-  G_MME
+  gini_mle(rv_vector = rv_vector)
+  gini_mme(rv_vector = rv_vector)
 \end{minted}
 
 We get the following estimations,
@@ -388,28 +423,29 @@ We get the following estimations,
 \begin{center}\rule{6cm}{0.4pt}\end{center}
 
 \begin{minted}{R}
-  # Generate N = 1000 times the sample
+  number_of_iterations <- 1000
 
-  N <- 1000
-
-  G_MLE_array <- numeric(N)
-  G_MME_array <- numeric(N)
-
-  for (i in 1:1000) {
-    U <- runif(number_of_samples)
-    X <- 1 / (1-U)^(1/3)
-    G_MLE <- 1 / ((2 * number_of_samples) / (sum(log(X / min(X)))) - 1)
-    G_MME <- 1 / ((2 * (number_of_samples) * mean(X) - min(X) )/ (number_of_samples * (mean(X) - min(X))) - 1)
-
-    G_MLE_array[i] <- G_MLE
-    G_MME_array[i] <- G_MME
+  gini_mle_sample <- numeric(number_of_iterations)
+  gini_mme_sample <- numeric(number_of_iterations)
+  
+  for (i in 1:number_of_iterations) {
+    # generate random variables
+    rv_vector <- generate_random_variable(number_of_samples = number_of_samples, inv_cdf = inv_cdf)
+  
+    # compute gini coefficients
+    gini_mle <- gini_mle(rv_vector = rv_vector)
+    gini_mme <- gini_mme(rv_vector = rv_vector)
+  
+    gini_mle_sample[i] <- gini_mle
+    gini_mme_sample[i] <- gini_mme
   }
-
-  hist(G_MLE_array)
-  hist(G_MME_array)
-
-  boxplot(G_MLE_array)
-  boxplot(G_MME_array)
+  
+  hist(gini_mle_sample, main="", xlab="Gini MLE & MME samples", col="steelblue")
+  hist(gini_mme_sample, col="red", add=TRUE)
+  legend('topright', c('MLE', 'MME'), fill=c('steelblue', 'red'))
+  
+  boxplot(gini_mle_sample)
+  boxplot(gini_mme_sample)
 \end{minted}
 
 
@@ -422,6 +458,39 @@ We get the following estimations,
 \begin{center}\rule{6cm}{0.4pt}\end{center}
 
 \textbf{(i)} Create an histogram for $\sqrt{n}(\hat{G}_{\text{MLE}} - G_{\theta_1^0, \theta_2^0} )$, for $n = 20$, $n = 100$ and $n = 500$. What can you conclude ?
+
+\begin{center}\rule{6cm}{0.4pt}\end{center}
+
+\section{Regression}
+
+The company wants to understand how electricity consumption is linked to productivity (i.e daily amount in 1000 euros that the company gains when the machine operates). We gather a dataset made of $40$ independent observations for which we observe the following variables,
+\begin{equation}
+  \begin{array}{rl}
+    X \equiv \text{Electricity consumption in MWh} \quad ; \quad Y \equiv \text{productivity in thousands of euros per day}
+  \end{array}
+\end{equation}
+
+\textbf{(a)} Is it reasonnable to fit a linear regression model between \textbf{productivity} ($Y$) and \textbf{electricity consumption} ($X$) ? 
+If no, what transformation of $X$ and/or $Y$ would you propose to retrieve a linear model ? Justify.
+
+\underline{Hint}: graphical representation may help visualize how the variables and the residuals behave.
+
+For the rest of the exercise, we work we the transformed variables $X^{\ast}$ and $Y^{\ast}$. 
+Write down the obtained model.
+
+\underline{Note}: it may be that $Y = Y^{\ast}$ and/or $X = X^{\ast}$.
+
+\begin{center}\rule{6cm}{0.4pt}\end{center}
+ 
+\textbf{(b)} Mathematically derive the marginal impact of $X$ on $Y$ in your model. This is computed via the following formula, 
+\begin{equation}
+  \pdv{E(Y|X=x)}{x}
+\end{equation}
+Provide interpretation.
+
+\begin{center}\rule{6cm}{0.4pt}\end{center}
+
+\textbf{(c)} Is the linear effect significant ? Choose the adequate test for testing linear significance. Compute the p-value of this test. Based on the resulting p-value, what can we conclude ? Analyse the value of the linear effect.
 
 \begin{center}\rule{6cm}{0.4pt}\end{center}
 
