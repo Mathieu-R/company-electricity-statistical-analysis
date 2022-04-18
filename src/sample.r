@@ -9,6 +9,9 @@ theta_2 <- 1
 
 number_of_samples <- 20
 
+# set a seed for reproductability
+set.seed(42)
+
 # cumulative density function
 cdf <- function(x) {
   return (-1 / x^3)
@@ -62,7 +65,6 @@ gini_mle_sample <- numeric(number_of_iterations)
 gini_mme_sample <- numeric(number_of_iterations)
 
 for (i in 1:number_of_iterations) {
-  set.seed(i)
   # generate random variables
   rv_vector <- generate_random_variable(number_of_samples = number_of_samples, inv_cdf = inv_cdf)
 
