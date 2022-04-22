@@ -161,3 +161,11 @@ for (n in n_vector) {
 par(mfrow = c(1, 2))
 plot(x = n_vector, y = gini_mle_biases, main = "", xlab = "Gini MLE biases", col = "steelblue")
 plot(x = n_vector, y = gini_mme_biases, main = "", xlab = "Gini MME biases", col = "red")
+
+par(mfrow = c(1, 2))
+plot(x = n_vector, y = gini_mle_variances, main = "", xlab = "Gini MLE biases", col = "steelblue")
+plot(x = n_vector, y = gini_mme_varigini_mle_variances, main = "", xlab = "Gini MME biases", col = "red")
+
+par(mfrow = c(1, 2))
+plot(x = n_vector, y = gini_mle_mses, main = "", xlab = "Gini MLE biases", col = "steelblue")
+plot(x = n_vector, y = gini_mme_mle_mses, main = "", xlab = "Gini MME biases", col = "red")
