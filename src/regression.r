@@ -1,4 +1,3 @@
-install.packages("e1071", dependencies=TRUE)
 library(e1071)
 
 df <- read.csv2(file="src/electricity_consumption_dataset.txt", sep=";", dec=".")

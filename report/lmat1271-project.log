@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.14)  21 APR 2022 17:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.14)  22 APR 2022 10:58
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1624,13 +1624,36 @@ LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 21.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)) [9]
+))
 Runaway argument?
 {figure}[H!]\csname figure@atbegin\endcsname  \centering \includegraphics \ETC.
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:493: Paragraph ended before \@float@HH was complete.
+/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:457: Paragraph ended before \@float@HH was complete.
 <to be read again> 
                    \par 
-l.493 
+l.457 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+{figure}[H!]\csname figure@atbegin\endcsname  \centering \includegraphics \ETC.
+/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:464: Paragraph ended before \@float@HH was complete.
+<to be read again> 
+                   \par 
+l.464 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+[9]
+Runaway argument?
+{figure}[H!]\csname figure@atbegin\endcsname  \centering \includegraphics \ETC.
+/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:507: Paragraph ended before \@float@HH was complete.
+<to be read again> 
+                   \par 
+l.507 
       
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -1638,13 +1661,13 @@ My plan is to forget the whole thing and hope for the best.
 
 [10]
 
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:506: LaTeX Error: \begin{figure} on input line 487 ended by \end{document}.
+/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:520: LaTeX Error: \begin{figure} on input line 501 ended by \end{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.506 \end{document}
+l.520 \end{document}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1662,9 +1685,11 @@ Package rerunfilecheck Info: Checksums for `lmat1271-project.out':
 runsystem(rm lmat1271-project.pyg)...executed.
 
  )
-(\end occurred inside a group at level 1)
+(\end occurred inside a group at level 3)
 
-### semi simple group (level 1) entered at line 487 (\begingroup)
+### semi simple group (level 3) entered at line 501 (\begingroup)
+### semi simple group (level 2) entered at line 458 (\begingroup)
+### semi simple group (level 1) entered at line 451 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
  51326 strings out of 478994
