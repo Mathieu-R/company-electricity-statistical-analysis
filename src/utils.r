@@ -40,6 +40,23 @@ mse <- function(sample, theoretical) {
   mean((sample - theoretical)^2)
 }
 
+# x: simulation of sample size n
+compute_statistical_quantities <- function(x, n) {
+  mean <- mean(x)
+
+  gini_mle_estimator <- gini_mle(rv_vector = x, n = n)
+  gini_mme_estimator <- gini_mme(rv_vector = x, n = n)
+
+  print(gini_mle_estimator)
+  print("next simulation")
+
+  c(
+    mean,
+    gini_mle_estimator,
+    gini_mme_estimator
+  )
+}
+
 # N: simulation size (i.e. number of samples)
 # n: sample size
 # f: function to generate random variables
@@ -49,34 +66,17 @@ sim <- function(N = 1000, n = 20, f, ...) {
   # each column correspond to one simulation
   x <- matrix(f(N * n, ...), nrow = n)
 
-  gini_mle_estimators <- numeric(N)
-  gini_mme_estimators <- numeric(N)
-
-  for (i in 1:N) {
-    gini_mle_estimators[i] <- gini_mle(rv_vector = x[, i], n = n)
-    gini_mme_estimators[i] <- gini_mme(rv_vector = x[, i], n = n)
-  }
-
-  print(gini_mle_estimators)
-
+  # for each column (i.e. each simulation of sample size n)
+  # we compute statistical quantities (mean, gini estimators,...)
+  # the function "FUN" is called for each column
   stats <- apply(
     X = x,
     MARGIN = 2,
-    FUN = function(y) {
-      c(
-        mean(y),
-        gini_mle_estimators,
-        gini_mme_estimators,
-        bias(sample = gini_mle_estimators, theoretical = gini_theoretical(theta_1)),
-        bias(sample = gini_mme_estimators, theoretical = gini_theoretical(theta_1)),
-        var(gini_mle_estimators),
-        var(gini_mme_estimators),
-        mse(sample = gini_mle_estimators, theoretical = gini_theoretical(theta_1)),
-        mse(sample = gini_mme_estimators, theoretical = gini_theoretical(theta_1))
-      )
-    }
+    FUN = compute_statistical_quantities,
+    n = n
   )
 
-  rownames(stats) <- c("sample-mean", "gini-mle-sample", "gini-mme-sample", "gini-mle-bias", "gini-mme-bias", "gini-mle-variance", "gini-mme-variance", "gini-mle-mse", "gini-mme-mse")
+  rownames(stats) <- c("mean-sample", "gini-mle-sample", "gini-mme-sample")
+
   return(stats)
 }
