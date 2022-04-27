@@ -47,36 +47,39 @@ mse_mme <- mse(sample = gini_mme_sample, theoretical = gini_theoretical(theta_1)
 
 
 # repeat computation for sample size n = 20, 40, 60, 80, 100, 150, 200, 300, 400, 500
-n_vector <- c(20, 40, 60, 80, 100, 150, 200, 300, 400, 500)
+sample_sizes <- c(20, 40, 60, 80, 100, 150, 200, 300, 400, 500)
+statistical_quantities <- c("gini-bias-mle", "gini-bias-mme", "gini-variance-mle", "gini-variance-mme", "gini-mse-mle", "gini-mse-mme")
 
-i <- 0
-for (n in n_vector) {
-  number_of_iterations <- 1000
+matrix <- matrix(NA, nrow = length(statistical_quantities), ncol = length(sample_sizes))
+rownames(matrix) <- statistical_quantities
+colnames(matrix) <- sample_sizes
 
-  gini_mle_sample <- numeric(number_of_iterations)
-  gini_mme_sample <- numeric(number_of_iterations)
+for (n in sample_sizes) {
+  x <- sim(N = 1000, n = n, f = inverse_transform_sampling, inv_cdf)
 
-  x <- sim(N = number_of_iterations, n = n, f = inverse_transform_sampling, inv_cdf)
+  gini_mle_sample <- x["gini-mle-sample", ]
+  gini_mme_sample <- x["gini-mme-sample", ]
 
-  gini_mle_biases[i] <- mean(gini_mle_sample_bias)
-  gini_mle_variances[i] <- mean(gini_mle_sample_variance)
-  gini_mle_mses[i] <- mean(gini_mle_sample_mse)
+  bias_mle <- bias(sample = gini_mle_sample, theoretical = gini_theoretical(theta_1))
+  bias_mme <- bias(sample = gini_mme_sample, theoretical = gini_theoretical(theta_1))
 
-  gini_mme_biases[i] <- mean(gini_mme_sample_bias)
-  gini_mme_variances[i] <- mean(gini_mme_sample_variance)
-  gini_mme_mses[i] <- mean(gini_mme_sample_mse)
+  variance_mle <- var(gini_mle_sample)
+  variance_mme <- var(gini_mme_sample)
 
-  i <- i + 1
+  mse_mle <- mse(sample = gini_mle_sample, theoretical = gini_theoretical(theta_1))
+  mse_mme <- mse(sample = gini_mme_sample, theoretical = gini_theoretical(theta_1))
+
+  matrix[, as.character(n)] <- c(bias_mle, bias_mme, variance_mle, variance_mme, mse_mle, mse_mme)
 }
 
 par(mfrow = c(1, 2))
-plot(x = n_vector, y = gini_mle_biases, main = "", xlab = "Gini MLE biases", col = "steelblue")
-plot(x = n_vector, y = gini_mme_biases, main = "", xlab = "Gini MME biases", col = "red")
+plot(x = n_vector, y = matrix["gini-bias-mle", ], main = "", xlab = "Gini MLE biases", col = "steelblue")
+plot(x = n_vector, y = matrix["gini-bias-mme", ], main = "", xlab = "Gini MME biases", col = "red")
 
 par(mfrow = c(1, 2))
-plot(x = n_vector, y = gini_mle_variances, main = "", xlab = "Gini MLE variances", col = "steelblue")
-plot(x = n_vector, y = gini_mme_variances, main = "", xlab = "Gini MME variances", col = "red")
+plot(x = n_vector, y = matrix["gini-variance-mle", ], main = "", xlab = "Gini MLE variances", col = "steelblue")
+plot(x = n_vector, y = matrix["gini-variance-mme", ], main = "", xlab = "Gini MME variances", col = "red")
 
 par(mfrow = c(1, 2))
-plot(x = n_vector, y = gini_mle_mses, main = "", xlab = "Gini MLE Mean Squared Error", col = "steelblue")
-plot(x = n_vector, y = gini_mme_mle_mses, main = "", xlab = "Gini MME Mean Squared Error", col = "red")
+plot(x = n_vector, y = matrix["gini-mse-mle", ], main = "", xlab = "Gini MLE Mean Squared Error", col = "steelblue")
+plot(x = n_vector, y = matrix["gini-mse-mme", ], main = "", xlab = "Gini MME Mean Squared Error", col = "red")

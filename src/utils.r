@@ -47,9 +47,6 @@ compute_statistical_quantities <- function(x, n) {
   gini_mle_estimator <- gini_mle(rv_vector = x, n = n)
   gini_mme_estimator <- gini_mme(rv_vector = x, n = n)
 
-  print(gini_mle_estimator)
-  print("next simulation")
-
   c(
     mean,
     gini_mle_estimator,

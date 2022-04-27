@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{c+c1}{\PYGZsh{} Generate N = 1000 times the sample}
+  \PYG{n}{x} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{sim}\PYG{p}{(}\PYG{n}{N} \PYG{o}{=} \PYG{l+m}{1000}\PYG{p}{,} \PYG{n}{n} \PYG{o}{=} \PYG{l+m}{20}\PYG{p}{,} \PYG{n}{f} \PYG{o}{=} \PYG{n}{inverse\PYGZus{}transform\PYGZus{}sampling}\PYG{p}{,} \PYG{n}{inv\PYGZus{}cdf}\PYG{p}{)}
+
+  \PYG{n}{gini\PYGZus{}mle\PYGZus{}sample} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{x}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}gini\PYGZhy{}mle\PYGZhy{}sample\PYGZdq{}}\PYG{p}{,} \PYG{p}{]}
+  \PYG{n}{gini\PYGZus{}mme\PYGZus{}sample} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{x}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}gini\PYGZhy{}mme\PYGZhy{}sample\PYGZdq{}}\PYG{p}{,} \PYG{p}{]}
+
+  \PYG{c+c1}{\PYGZsh{} histogram of gini samples}
+  \PYG{n+nf}{par}\PYG{p}{(}\PYG{n}{mfrow} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{))}
+  \PYG{n+nf}{hist}\PYG{p}{(}\PYG{n}{gini\PYGZus{}mle\PYGZus{}sample}\PYG{p}{,} \PYG{n}{breaks} \PYG{o}{=} \PYG{l+m}{50}\PYG{p}{,} \PYG{n}{main} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{,} \PYG{n}{xlab} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Gini MLE sample\PYGZdq{}}\PYG{p}{,} \PYG{n}{col} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}steelblue\PYGZdq{}}\PYG{p}{)}
+  \PYG{n+nf}{abline}\PYG{p}{(}\PYG{n}{v} \PYG{o}{=} \PYG{n+nf}{gini\PYGZus{}theoretical}\PYG{p}{(}\PYG{n}{theta\PYGZus{}1}\PYG{p}{),} \PYG{n}{col} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}green\PYGZdq{}}\PYG{p}{,} \PYG{n}{lty} \PYG{o}{=} \PYG{l+m}{2}\PYG{p}{)}
+  \PYG{n+nf}{hist}\PYG{p}{(}\PYG{n}{gini\PYGZus{}mme\PYGZus{}sample}\PYG{p}{,} \PYG{n}{breaks} \PYG{o}{=} \PYG{l+m}{50}\PYG{p}{,} \PYG{n}{main} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{,} \PYG{n}{xlab} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Gini MME sample\PYGZdq{}}\PYG{p}{,} \PYG{n}{col} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}red\PYGZdq{}}\PYG{p}{)}
+  \PYG{n+nf}{abline}\PYG{p}{(}\PYG{n}{v} \PYG{o}{=} \PYG{n+nf}{gini\PYGZus{}theoretical}\PYG{p}{(}\PYG{n}{theta\PYGZus{}1}\PYG{p}{),} \PYG{n}{col} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}green\PYGZdq{}}\PYG{p}{,} \PYG{n}{lty} \PYG{o}{=} \PYG{l+m}{2}\PYG{p}{)}
+  \PYG{n+nf}{legend}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}topright\PYGZdq{}}\PYG{p}{,} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Gini MLE\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}Gini MME\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}True Gini\PYGZdq{}}\PYG{p}{),} \PYG{n}{fill} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}steelblue\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}red\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}green\PYGZdq{}}\PYG{p}{))}
+
+  \PYG{c+c1}{\PYGZsh{} boxplot of gini samples}
+  \PYG{n+nf}{par}\PYG{p}{(}\PYG{n}{mfrow} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{))}
+  \PYG{n+nf}{boxplot}\PYG{p}{(}\PYG{n}{gini\PYGZus{}mle\PYGZus{}sample}\PYG{p}{,} \PYG{n}{col} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}grey\PYGZdq{}}\PYG{p}{)}
+  \PYG{n+nf}{abline}\PYG{p}{(}\PYG{n}{h} \PYG{o}{=} \PYG{n+nf}{gini\PYGZus{}theoretical}\PYG{p}{(}\PYG{n}{theta\PYGZus{}1}\PYG{p}{),} \PYG{n}{col} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}brown\PYGZdq{}}\PYG{p}{,} \PYG{n}{lty} \PYG{o}{=} \PYG{l+m}{2}\PYG{p}{)}
+  \PYG{n+nf}{boxplot}\PYG{p}{(}\PYG{n}{gini\PYGZus{}mme\PYGZus{}sample}\PYG{p}{,} \PYG{n}{col} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}grey\PYGZdq{}}\PYG{p}{)}
+  \PYG{n+nf}{abline}\PYG{p}{(}\PYG{n}{h} \PYG{o}{=} \PYG{n+nf}{gini\PYGZus{}theoretical}\PYG{p}{(}\PYG{n}{theta\PYGZus{}1}\PYG{p}{),} \PYG{n}{col} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}brown\PYGZdq{}}\PYG{p}{,} \PYG{n}{lty} \PYG{o}{=} \PYG{l+m}{2}\PYG{p}{)}
+\end{Verbatim}
