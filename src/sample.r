@@ -83,3 +83,19 @@ plot(x = n_vector, y = matrix["gini-variance-mme", ], main = "", xlab = "Gini MM
 par(mfrow = c(1, 2))
 plot(x = n_vector, y = matrix["gini-mse-mle", ], main = "", xlab = "Gini MLE Mean Squared Error", col = "steelblue")
 plot(x = n_vector, y = matrix["gini-mse-mme", ], main = "", xlab = "Gini MME Mean Squared Error", col = "red")
+
+
+#
+sim_n20 <- sim(N = 1000, n = 20, f = inverse_transform_sampling, inv_cdf)
+result_n20 <- sqrt(20) * (sim_n20["gini-mle-sample", ] - gini_theoretical(theta_1))
+
+sim_n100 <- sim(N = 1000, n = 100, f = inverse_transform_sampling, inv_cdf)
+result_n100 <- sqrt(100) * (sim_n100["gini-mle-sample", ] - gini_theoretical(theta_1))
+
+sim_n500 <- sim(N = 1000, n = 500, f = inverse_transform_sampling, inv_cdf)
+result_n500 <- sqrt(500) * (sim_n500["gini-mle-sample", ] - gini_theoretical(theta_1))
+
+par(mfrow = c(1, 3))
+hist(result_n20, breaks = 50, main = "", xlab = "", col = "steelblue")
+hist(result_n100, breaks = 50, main = "", xlab = "", col = "steelblue")
+hist(result_n500, breaks = 50, main = "", xlab = "", col = "steelblue")
