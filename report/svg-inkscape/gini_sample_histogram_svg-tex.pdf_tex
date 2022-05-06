@@ -1,0 +1,92 @@
+%% Creator: Inkscape 1.1.2 (b8e25be8, 2022-02-05), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'gini_sample_histogram_svg-tex.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{863.99997711bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.68315971)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{gini_sample_histogram_svg-tex.pdf}}%
+    \put(0.26562501,0.02031247){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Gini MLE sample\end{tabular}}}}%
+    \put(0.0140625,0.34939234){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Frequency\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{gini_sample_histogram_svg-tex.pdf}}%
+    \put(0.11540799,0.05156246){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.1\end{tabular}}}}%
+    \put(0.20644531,0.05156246){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.2\end{tabular}}}}%
+    \put(0.29749351,0.05156246){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.3\end{tabular}}}}%
+    \put(0.38853083,0.05156246){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.4\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{gini_sample_histogram_svg-tex.pdf}}%
+    \put(0.0453125,0.0996636){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}}%
+    \put(0.0453125,0.21065536){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}20\end{tabular}}}}}%
+    \put(0.0453125,0.32164712){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}40\end{tabular}}}}}%
+    \put(0.0453125,0.43263887){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}60\end{tabular}}}}}%
+    \put(0.0453125,0.54361978){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}80\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{gini_sample_histogram_svg-tex.pdf}}%
+    \put(0.76562499,0.02031247){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Gini MME sample\end{tabular}}}}%
+    \put(0.51406251,0.34939234){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Frequency\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{gini_sample_histogram_svg-tex.pdf}}%
+    \put(0.60011938,0.05156246){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.1\end{tabular}}}}%
+    \put(0.67055121,0.05156246){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.2\end{tabular}}}}%
+    \put(0.74097225,0.05156246){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.3\end{tabular}}}}%
+    \put(0.81140408,0.05156246){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.4\end{tabular}}}}%
+    \put(0.88182511,0.05156246){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.5\end{tabular}}}}%
+    \put(0.95225694,0.05156246){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.6\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{gini_sample_histogram_svg-tex.pdf}}%
+    \put(0.54531251,0.0996636){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}}%
+    \put(0.54531251,0.20056421){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}20\end{tabular}}}}}%
+    \put(0.54531251,0.30146483){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}40\end{tabular}}}}}%
+    \put(0.54531251,0.40236544){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}60\end{tabular}}}}}%
+    \put(0.54531251,0.50326605){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}80\end{tabular}}}}}%
+    \put(0.54531251,0.60416666){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}100\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{gini_sample_histogram_svg-tex.pdf}}%
+    \put(0.81926004,0.58304036){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Gini MLE\end{tabular}}}}%
+    \put(0.81926004,0.55166014){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Gini MME\end{tabular}}}}%
+    \put(0.81926004,0.52027993){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}True Gini\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

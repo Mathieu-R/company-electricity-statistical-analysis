@@ -45,6 +45,9 @@ variance_mme <- var(gini_mme_sample)
 mse_mle <- mse(sample = gini_mle_sample, theoretical = gini_theoretical(theta_1))
 mse_mme <- mse(sample = gini_mme_sample, theoretical = gini_theoretical(theta_1))
 
+print(bias_mle, variance_mle, mse_mle)
+print(bias_mme, variance_mme, mse_mme)
+
 
 # repeat computation for sample size n = 20, 40, 60, 80, 100, 150, 200, 300, 400, 500
 sample_sizes <- c(20, 40, 60, 80, 100, 150, 200, 300, 400, 500)
@@ -73,16 +76,16 @@ for (n in sample_sizes) {
 }
 
 par(mfrow = c(1, 2))
-plot(x = n_vector, y = matrix["gini-bias-mle", ], main = "", xlab = "Gini MLE biases", col = "steelblue")
-plot(x = n_vector, y = matrix["gini-bias-mme", ], main = "", xlab = "Gini MME biases", col = "red")
+plot(x = sample_sizes, y = matrix["gini-bias-mle", ], main = "", xlab = "N", ylab = "Gini MLE biases", col = "steelblue")
+plot(x = sample_sizes, y = matrix["gini-bias-mme", ], main = "", xlab = "N", ylab = "Gini MME biases", col = "red")
 
 par(mfrow = c(1, 2))
-plot(x = n_vector, y = matrix["gini-variance-mle", ], main = "", xlab = "Gini MLE variances", col = "steelblue")
-plot(x = n_vector, y = matrix["gini-variance-mme", ], main = "", xlab = "Gini MME variances", col = "red")
+plot(x = sample_sizes, y = matrix["gini-variance-mle", ], main = "", xlab = "N", ylab = "Gini MLE variances", col = "steelblue")
+plot(x = sample_sizes, y = matrix["gini-variance-mme", ], main = "", xlab = "N", ylab = "Gini MME variances", col = "red")
 
 par(mfrow = c(1, 2))
-plot(x = n_vector, y = matrix["gini-mse-mle", ], main = "", xlab = "Gini MLE Mean Squared Error", col = "steelblue")
-plot(x = n_vector, y = matrix["gini-mse-mme", ], main = "", xlab = "Gini MME Mean Squared Error", col = "red")
+plot(x = sample_sizes, y = matrix["gini-mse-mle", ], main = "", xlab = "N", ylab = "Gini MLE Mean Squared Error", col = "steelblue")
+plot(x = sample_sizes, y = matrix["gini-mse-mme", ], main = "", xlab = "N", ylab = "Gini MME Mean Squared Error", col = "red")
 
 
 #
@@ -96,6 +99,6 @@ sim_n500 <- sim(N = 1000, n = 500, f = inverse_transform_sampling, inv_cdf)
 result_n500 <- sqrt(500) * (sim_n500["gini-mle-sample", ] - gini_theoretical(theta_1))
 
 par(mfrow = c(1, 3))
-hist(result_n20, breaks = 50, main = "", xlab = "", col = "steelblue")
-hist(result_n100, breaks = 50, main = "", xlab = "", col = "steelblue")
-hist(result_n500, breaks = 50, main = "", xlab = "", col = "steelblue")
+hist(result_n20, breaks = 50, main = "sample size: n = 20", xlab = "$\\sqrt{n}(\\hat{G}_{\\text{MLE}} - G_{\\theta_1^0, \\theta_2^0} )$", col = "steelblue")
+hist(result_n100, breaks = 50, main = "sample size: n = 100", xlab = "$\\{n}(\\hat{G}_{\\text{MLE}} - G_{\\theta_1^0, \\theta_2^0} )$", col = "steelblue")
+hist(result_n500, breaks = 50, main = "sample size: n = 500", xlab = "$\\sqrt{n}(\\hat{G}_{\\text{MLE}} - G_{\\theta_1^0, \\theta_2^0} )$", col = "steelblue")
