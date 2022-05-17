@@ -2,7 +2,5 @@
 
 R Packages used :
 
-- `import`
-- `ggplot2`
-- `dplyr`
-- `e1071`
+- `tidyverse`
+- `rmarkdown`
