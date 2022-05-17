@@ -1,0 +1,166 @@
+%% Creator: Inkscape 1.1.2 (b8e25be8, 2022-02-05), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'reciprocal_model_analysis_svg-tex.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{1152.00004578bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.62955725)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{reciprocal_model_analysis_svg-tex.pdf}}%
+    \put(0.04205729,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}10\end{tabular}}}}%
+    \put(0.10738118,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}12\end{tabular}}}}%
+    \put(0.17269694,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}14\end{tabular}}}}%
+    \put(0.23802083,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}16\end{tabular}}}}%
+    \put(0.30334471,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}18\end{tabular}}}}%
+    \put(0.3686686,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}20\end{tabular}}}}%
+    \put(0.43399248,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}22\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{reciprocal_model_analysis_svg-tex.pdf}}%
+    \put(0.02820638,0.41418453){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-5\end{tabular}}}}}%
+    \put(0.02820638,0.4641357){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}}%
+    \put(0.02820638,0.51408687){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}5\end{tabular}}}}}%
+    \put(0.02820638,0.56403804){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}10\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{reciprocal_model_analysis_svg-tex.pdf}}%
+    \put(0.25972492,0.32742509){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Fitted values\end{tabular}}}}%
+    \put(0.00875651,0.47703446){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Residuals\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{reciprocal_model_analysis_svg-tex.pdf}}%
+    \put(0.25972492,0.5940592){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Residuals vs Fitted\end{tabular}}}}%
+    \put(0.43706053,0.56549475){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}21\end{tabular}}}}%
+    \put(0.1946289,0.55340165){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}30\end{tabular}}}}%
+    \put(0.39239907,0.38280433){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}35\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{reciprocal_model_analysis_svg-tex.pdf}}%
+    \put(0.57808427,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-2\end{tabular}}}}%
+    \put(0.66890461,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-1\end{tabular}}}}%
+    \put(0.75972489,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}%
+    \put(0.85054523,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}1\end{tabular}}}}%
+    \put(0.94136552,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{reciprocal_model_analysis_svg-tex.pdf}}%
+    \put(0.52820636,0.37490231){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-2\end{tabular}}}}}%
+    \put(0.52820636,0.41504716){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-1\end{tabular}}}}}%
+    \put(0.52820636,0.45518388){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}}%
+    \put(0.52820636,0.49532874){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}1\end{tabular}}}}}%
+    \put(0.52820636,0.53546545){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}2\end{tabular}}}}}%
+    \put(0.52820636,0.57561031){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}3\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{reciprocal_model_analysis_svg-tex.pdf}}%
+    \put(0.75972489,0.32742509){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Theoretical Quantiles\end{tabular}}}}%
+    \put(0.50875649,0.47703446){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Standardized residuals\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{reciprocal_model_analysis_svg-tex.pdf}}%
+    \put(0.75972489,0.5940592){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Normal Q-Q\end{tabular}}}}%
+    \put(0.96085604,0.56532385){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}21\end{tabular}}}}%
+    \put(0.91899411,0.54973954){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}30\end{tabular}}}}%
+    \put(0.55859375,0.37127275){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}35\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{reciprocal_model_analysis_svg-tex.pdf}}%
+    \put(0.04205729,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}10\end{tabular}}}}%
+    \put(0.10738118,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}12\end{tabular}}}}%
+    \put(0.17269694,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}14\end{tabular}}}}%
+    \put(0.23802083,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}16\end{tabular}}}}%
+    \put(0.30334471,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}18\end{tabular}}}}%
+    \put(0.3686686,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}20\end{tabular}}}}%
+    \put(0.43399248,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}22\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{reciprocal_model_analysis_svg-tex.pdf}}%
+    \put(0.02820638,0.05795082){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.0\end{tabular}}}}}%
+    \put(0.02820638,0.12050779){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.5\end{tabular}}}}}%
+    \put(0.02820638,0.18306475){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}1.0\end{tabular}}}}}%
+    \put(0.02820638,0.24561358){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}1.5\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{reciprocal_model_analysis_svg-tex.pdf}}%
+    \put(0.25972492,0.01264647){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Fitted values\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{reciprocal_model_analysis_svg-tex.pdf}}%
+    \put(0.00858561,0.1228434){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}S\end{tabular}}}}}%
+    \put(0.00858561,0.12824705){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}t\end{tabular}}}}}%
+    \put(0.00858561,0.13050128){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}a\end{tabular}}}}}%
+    \put(0.00858561,0.1350016){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}n\end{tabular}}}}}%
+    \put(0.00858561,0.13951007){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}d\end{tabular}}}}}%
+    \put(0.00858561,0.14401853){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}a\end{tabular}}}}}%
+    \put(0.00858561,0.14851885){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}r\end{tabular}}}}}%
+    \put(0.00858561,0.15121254){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}d\end{tabular}}}}}%
+    \put(0.00858561,0.155721){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}i\end{tabular}}}}}%
+    \put(0.00858561,0.15751951){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}z\end{tabular}}}}}%
+    \put(0.00858561,0.16157224){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}e\end{tabular}}}}}%
+    \put(0.00858561,0.16607256){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}d\end{tabular}}}}}%
+    \put(0.00858561,0.17283526){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}r\end{tabular}}}}}%
+    \put(0.00858561,0.17552894){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}e\end{tabular}}}}}%
+    \put(0.00858561,0.18002927){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}s\end{tabular}}}}}%
+    \put(0.00858561,0.184082){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}i\end{tabular}}}}}%
+    \put(0.00858561,0.18588051){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}d\end{tabular}}}}}%
+    \put(0.00858561,0.19038897){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}u\end{tabular}}}}}%
+    \put(0.00858561,0.1948893){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}a\end{tabular}}}}}%
+    \put(0.00858561,0.19939776){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}l\end{tabular}}}}}%
+    \put(0.00858561,0.20119626){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}s\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{reciprocal_model_analysis_svg-tex.pdf}}%
+    \put(0.25972492,0.27928056){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Scale-Location\end{tabular}}}}%
+    \put(0.43706053,0.26510414){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}21\end{tabular}}}}%
+    \put(0.1946289,0.24998368){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}30\end{tabular}}}}%
+    \put(0.39239907,0.23580727){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}35\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{reciprocal_model_analysis_svg-tex.pdf}}%
+    \put(0.55616044,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.00\end{tabular}}}}%
+    \put(0.63231605,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.02\end{tabular}}}}%
+    \put(0.70846351,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.04\end{tabular}}}}%
+    \put(0.78461098,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.06\end{tabular}}}}%
+    \put(0.86075839,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.08\end{tabular}}}}%
+    \put(0.93691405,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.10\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{reciprocal_model_analysis_svg-tex.pdf}}%
+    \put(0.52820636,0.07434894){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-2\end{tabular}}}}}%
+    \put(0.52820636,0.11154783){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-1\end{tabular}}}}}%
+    \put(0.52820636,0.14874672){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}}%
+    \put(0.52820636,0.18595375){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}1\end{tabular}}}}}%
+    \put(0.52820636,0.22315264){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}2\end{tabular}}}}}%
+    \put(0.52820636,0.26035153){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}3\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{reciprocal_model_analysis_svg-tex.pdf}}%
+    \put(0.7597249,0.01264647){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Leverage\end{tabular}}}}%
+    \put(0.50875649,0.16225583){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Standardized residuals\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{reciprocal_model_analysis_svg-tex.pdf}}%
+    \put(0.5873128,0.06105954){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Cook's distance\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{reciprocal_model_analysis_svg-tex.pdf}}%
+    \put(0.98200675,0.25173338){\color[rgb]{0.8745098,0.3254902,0.41960784}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
+    \put(0.75972489,0.27928056){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Residuals vs Leverage\end{tabular}}}}%
+    \put(0.86821284,0.25071612){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}21\end{tabular}}}}%
+    \put(0.90351558,0.22327472){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}10\end{tabular}}}}%
+    \put(0.7753499,0.06802569){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}35\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

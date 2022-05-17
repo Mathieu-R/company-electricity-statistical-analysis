@@ -24,9 +24,10 @@ We want to fit a linear model on our data. Is there a linear relationship betwee
 ggplot(df, aes(x = electricity_consumption, y = productivity)) +
   geom_jitter() +
   geom_smooth() +
-  ggtitle("Productivity ~ Electricity consumption") +
+  ggtitle("Productivity vs Electricity consumption") +
   xlab("Electricity consumption (MWh)") +
-  ylab("Productivity (1000€ / day)")
+  ylab("Productivity (1000€ / day)") + 
+  theme(plot.title = element_text(hjust = 0.5))
 ```
 
 As we can see, this does not seem linear at all. We can still try to fit a linear model.    
@@ -38,7 +39,6 @@ $$
 We can do that easily in r 
 ```{r}
 simple_lm <- lm(productivity ~ electricity_consumption, data = df)
-summary(simple_lm)
 ```
 
 This method is based on **4 assumptions** :
@@ -59,11 +59,11 @@ plot(simple_lm)
 We can plot a _scatter plot_ of the **residuals** again the **fitted values**.    
 If there is a linear relationship, the points should be randomly distributed around the horizontal line $y = 0$.
 
-As we can see in the **residual vs fitted** plot, the mean of the residuals is not $O$.
+As we can see in the **residual vs fitted** plot, the mean of the residuals is not $0$.
 
 ### 1.2. Independence 
 
-We want to make sure the is no dependance between some variables (i.e. each observation is collected independently). We can check the _correlation coefficient_ of 2 variables in r.
+We want to make sure there is no dependance between some variables (i.e. each observation is collected independently). We can check the _correlation coefficient_ of 2 variables in r.
 
 ### 1.3. Homoescedasticity
 
@@ -74,7 +74,7 @@ We want to make sure the variance of the error term $\epsilon$ of the model is c
 We want to make sure the residuals are normaly distributed so that our model is not consistently under- or over-predicting the values.    
 In order to visualize that in r, we can plot an _histogram_ of the residuals or a _qqplot_
 
-We can see in the **qqplot** that the high and low values are pulling away from the dashed line.
+We can see in the **qqplot** that the high and low values are pulling away from the dashed line. This suggests that the explanatory variable (**electricity_consumption**) is heavy tailed.
 
 ## Model evaluation
 
@@ -93,9 +93,120 @@ summary(simple_lm)
 
 The **R-Squared** is $0.2614$ so $26%$ of the variation of the **productivity** is explained by the **electricity consumption**.
 
+```{r}
+ggplot(df, aes(electricity_consumption)) +
+  geom_histogram()
+```
+
+We can notice a strong asymmetry in the **electricity consumption** variable. This variable is right (positive) skewed.
+
+```{r}
+ggplot(df, aes(productivity)) +
+  geom_histogram()
+```
+
 ## 2. Transforming the variables
 
-### 2.1. Square transformation
+https://www.r-bloggers.com/2020/01/a-guide-to-data-transformation/
+
+As we have seen, the **electricity_consumption** variable is **right skewed**. 
+
+This suggests the following transformations.
+
+### 2.1. Square Root transformation
+
+```{r}
+square_root_lm <- lm(productivity ~ sqrt(electricity_consumption), data = df)
+summary(square_root_lm)
+
+par(mfrow = c(2,2))
+plot(square_root_lm)
+```
+
+```{r}
+ggplot(df, aes(x = electricity_consumption, y = productivity)) +
+  geom_point(alpha = 0.7) +
+  geom_point(aes(x = electricity_consumption, y = square_root_lm$fitted.values), color = "red", alpha = 0.5) +
+  geom_segment(aes(xend = electricity_consumption, yend = square_root_lm$fitted.values), color = "red", alpha = 0.25, linetype = "dashed")
+```
+
+```{r}
+ggplot(df, aes(x = electricity_consumption, y = productivity)) + 
+  geom_point(alpha = 0.75) +
+  geom_smooth(method = "lm", formula = y ~ sqrt(x), color = "red")
+```
+
+### 2.2. Log transformation 
+```{r}
+log_lm <- lm(productivity ~ log(electricity_consumption), data = df)
+summary(log_lm)
+
+par(mfrow = c(2,2))
+plot(log_lm)
+```
+
+```{r}
+ggplot(df, aes(x = electricity_consumption, y = productivity)) +
+  geom_point(alpha = 0.7) +
+  geom_point(aes(x = electricity_consumption, y = log_lm$fitted.values), color = "red", alpha = 0.5) +
+  geom_segment(aes(xend = electricity_consumption, yend = log_lm$fitted.values), color = "red", alpha = 0.25, linetype = "dashed")
+```
+
+```{r}
+ggplot(df, aes(x = electricity_consumption, y = productivity)) + 
+  geom_point(alpha = 0.75) +
+  geom_smooth(method = "lm", formula = y ~ log(x), color = "red")
+```
+
+```{r}
+ggplot(df, aes(x = log(electricity_consumption), y = productivity)) + 
+  geom_point(alpha = 0.75) +
+  geom_smooth(method = "lm", color = "red")
+```
+
+```{r}
+ggplot(df, aes(x = log(electricity_consumption))) +
+  geom_histogram()
+```
+
+
+### 2.3. Reciprocal transformation
+
+```{r}
+reciprocal_lm <- lm(productivity ~ I(1 / electricity_consumption^2), data = df)
+summary(reciprocal_lm)
+
+par(mfrow = c(2,2))
+plot(reciprocal_lm)
+```
+
+```{r}
+ggplot(df, aes(x = electricity_consumption, y = productivity)) +
+  geom_point(alpha = 0.7) +
+  geom_point(aes(x = electricity_consumption, y = reciprocal_lm$fitted.values), color = "red", alpha = 0.5) +
+  geom_segment(aes(xend = electricity_consumption, yend = reciprocal_lm$fitted.values), color = "red", alpha = 0.25, linetype = "dashed")
+```
+
+```{r}
+ggplot(df, aes(x = electricity_consumption, y = productivity)) + 
+  geom_point(alpha = 0.75) +
+  geom_smooth(method = "lm", formula = y ~ I(1/x^2), color = "red")
+```
+
+```{r}
+ggplot(df, aes(x = 1 / (electricity_consumption)^2, y = productivity)) + 
+  geom_point(alpha = 0.75) +
+  geom_smooth(method = "lm", color = "red")
+```
+
+```{r}
+ggplot(df, aes(x = 1 / electricity_consumption)) + 
+  geom_histogram()
+```
+
+Other transformations but for left skewed data.
+
+### 2.4. Square transformation
 
 We first try improving our model by adding a square term. 
 ```{r}
@@ -119,22 +230,7 @@ ggplot(df, aes(x = electricity_consumption, y = productivity)) +
   geom_smooth(method = "lm", formula = y ~ x + I(x^2), color = "red")
 ```
 
-### 2.2. Log transformation 
-```{r}
-log_lm <- lm(productivity ~  log(electricity_consumption), data = df)
-summary(log_lm)
-
-par(mfrow = c(2,2))
-plot(log_lm)
-```
-
-```{r}
-ggplot(log_lm, aes(x = .resid)) +
-  geom_histogram(binwidth = 25) +
-  xlab("residuals")
-```
-
-### 2.2. Other Log transformation 
+### 2.5. Other Log transformation 
 ```{r}
 other_log_lm <- lm(log(productivity) ~ electricity_consumption, data = df)
 summary(log_lm)

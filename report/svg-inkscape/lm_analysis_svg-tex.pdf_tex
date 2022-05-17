@@ -1,0 +1,167 @@
+%% Creator: Inkscape 1.1.2 (b8e25be8, 2022-02-05), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'lm_analysis_svg-tex.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{1152.00004578bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.62955725)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{lm_analysis_svg-tex.pdf}}%
+    \put(0.04811198,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}15\end{tabular}}}}%
+    \put(0.17476399,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}20\end{tabular}}}}%
+    \put(0.30141601,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}25\end{tabular}}}}%
+    \put(0.42807617,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}30\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{lm_analysis_svg-tex.pdf}}%
+    \put(0.02820638,0.38697099){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-10\end{tabular}}}}}%
+    \put(0.02820638,0.42692867){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-5\end{tabular}}}}}%
+    \put(0.02820638,0.46688635){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}}%
+    \put(0.02820638,0.50684404){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}5\end{tabular}}}}}%
+    \put(0.02820638,0.54680172){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}10\end{tabular}}}}}%
+    \put(0.02820638,0.58676754){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}15\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{lm_analysis_svg-tex.pdf}}%
+    \put(0.25972492,0.32742509){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Fitted values\end{tabular}}}}%
+    \put(0.00875651,0.47703446){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Residuals\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{lm_analysis_svg-tex.pdf}}%
+    \put(0.25972492,0.5940592){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Residuals vs Fitted\end{tabular}}}}%
+    \put(0.17080078,0.56549475){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}21\end{tabular}}}}%
+    \put(0.05859375,0.38372393){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}27\end{tabular}}}}%
+    \put(0.06763509,0.52939449){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}30\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{lm_analysis_svg-tex.pdf}}%
+    \put(0.57808427,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-2\end{tabular}}}}%
+    \put(0.66890461,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-1\end{tabular}}}}%
+    \put(0.75972489,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}%
+    \put(0.85054523,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}1\end{tabular}}}}%
+    \put(0.94136552,0.34687498){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{lm_analysis_svg-tex.pdf}}%
+    \put(0.52820636,0.38286943){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-3\end{tabular}}}}}%
+    \put(0.52820636,0.41437171){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-2\end{tabular}}}}}%
+    \put(0.52820636,0.44586585){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-1\end{tabular}}}}}%
+    \put(0.52820636,0.47736813){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}}%
+    \put(0.52820636,0.5088704){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}1\end{tabular}}}}}%
+    \put(0.52820636,0.54037268){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}2\end{tabular}}}}}%
+    \put(0.52820636,0.57187496){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}3\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{lm_analysis_svg-tex.pdf}}%
+    \put(0.75972489,0.32742509){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Theoretical Quantiles\end{tabular}}}}%
+    \put(0.50875649,0.47703446){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Standardized residuals\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{lm_analysis_svg-tex.pdf}}%
+    \put(0.75972489,0.5940592){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Normal Q-Q\end{tabular}}}}%
+    \put(0.55859375,0.37127275){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}18\end{tabular}}}}%
+    \put(0.96085604,0.56532385){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}21\end{tabular}}}}%
+    \put(0.60045573,0.40563962){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}27\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{lm_analysis_svg-tex.pdf}}%
+    \put(0.04811198,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}15\end{tabular}}}}%
+    \put(0.17476399,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}20\end{tabular}}}}%
+    \put(0.30141601,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}25\end{tabular}}}}%
+    \put(0.42807617,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}30\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{lm_analysis_svg-tex.pdf}}%
+    \put(0.02820638,0.05795082){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.0\end{tabular}}}}}%
+    \put(0.02820638,0.11517738){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.5\end{tabular}}}}}%
+    \put(0.02820638,0.17240394){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}1.0\end{tabular}}}}}%
+    \put(0.02820638,0.2296305){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}1.5\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{lm_analysis_svg-tex.pdf}}%
+    \put(0.25972492,0.01264647){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Fitted values\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{lm_analysis_svg-tex.pdf}}%
+    \put(0.00858561,0.1228434){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}S\end{tabular}}}}}%
+    \put(0.00858561,0.12824705){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}t\end{tabular}}}}}%
+    \put(0.00858561,0.13050128){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}a\end{tabular}}}}}%
+    \put(0.00858561,0.1350016){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}n\end{tabular}}}}}%
+    \put(0.00858561,0.13951007){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}d\end{tabular}}}}}%
+    \put(0.00858561,0.14401853){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}a\end{tabular}}}}}%
+    \put(0.00858561,0.14851885){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}r\end{tabular}}}}}%
+    \put(0.00858561,0.15121254){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}d\end{tabular}}}}}%
+    \put(0.00858561,0.155721){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}i\end{tabular}}}}}%
+    \put(0.00858561,0.15751951){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}z\end{tabular}}}}}%
+    \put(0.00858561,0.16157224){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}e\end{tabular}}}}}%
+    \put(0.00858561,0.16607256){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}d\end{tabular}}}}}%
+    \put(0.00858561,0.17283526){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}r\end{tabular}}}}}%
+    \put(0.00858561,0.17552894){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}e\end{tabular}}}}}%
+    \put(0.00858561,0.18002927){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}s\end{tabular}}}}}%
+    \put(0.00858561,0.184082){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}i\end{tabular}}}}}%
+    \put(0.00858561,0.18588051){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}d\end{tabular}}}}}%
+    \put(0.00858561,0.19038897){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}u\end{tabular}}}}}%
+    \put(0.00858561,0.1948893){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}a\end{tabular}}}}}%
+    \put(0.00858561,0.19939776){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}l\end{tabular}}}}}%
+    \put(0.00858561,0.20119626){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}s\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{lm_analysis_svg-tex.pdf}}%
+    \put(0.25972492,0.27928056){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Scale-Location\end{tabular}}}}%
+    \put(0.46085609,0.26510414){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}18\end{tabular}}}}%
+    \put(0.17566731,0.24932451){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}21\end{tabular}}}}%
+    \put(0.05859375,0.22745765){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}27\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{lm_analysis_svg-tex.pdf}}%
+    \put(0.55616044,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.0\end{tabular}}}}%
+    \put(0.6595052,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.2\end{tabular}}}}%
+    \put(0.76284992,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.4\end{tabular}}}}%
+    \put(0.86618648,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.6\end{tabular}}}}%
+    \put(0.9695312,0.03209635){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.8\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{lm_analysis_svg-tex.pdf}}%
+    \put(0.52820636,0.05253904){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-4\end{tabular}}}}}%
+    \put(0.52820636,0.08173012){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-3\end{tabular}}}}}%
+    \put(0.52820636,0.1109212){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-2\end{tabular}}}}}%
+    \put(0.52820636,0.14012042){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-1\end{tabular}}}}}%
+    \put(0.52820636,0.1693115){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}}%
+    \put(0.52820636,0.19850258){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}1\end{tabular}}}}}%
+    \put(0.52820636,0.22769366){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}2\end{tabular}}}}}%
+    \put(0.52820636,0.25688474){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}3\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{lm_analysis_svg-tex.pdf}}%
+    \put(0.7597249,0.01264647){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Leverage\end{tabular}}}}%
+    \put(0.50875649,0.16225583){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Standardized residuals\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{lm_analysis_svg-tex.pdf}}%
+    \put(0.56905923,0.05642901){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Cook's distance\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{lm_analysis_svg-tex.pdf}}%
+    \put(0.98200675,0.1477539){\color[rgb]{0.8745098,0.3254902,0.41960784}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}%
+    \put(0.98200675,0.15342607){\color[rgb]{0.8745098,0.3254902,0.41960784}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
+    \put(0.98200675,0.18083492){\color[rgb]{0.8745098,0.3254902,0.41960784}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
+    \put(0.98200675,0.18650715){\color[rgb]{0.8745098,0.3254902,0.41960784}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}%
+    \put(0.75972489,0.27928056){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Residuals vs Leverage\end{tabular}}}}%
+    \put(0.96085604,0.06894529){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}18\end{tabular}}}}%
+    \put(0.58962402,0.25071612){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}21\end{tabular}}}}%
+    \put(0.57567544,0.10078936){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}27\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

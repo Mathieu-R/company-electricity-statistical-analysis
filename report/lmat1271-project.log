@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.14)  6 MAY 2022 17:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.14)  17 MAY 2022 11:49
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1744,29 +1744,426 @@ pdfTeX warning: pdflatex (file ./svg-inkscape/gini_sample_boxplot_svg-tex.pdf): 
 
 pdfTeX warning: pdflatex (file ./svg-inkscape/gini_sample_boxplot_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-Package svg Info: Last page of `./svg-inkscape/scatter_plot_svg-tex.pdf' is 2 on input line 486.
- (./svg-inkscape/scatter_plot_svg-tex.pdf_tex
-<./svg-inkscape/scatter_plot_svg-tex.pdf, id=163, page=1, 867.24pt x 592.46344pt>
-File: ./svg-inkscape/scatter_plot_svg-tex.pdf Graphic file (type pdf)
-<use ./svg-inkscape/scatter_plot_svg-tex.pdf, page 1>
-Package pdftex.def Info: ./svg-inkscape/scatter_plot_svg-tex.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 441.01619pt x 301.28448pt.
-<./svg-inkscape/scatter_plot_svg-tex.pdf, id=164, page=2, 867.24pt x 592.46344pt>
-File: ./svg-inkscape/scatter_plot_svg-tex.pdf Graphic file (type pdf)
-<use ./svg-inkscape/scatter_plot_svg-tex.pdf, page 2>
-Package pdftex.def Info: ./svg-inkscape/scatter_plot_svg-tex.pdf , page2 used on input line 60.
-(pdftex.def)             Requested size: 441.01619pt x 301.28448pt.
+Package svg Info: Last page of `./svg-inkscape/lm_scatter_plot_svg-tex.pdf' is 2 on input line 486.
+ (./svg-inkscape/lm_scatter_plot_svg-tex.pdf_tex
+<./svg-inkscape/lm_scatter_plot_svg-tex.pdf, id=163, page=1, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/lm_scatter_plot_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/lm_scatter_plot_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/lm_scatter_plot_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/lm_scatter_plot_svg-tex.pdf, id=164, page=2, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/lm_scatter_plot_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/lm_scatter_plot_svg-tex.pdf, page 2>
+Package pdftex.def Info: ./svg-inkscape/lm_scatter_plot_svg-tex.pdf , page2 used on input line 60.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
 ) [11]
-Overfull \hbox (3.54892pt too wide) in paragraph at lines 491--492
-[]\T1/cmr/m/n/10 Moreover, the $\OML/cmm/m/it/10 R[] \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 26$ \T1/cmr/m/n/10 which means that the li-near re-la-tion bet-ween the 2 va-riable is very weak. 
- []
+\openout4 = `lmat1271-project.pyg'.
 
-[12 <./svg-inkscape/scatter_plot_svg-tex.pdf> <./svg-inkscape/scatter_plot_svg-tex.pdf
+ (./_minted-lmat1271-project/67497918853A2DEED2E842EC858FC63BB12A278208B748B3BCF1EA5532920E12.pygtex)
+Package svg Info: Last page of `./svg-inkscape/lm_analysis_svg-tex.pdf' is 18 on input line 506.
+ (./svg-inkscape/lm_analysis_svg-tex.pdf_tex
+<./svg-inkscape/lm_analysis_svg-tex.pdf, id=172, page=1, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/lm_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/lm_analysis_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/lm_analysis_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/lm_analysis_svg-tex.pdf, id=173, page=2, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/lm_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/lm_analysis_svg-tex.pdf, page 2>
+Package pdftex.def Info: ./svg-inkscape/lm_analysis_svg-tex.pdf , page2 used on input line 61.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/lm_analysis_svg-tex.pdf, id=174, page=3, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/lm_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/lm_analysis_svg-tex.pdf, page 3>
+Package pdftex.def Info: ./svg-inkscape/lm_analysis_svg-tex.pdf , page3 used on input line 68.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/lm_analysis_svg-tex.pdf, id=175, page=4, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/lm_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/lm_analysis_svg-tex.pdf, page 4>
+Package pdftex.def Info: ./svg-inkscape/lm_analysis_svg-tex.pdf , page4 used on input line 71.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/lm_analysis_svg-tex.pdf, id=176, page=5, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/lm_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/lm_analysis_svg-tex.pdf, page 5>
+Package pdftex.def Info: ./svg-inkscape/lm_analysis_svg-tex.pdf , page5 used on input line 76.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/lm_analysis_svg-tex.pdf, id=177, page=6, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/lm_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/lm_analysis_svg-tex.pdf, page 6>
+Package pdftex.def Info: ./svg-inkscape/lm_analysis_svg-tex.pdf , page6 used on input line 82.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/lm_analysis_svg-tex.pdf, id=178, page=7, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/lm_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/lm_analysis_svg-tex.pdf, page 7>
+Package pdftex.def Info: ./svg-inkscape/lm_analysis_svg-tex.pdf , page7 used on input line 90.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/lm_analysis_svg-tex.pdf, id=179, page=8, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/lm_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/lm_analysis_svg-tex.pdf, page 8>
+Package pdftex.def Info: ./svg-inkscape/lm_analysis_svg-tex.pdf , page8 used on input line 93.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/lm_analysis_svg-tex.pdf, id=180, page=9, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/lm_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/lm_analysis_svg-tex.pdf, page 9>
+Package pdftex.def Info: ./svg-inkscape/lm_analysis_svg-tex.pdf , page9 used on input line 98.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/lm_analysis_svg-tex.pdf, id=181, page=10, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/lm_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/lm_analysis_svg-tex.pdf, page 10>
+Package pdftex.def Info: ./svg-inkscape/lm_analysis_svg-tex.pdf , page10 used on input line 103.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/lm_analysis_svg-tex.pdf, id=182, page=11, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/lm_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/lm_analysis_svg-tex.pdf, page 11>
+Package pdftex.def Info: ./svg-inkscape/lm_analysis_svg-tex.pdf , page11 used on input line 108.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/lm_analysis_svg-tex.pdf, id=183, page=12, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/lm_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/lm_analysis_svg-tex.pdf, page 12>
+Package pdftex.def Info: ./svg-inkscape/lm_analysis_svg-tex.pdf , page12 used on input line 110.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/lm_analysis_svg-tex.pdf, id=184, page=13, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/lm_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/lm_analysis_svg-tex.pdf, page 13>
+Package pdftex.def Info: ./svg-inkscape/lm_analysis_svg-tex.pdf , page13 used on input line 132.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/lm_analysis_svg-tex.pdf, id=185, page=14, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/lm_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/lm_analysis_svg-tex.pdf, page 14>
+Package pdftex.def Info: ./svg-inkscape/lm_analysis_svg-tex.pdf , page14 used on input line 137.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/lm_analysis_svg-tex.pdf, id=186, page=15, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/lm_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/lm_analysis_svg-tex.pdf, page 15>
+Package pdftex.def Info: ./svg-inkscape/lm_analysis_svg-tex.pdf , page15 used on input line 143.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/lm_analysis_svg-tex.pdf, id=187, page=16, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/lm_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/lm_analysis_svg-tex.pdf, page 16>
+Package pdftex.def Info: ./svg-inkscape/lm_analysis_svg-tex.pdf , page16 used on input line 152.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/lm_analysis_svg-tex.pdf, id=188, page=17, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/lm_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/lm_analysis_svg-tex.pdf, page 17>
+Package pdftex.def Info: ./svg-inkscape/lm_analysis_svg-tex.pdf , page17 used on input line 155.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/lm_analysis_svg-tex.pdf, id=189, page=18, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/lm_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/lm_analysis_svg-tex.pdf, page 18>
+Package pdftex.def Info: ./svg-inkscape/lm_analysis_svg-tex.pdf , page18 used on input line 157.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+) [12 <./svg-inkscape/lm_scatter_plot_svg-tex.pdf> <./svg-inkscape/lm_scatter_plot_svg-tex.pdf
 
-pdfTeX warning: pdflatex (file ./svg-inkscape/scatter_plot_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+pdfTeX warning: pdflatex (file ./svg-inkscape/lm_scatter_plot_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:515: Undefined control sequence.
-l.515 \appendixpage
+Package svg Info: Last page of `./svg-inkscape/histogram_explanatory_variable_svg-tex.pdf' is 2 on input line 524.
+ (./svg-inkscape/histogram_explanatory_variable_svg-tex.pdf_tex
+<./svg-inkscape/histogram_explanatory_variable_svg-tex.pdf, id=209, page=1, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/histogram_explanatory_variable_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/histogram_explanatory_variable_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/histogram_explanatory_variable_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/histogram_explanatory_variable_svg-tex.pdf, id=210, page=2, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/histogram_explanatory_variable_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/histogram_explanatory_variable_svg-tex.pdf, page 2>
+Package pdftex.def Info: ./svg-inkscape/histogram_explanatory_variable_svg-tex.pdf , page2 used on input line 61.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+
+./svg-inkscape/histogram_explanatory_variable_svg-tex.pdf_tex:66: Missing $ inserted.
+<inserted text> 
+                $
+l.66 ...{c}electricity_consumption\end{tabular}}}}
+                                                  %
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./svg-inkscape/histogram_explanatory_variable_svg-tex.pdf_tex:66: Missing $ inserted.
+<inserted text> 
+                $
+l.66 ...{c}electricity_consumption\end{tabular}}}}
+                                                  %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+) [13 <./svg-inkscape/lm_analysis_svg-tex.pdf> <./svg-inkscape/lm_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/lm_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/lm_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/lm_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/lm_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/lm_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/lm_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/lm_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/lm_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/lm_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/lm_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/lm_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/lm_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/lm_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/lm_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/lm_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/lm_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/lm_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/lm_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/lm_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/lm_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/lm_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/lm_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/lm_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/lm_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/lm_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/lm_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/lm_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/lm_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/lm_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/lm_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/lm_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/lm_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/lm_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+Package svg Info: Last page of `./svg-inkscape/reciprocal_scatter_plot_svg-tex.pdf' is 2 on input line 547.
+ (./svg-inkscape/reciprocal_scatter_plot_svg-tex.pdf_tex
+<./svg-inkscape/reciprocal_scatter_plot_svg-tex.pdf, id=284, page=1, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_scatter_plot_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_scatter_plot_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_scatter_plot_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/reciprocal_scatter_plot_svg-tex.pdf, id=285, page=2, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_scatter_plot_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_scatter_plot_svg-tex.pdf, page 2>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_scatter_plot_svg-tex.pdf , page2 used on input line 60.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+
+./svg-inkscape/reciprocal_scatter_plot_svg-tex.pdf_tex:65: Missing $ inserted.
+<inserted text> 
+                $
+l.65 ...{c}electricity_consumption\end{tabular}}}}
+                                                  %
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./svg-inkscape/reciprocal_scatter_plot_svg-tex.pdf_tex:65: Missing $ inserted.
+<inserted text> 
+                $
+l.65 ...{c}electricity_consumption\end{tabular}}}}
+                                                  %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+) [14 <./svg-inkscape/histogram_explanatory_variable_svg-tex.pdf> <./svg-inkscape/histogram_explanatory_variable_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/histogram_explanatory_variable_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+Package svg Info: Last page of `./svg-inkscape/reciprocal_linear_scatter_plot_svg-tex.pdf' is 2 on input line 555.
+ (./svg-inkscape/reciprocal_linear_scatter_plot_svg-tex.pdf_tex
+<./svg-inkscape/reciprocal_linear_scatter_plot_svg-tex.pdf, id=304, page=1, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_linear_scatter_plot_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_linear_scatter_plot_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_linear_scatter_plot_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/reciprocal_linear_scatter_plot_svg-tex.pdf, id=305, page=2, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_linear_scatter_plot_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_linear_scatter_plot_svg-tex.pdf, page 2>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_linear_scatter_plot_svg-tex.pdf , page2 used on input line 60.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+
+./svg-inkscape/reciprocal_linear_scatter_plot_svg-tex.pdf_tex:65: Missing $ inserted.
+<inserted text> 
+                $
+l.65 ...electricity_consumption)^2\end{tabular}}}}
+                                                  %
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./svg-inkscape/reciprocal_linear_scatter_plot_svg-tex.pdf_tex:65: Missing $ inserted.
+<inserted text> 
+                $
+l.65 ...electricity_consumption)^2\end{tabular}}}}
+                                                  %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+) [15 <./svg-inkscape/reciprocal_scatter_plot_svg-tex.pdf> <./svg-inkscape/reciprocal_scatter_plot_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/reciprocal_scatter_plot_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+Package svg Info: Last page of `./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf' is 18 on input line 562.
+ (./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf_tex
+<./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, id=323, page=1, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, id=324, page=2, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, page 2>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf , page2 used on input line 64.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, id=325, page=3, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, page 3>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf , page3 used on input line 69.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, id=326, page=4, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, page 4>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf , page4 used on input line 72.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, id=327, page=5, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, page 5>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf , page5 used on input line 77.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, id=328, page=6, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, page 6>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf , page6 used on input line 83.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, id=329, page=7, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, page 7>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf , page7 used on input line 90.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, id=330, page=8, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, page 8>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf , page8 used on input line 93.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, id=331, page=9, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, page 9>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf , page9 used on input line 98.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, id=332, page=10, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, page 10>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf , page10 used on input line 106.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, id=333, page=11, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, page 11>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf , page11 used on input line 111.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, id=334, page=12, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, page 12>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf , page12 used on input line 113.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, id=335, page=13, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, page 13>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf , page13 used on input line 135.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, id=336, page=14, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, page 14>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf , page14 used on input line 140.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, id=337, page=15, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, page 15>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf , page15 used on input line 147.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, id=338, page=16, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, page 16>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf , page16 used on input line 154.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, id=339, page=17, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, page 17>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf , page17 used on input line 157.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+<./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, id=340, page=18, 1156.32pt x 727.96968pt>
+File: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf, page 18>
+Package pdftex.def Info: ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf , page18 used on input line 159.
+(pdftex.def)             Requested size: 441.01178pt x 277.64217pt.
+) [16 <./svg-inkscape/reciprocal_linear_scatter_plot_svg-tex.pdf> <./svg-inkscape/reciprocal_linear_scatter_plot_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/reciprocal_linear_scatter_plot_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/reciprocal_model_analysis_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] [17] [18]
+/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:638: Undefined control sequence.
+l.638 \appendixpage
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1774,8 +2171,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:516: Undefined control sequence.
-l.516 \addappheadtotoc
+/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex:639: Undefined control sequence.
+l.639 \addappheadtotoc
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1785,7 +2182,7 @@ and I'll forget about whatever was undefined.
 
 \openout4 = `lmat1271-project.pyg'.
 
-(./_minted-lmat1271-project/3B3682C12CF36B438091C5EA065F2841B12A278208B748B3BCF1EA5532920E12.pygtex [13]) [14] (./lmat1271-project.aux)
+(./_minted-lmat1271-project/3B3682C12CF36B438091C5EA065F2841B12A278208B748B3BCF1EA5532920E12.pygtex [19]) [20] (./lmat1271-project.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
@@ -1801,18 +2198,18 @@ runsystem(rm lmat1271-project.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 51855 strings out of 478994
- 1222591 string characters out of 5858184
- 1872841 words of memory out of 5000000
- 68261 multiletter control sequences out of 15000+600000
+ 52046 strings out of 478994
+ 1233251 string characters out of 5858184
+ 1897359 words of memory out of 5000000
+ 68415 multiletter control sequences out of 15000+600000
  417139 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  111i,20n,116p,10678b,1005s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbl1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfit1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on lmat1271-project.pdf (14 pages, 338654 bytes).
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbl1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfit1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on lmat1271-project.pdf (20 pages, 439593 bytes).
 PDF statistics:
- 290 PDF objects out of 1000 (max. 8388607)
- 201 compressed objects within 3 object streams
- 29 named destinations out of 1000 (max. 500000)
- 208 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 542 PDF objects out of 1000 (max. 8388607)
+ 347 compressed objects within 4 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 443 words of extra memory for PDF output out of 10000 (max. 10000000)
 
