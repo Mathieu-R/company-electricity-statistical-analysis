@@ -1,6 +1,10 @@
 .DS_Store
 .vscode
 
+# rmarkdown generated documents
+src/*.html 
+src/*.pdf
+
 # History files
 .Rhistory
 .Rapp.history
