@@ -1,9 +1,9 @@
 # Fdb version 3
-["pdflatex"] 1652780950 "/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex" "lmat1271-project.pdf" "lmat1271-project" 1652780950
+["pdflatex"] 1652787041 "/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex" "lmat1271-project.pdf" "lmat1271-project" 1652787041
   "../header.tex" 1651848901 7505 eeb9c60a0ae9c0e4199603467c4c2537 ""
   "../preamble-exercice.tex" 1649697442 316 149962f39fd3bed1cee2492378a390d8 ""
-  "/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex" 1652780923 29558 9041e85536c37274a560949ceca6d0a5 ""
-  "/dev/null" 1652780957 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex" 1652787014 29555 d54bfaaa136f78f8f48384c306d367b4 ""
+  "/dev/null" 1652787060 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -402,9 +402,9 @@
   "figures/reciprocal_linear_scatter_plot.svg" 1652770844 16625 0bc733cff3ec383154f3b162d67513aa ""
   "figures/reciprocal_model_analysis.svg" 1652770509 44937 a306acf863c0b06230fed2f25a4d3cff ""
   "figures/reciprocal_scatter_plot.svg" 1652770482 16828 16acda88ae09ce092251f307c25fa6db ""
-  "lmat1271-project.aux" 1652780950 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
+  "lmat1271-project.aux" 1652787041 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
   "lmat1271-project.out" 0 -1 0 "pdflatex"
-  "lmat1271-project.tex" 1652780923 29558 9041e85536c37274a560949ceca6d0a5 ""
+  "lmat1271-project.tex" 1652787014 29555 d54bfaaa136f78f8f48384c306d367b4 ""
   "svg-inkscape/gini_sample_boxplot_svg-tex.pdf" 1651830935 8760 c512dd48e5da6133115bba2c6ea3abce ""
   "svg-inkscape/gini_sample_boxplot_svg-tex.pdf_tex" 1651830935 3594 c690233301bba278e77b65c567497648 ""
   "svg-inkscape/gini_sample_histogram_svg-tex.pdf" 1651830934 8301 814f44cef59eeeada599ac7e20472121 ""
@@ -422,7 +422,7 @@
   "svg-inkscape/reciprocal_scatter_plot_svg-tex.pdf" 1652770626 8444 a0ae0e1348e529718502c4a20b7bf932 ""
   "svg-inkscape/reciprocal_scatter_plot_svg-tex.pdf_tex" 1652770626 3604 009d368ac79402a5fda2033ad616bb6d ""
   (generated)
-  "lmat1271-project.aux"
   "lmat1271-project.out"
-  "lmat1271-project.log"
   "lmat1271-project.pdf"
+  "lmat1271-project.log"
+  "lmat1271-project.aux"
