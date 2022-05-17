@@ -448,13 +448,46 @@ Redoing the $N = 1000$ simulations and computing the different quantities, we ge
 
 \begin{center}\rule{6cm}{0.4pt}\end{center}
 
+\begin{figure}
+  \centering
+  \begin{subfigure}{.4\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/gini_bias_plot.pdf}
+    \caption{}
+    \label{<label>}
+  \end{subfigure}
+  \begin{subfigure}{.4\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/gini_var_plot.pdf}
+    \caption{}
+    \label{<label>}
+  \end{subfigure}
+
+  \medskip 
+
+  \begin{subfigure}{.4\textwidth}
+    \centering
+    \vspace{0pt}
+    \includesvg[width=\linewidth]{figures/gini_mse_plot.svg}
+    \caption{}
+    \label{<label>}
+  \end{subfigure}
+\end{figure}
+
+
 \textbf{(i)} Create an histogram for $\sqrt{n}(\hat{G}_{\text{MLE}} - G_{\theta_1^0, \theta_2^0})$, for $n = 20$, $n = 100$ and $n = 500$. What can you conclude ?
 
-% TODO: show plot
+\begin{center}\rule{6cm}{0.4pt}\end{center}
+
+\begin{figure}[H]
+  \centering
+  \includesvg[width=\textwidth]{figures/special_formula_comparison.svg}
+  \caption{histogram for $\sqrt{n}(\hat{G}_{\text{MLE}} - G_{\theta_1^0, \theta_2^0})$, for sample size $n = 20$, $n = 100$ and $n = 500$}
+  \label{fig:special-formula-sample-size-comparison}
+\end{figure}
 
 As we increase the sample size $n$, the distribution of $\sqrt{n}(\hat{G}_{\text{MLE}} - G_{\theta_1^0, \theta_2^0})$ tends more and more toward a normal distribution.
 
-% TODO: show plot
 
 \begin{center}\rule{6cm}{0.4pt}\end{center}
 

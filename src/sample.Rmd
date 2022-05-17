@@ -1,5 +1,9 @@
-We first begin by importing some useful functions.
+We first begin by importing some useful functions and libraries.
 ```{r}
+library(tidyverse)
+library(reshape2)
+library(latex2exp)
+
 setwd("/Users/mathieu/Lab/company-electricity-statistical-analysis/src/")
 source("utils.r")
 ```
@@ -45,18 +49,18 @@ gini_mme_sample <- x["gini-mme-sample", ]
 
 # histogram of gini samples
 par(mfrow = c(1, 2))
-hist(gini_mle_sample, breaks = 50, main = "", xlab = "Gini MLE sample", col = "steelblue")
-abline(v = gini_theoretical(theta_1), col = "green", lty = 2)
-hist(gini_mme_sample, breaks = 50, main = "", xlab = "Gini MME sample", col = "red")
-abline(v = gini_theoretical(theta_1), col = "green", lty = 2)
-legend("topright", c("Gini MLE", "Gini MME", "True Gini"), fill = c("steelblue", "red", "green"))
+hist(gini_mle_sample, breaks = 50, main = "", xlab = "Gini MLE sample", col = "darkorange")
+abline(v = gini_theoretical(theta_1), col = "darkgreen", lty = 2)
+hist(gini_mme_sample, breaks = 50, main = "", xlab = "Gini MME sample", col = "steelblue")
+abline(v = gini_theoretical(theta_1), col = "darkgreen", lty = 2)
+legend("topright", c("Gini MLE", "Gini MME", "True Gini"), fill = c("darkorange", "steelblue", "darkgreen"))
 
 # boxplot of gini samples
 par(mfrow = c(1, 2))
 boxplot(gini_mle_sample, col = "grey")
-abline(h = gini_theoretical(theta_1), col = "brown", lty = 2)
+abline(h = gini_theoretical(theta_1), col = "darkgreen", lty = 2)
 boxplot(gini_mme_sample, col = "grey")
-abline(h = gini_theoretical(theta_1), col = "brown", lty = 2)
+abline(h = gini_theoretical(theta_1), col = "darkgreen", lty = 2)
 ```
 
 We use these samples to estimate the **bias**, the **variance** and the **mean squared error (MSE)** of both estimators.
@@ -105,18 +109,46 @@ for (n in sample_sizes) {
   matrix[, as.character(n)] <- c(bias_mle, bias_mme, variance_mle, variance_mme, mse_mle, mse_mme)
 }
 
+# create dataframes
+bias_df <- data.frame(n = sample_sizes, mle = matrix["gini-bias-mle", ], mme = matrix["gini-bias-mme", ])
+var_df <- data.frame(n = sample_sizes, mle = matrix["gini-variance-mle", ], mme = matrix["gini-variance-mme", ])
+mse_df <- data.frame(n = sample_sizes, mle = matrix["gini-mse-mle", ], mme = matrix["gini-mse-mme", ])
+
+# converting to long format for easier plotting
+# https://statisticsglobe.com/r-draw-multiple-lines-to-same-ggplot2-plot
+bias_df <- melt(bias_df, id = "n")
+var_df <- melt(var_df, id = "n")
+mse_df <- melt(mse_df, id = "n")
+
+par(mfrow = c(1,1))
+
 # we compate the gini estimators through a plot as a function of n
-par(mfrow = c(1, 2))
-plot(x = sample_sizes, y = matrix["gini-bias-mle", ], main = "", xlab = "n", ylab = "Gini MLE biases", col = "darkorange")
-plot(x = sample_sizes, y = matrix["gini-bias-mme", ], main = "", xlab = "n", ylab = "Gini MME biases", col = "blueviolet")
+ggplot(bias_df, aes(x = n, y = value, color = variable)) +
+  geom_point() + 
+  geom_line() +
+  labs(x = "n", y = "bias") +
+  scale_fill_hue(labels = c("Gini MLE bias", "Gini MME bias")) +
+  theme(legend.title = element_blank())
 
-par(mfrow = c(1, 2))
-plot(x = sample_sizes, y = matrix["gini-variance-mle", ], main = "", xlab = "n", ylab = "Gini MLE variances", col = "darkorange")
-plot(x = sample_sizes, y = matrix["gini-variance-mme", ], main = "", xlab = "n", ylab = "Gini MME variances", col = "blueviolet")
+ggsave("../report/figures/gini_bias_plot.pdf")
 
-par(mfrow = c(1, 2))
-plot(x = sample_sizes, y = matrix["gini-mse-mle", ], main = "", xlab = "n", ylab = "Gini MLE Mean Squared Error", col = "darkorange")
-plot(x = sample_sizes, y = matrix["gini-mse-mme", ], main = "", xlab = "n", ylab = "Gini MME Mean Squared Error", col = "blueviolet")
+ggplot(var_df, aes(x = n, y = value, color = variable)) +
+  geom_point() + 
+  geom_line() +
+  labs(x = "n", y = "variance") +
+  scale_fill_hue(labels = c("Gini MLE: variance", "Gini MME: variance")) +
+  theme(legend.title = element_blank())
+
+ggsave("../report/figures/gini_var_plot.pdf")
+
+ggplot(mse_df, aes(x = n, y = value, color = variable)) +
+  geom_point() + 
+  geom_line() +
+  labs(x = "n", y = "mean squared error") + 
+  scale_fill_hue(labels = c("Gini MLE: mse", "Gini MME: mse")) +
+  theme(legend.title = element_blank())
+
+ggsave("../report/figures/gini_mse_plot.pdf")
 ```
 
 Finally, we create an histogram of $\sqrt{n}(\hat{G}_{\text{MLE}} - G_{\theta_1^0, \theta_2^0})$ for $n = 20$, $n = 100$ and $n = 100$ and compare them.
@@ -131,7 +163,7 @@ sim_n500 <- sim(N = 1000, n = 500, f = inverse_transform_sampling, inv_cdf)
 result_n500 <- sqrt(500) * (sim_n500["gini-mle-sample", ] - gini_theoretical(theta_1))
 
 par(mfrow = c(1, 3))
-hist(result_n20, breaks = 50, main = "sample size: n = 20", xlab = "$\\sqrt{n}(\\hat{G}_{\\text{MLE}} - G_{\\theta_1^0, \\theta_2^0} )$", col = "coral")
-hist(result_n100, breaks = 50, main = "sample size: n = 100", xlab = "$\\{n}(\\hat{G}_{\\text{MLE}} - G_{\\theta_1^0, \\theta_2^0} )$", col = "aquamarine3")
-hist(result_n500, breaks = 50, main = "sample size: n = 500", xlab = "$\\sqrt{n}(\\hat{G}_{\\text{MLE}} - G_{\\theta_1^0, \\theta_2^0} )$", col = "steelblue")
+hist(result_n20, breaks = 50, main = "sample size: n = 20", xlab = TeX(r"($\sqrt{n}(\hat{G}_{\textrm{MLE}} - G_{\theta_1^0, \theta_2^0})$)"), col = "coral")
+hist(result_n100, breaks = 50, main = "sample size: n = 100", xlab = TeX(r"($\sqrt{n}(\hat{G}_{\textrm{MLE}} - G_{\theta_1^0, \theta_2^0})$)"), col = "aquamarine3")
+hist(result_n500, breaks = 50, main = "sample size: n = 500", xlab = TeX(r"($\sqrt{n}(\hat{G}_{\textrm{MLE}} - G_{\theta_1^0, \theta_2^0})$)"), col = "steelblue")
 ```

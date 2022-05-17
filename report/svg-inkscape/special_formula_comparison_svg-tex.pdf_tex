@@ -1,0 +1,152 @@
+%% Creator: Inkscape 1.1.2 (b8e25be8, 2022-02-05), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'special_formula_comparison_svg-tex.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{863.99997711bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.68315971)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{special_formula_comparison_svg-tex.pdf}}%
+    \put(0.17697484,0.65831162){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{sample size: n = 20}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{special_formula_comparison_svg-tex.pdf}}%
+    \put(0.14913195,0.01652559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}n\end{tabular}}}}%
+    \put(0.15469836,0.01652559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}(\end{tabular}}}}%
+    \put(0.15826823,0.01652559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}G\end{tabular}}}}%
+    \put(0.15959202,0.02092011){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}^\end{tabular}}}}%
+    \put(0.1649414,0.01495222){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}M\end{tabular}}}}%
+    \put(0.16994358,0.01495222){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}L\end{tabular}}}}%
+    \put(0.17327475,0.01495222){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}E\end{tabular}}}}%
+    \put(0.17886285,0.01652559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}−\end{tabular}}}}%
+    \put(0.1851671,0.01652559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}G\end{tabular}}}}%
+    \put(0.19184029,0.01495222){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}θ\end{tabular}}}}%
+    \put(0.19496527,0.01341144){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}%
+    \put(0.19496527,0.01754555){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.19734158,0.01495222){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l},\end{tabular}}}}%
+    \put(0.20034723,0.01495222){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}θ\end{tabular}}}}%
+    \put(0.20347223,0.01341144){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0.20347223,0.01754555){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.20584854,0.01652559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l})\end{tabular}}}}%
+    \put(0.00927734,0.34673392){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Frequency\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{special_formula_comparison_svg-tex.pdf}}%
+    \put(0.06056858,0.03402776){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-0.5\end{tabular}}}}%
+    \put(0.14371745,0.03402776){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.0\end{tabular}}}}%
+    \put(0.22686633,0.03402776){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.5\end{tabular}}}}%
+    \put(0.31001519,0.03402776){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}1.0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{special_formula_comparison_svg-tex.pdf}}%
+    \put(0.02990451,0.07438149){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}}%
+    \put(0.02990451,0.19279512){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}20\end{tabular}}}}}%
+    \put(0.02990451,0.31120875){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}40\end{tabular}}}}}%
+    \put(0.02990451,0.42962238){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}60\end{tabular}}}}}%
+    \put(0.02990451,0.54803601){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}80\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{special_formula_comparison_svg-tex.pdf}}%
+    \put(0.51030816,0.65831162){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{sample size: n = 100}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{special_formula_comparison_svg-tex.pdf}}%
+    \put(0.48246531,0.01652559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}n\end{tabular}}}}%
+    \put(0.48803169,0.01652559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}(\end{tabular}}}}%
+    \put(0.49160157,0.01652559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}G\end{tabular}}}}%
+    \put(0.49292536,0.02092011){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}^\end{tabular}}}}%
+    \put(0.49827474,0.01495222){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}M\end{tabular}}}}%
+    \put(0.50327693,0.01495222){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}L\end{tabular}}}}%
+    \put(0.5066081,0.01495222){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}E\end{tabular}}}}%
+    \put(0.5121962,0.01652559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}−\end{tabular}}}}%
+    \put(0.51850045,0.01652559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}G\end{tabular}}}}%
+    \put(0.52517363,0.01495222){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}θ\end{tabular}}}}%
+    \put(0.52829863,0.01341144){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}%
+    \put(0.52829863,0.01754555){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.53067494,0.01495222){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l},\end{tabular}}}}%
+    \put(0.53368057,0.01495222){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}θ\end{tabular}}}}%
+    \put(0.53680557,0.01341144){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0.53680557,0.01754555){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.53918188,0.01652559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l})\end{tabular}}}}%
+    \put(0.34261069,0.34673392){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Frequency\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{special_formula_comparison_svg-tex.pdf}}%
+    \put(0.42338326,0.03402776){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-0.5\end{tabular}}}}%
+    \put(0.4989692,0.03402776){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.0\end{tabular}}}}%
+    \put(0.57456601,0.03402776){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{special_formula_comparison_svg-tex.pdf}}%
+    \put(0.36323786,0.07438149){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}}%
+    \put(0.36323786,0.1940972){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}20\end{tabular}}}}}%
+    \put(0.36323786,0.31381292){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}40\end{tabular}}}}}%
+    \put(0.36323786,0.43352863){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}60\end{tabular}}}}}%
+    \put(0.36323786,0.55324435){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}80\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{special_formula_comparison_svg-tex.pdf}}%
+    \put(0.84364152,0.65831162){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{sample size: n = 500}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{special_formula_comparison_svg-tex.pdf}}%
+    \put(0.81579866,0.01652559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}n\end{tabular}}}}%
+    \put(0.82136501,0.01652559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}(\end{tabular}}}}%
+    \put(0.82493493,0.01652559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}G\end{tabular}}}}%
+    \put(0.82625868,0.02092011){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}^\end{tabular}}}}%
+    \put(0.83160807,0.01495222){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}M\end{tabular}}}}%
+    \put(0.83661029,0.01495222){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}L\end{tabular}}}}%
+    \put(0.83994146,0.01495222){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}E\end{tabular}}}}%
+    \put(0.84552953,0.01652559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}−\end{tabular}}}}%
+    \put(0.85183378,0.01652559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}G\end{tabular}}}}%
+    \put(0.85850698,0.01495222){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}θ\end{tabular}}}}%
+    \put(0.86163199,0.01341144){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}%
+    \put(0.86163199,0.01754555){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.86400829,0.01495222){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l},\end{tabular}}}}%
+    \put(0.86701389,0.01495222){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}θ\end{tabular}}}}%
+    \put(0.87013889,0.01341144){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0.87013889,0.01754555){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.8725152,0.01652559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l})\end{tabular}}}}%
+    \put(0.67594403,0.34673392){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Frequency\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{special_formula_comparison_svg-tex.pdf}}%
+    \put(0.7629449,0.03402776){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-0.5\end{tabular}}}}%
+    \put(0.83630644,0.03402776){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.0\end{tabular}}}}%
+    \put(0.90967883,0.03402776){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{special_formula_comparison_svg-tex.pdf}}%
+    \put(0.6965712,0.07438149){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}}%
+    \put(0.6965712,0.18906248){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}20\end{tabular}}}}}%
+    \put(0.6965712,0.30373262){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}40\end{tabular}}}}}%
+    \put(0.6965712,0.41841361){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}60\end{tabular}}}}}%
+    \put(0.6965712,0.53308375){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}80\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{special_formula_comparison_svg-tex.pdf}}%
+  \end{picture}%
+\endgroup%
