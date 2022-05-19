@@ -23,10 +23,10 @@ If we look at the \textbf{scatter plot} (\ref{fig:scatter_plot}) of the producti
 
 We can still try to fit a linear model using the \textbf{ordinary least square (OLS)} method that consists in minimizing the sum of the square of the error: 
 \begin{equation}
-  \text{SSE} = \sum_{i = 1}^{n} (y_i - \hat{y}_i)^2
+  \text{SSE} = \sum_{i = 1}^{n} (Y_i - \hat{Y}_i)^2
 \end{equation}
 
-Looking at \autoref{fig:analysis-linear-model}, in the \textbf{Residuals vs Fitted} plot, we notice that only for the small values of $\hat{Y}$, the points are randomly distributed around $y = 0$. As the value of $\hat{Y}$ increase, it's less the case. Therefore, for high values of $\hat{Y}$, the residues are not normally distributed. Highlighting the non-linearity we saw on the previous scatter-plot. The red line shows that mean of the residuals $E(\epsilon) \neq = 0$.
+Looking at \autoref{fig:analysis-linear-model}, in the \textbf{Residuals vs Fitted} plot, we notice that only for the small values of $\hat{Y}$, the points are randomly distributed around $y = 0$. As the value of $\hat{Y}$ increase, it's less the case. Therefore, for high values of $\hat{Y}$, the residues are not normally distributed. Highlighting the non-linearity we saw on the previous scatter-plot. The red line shows that mean of the residuals $E(\epsilon) \neq 0$.
 
 Checking the \textbf{QQplot} in the top right corner, we see that the extreme values are pulling away from the dashed line. This suggests that the explanatory variable $X$ is heavy tailed. 
 
@@ -34,25 +34,25 @@ Then, the \textbf{Scale-Location} plot indicates that the size of the residues g
 
 Finally, the \textbf{Residuals vs Leverage} plot show us that there is a point that lies outside the Cook's distance. Therefore, this point is an influential observation that impact heavily our linear model.
 
-Eventually, checking the summary of the linear model in R, we see the $R^2 = 0.2614$ so $26$ of the variation of the \textbf{productivity} is explained by the \textbf{electricity consumption}. This suggest that the linear relation between the 2 variable is weak.
+Eventually, checking the summary of the linear model in R, we see the $R^2 = 0.2614$ so $26\%$ of the variation of the \textbf{productivity} is explained by the \textbf{electricity consumption}. This suggest that the linear relation between the 2 variable is weak.
 
 We can verify the observation made with the QQplot, by plotting an histogram of $X$ (\autoref{fig:histogram-explanatory-variable})
 
 We observe a strong asymmetry in $X$. This variable is right skewed.
 
-We conclude that we cannot use a simple linear model like $Y_i \sim X_i$, 
+We conclude that we cannot use a simple linear model like $Y \sim X$, 
 \begin{equation*}
-  Y_{i} = \beta_0 + \beta_1 X_i, \quad \beta_0, \beta_1 \in \R
+  Y = \beta_0 + \beta_1 X, \quad \beta_0, \beta_1 \in \R
 \end{equation*}
 
-We can try to transform the variable $X_i$. Having a right skewed explanatory variable suggests trying the following transformations,
+We can try to transform the variable $X$. Having a right skewed explanatory variable suggests trying the following transformations,
 \begin{itemize}
-  \item \textbf{Square Root transformation}: $Y_i \sim \sqrt{X_i}$
-  \item \textbf{Log transformation}: $Y_i \sim \log_{10}(X_i)$
-  \item \textbf{Reciprocal transformation}: $Y_i \sim 1 / X_i$ (or higher order in $X_i$)
+  \item \textbf{Square Root transformation}: $X \rightarrow \sqrt{X}$
+  \item \textbf{Log transformation}: $X \rightarrow \log_{10}(X)$
+  \item \textbf{Reciprocal transformation}: $X \rightarrow 1 / X$ (or higher order in $X$)
 \end{itemize}
 
-After trying the different models, we notice that the following transformation: $X_i \rightarrow 1 / (X_i)^2$ seems the best at explaining the relationship between the \textbf{productivity} and the \textbf{electricity consumption} (\autoref{fig:scatter-plot-reciprocal-model}, \autoref{fig:linear-scatter-plot-reciprocal-model})
+After trying the different models, we notice that the following transformation: $X \rightarrow 1 / (X)^2 \equiv X^{\ast}$ seems the best at explaining the relationship between the \textbf{productivity} and the \textbf{electricity consumption} (\autoref{fig:scatter-plot-reciprocal-model}, \autoref{fig:linear-scatter-plot-reciprocal-model})
 
 Indeed, looking at some plot to analyse this model (\autoref{fig:reciprocal-model-analysis}), we can see on the \textbf{Residuals vs Fitted} plot the the points are now randomly distributed around $y = 0$. Moreover, the mean of the residuals is tending to $0$ for every fitted values. 
 
@@ -66,7 +66,7 @@ Checking the summary of that model, the R-Squared is now,
   R^2 = 0.4671
 \end{equation}
 
-Eventually, our model is, 
+Finally, our model is, 
 \begin{equation}
   Y = 23 - \frac{203.822}{X^2}
 \end{equation}
@@ -94,8 +94,6 @@ Therefore, the marginal impact of $X$ on $Y$ is,
 The marginal impact is telling us how the response variable (\textbf{productivity}) changes when the explanatory variable (\textbf{electricity consumption}) changes of one unit at a given value of this last variable. 
 
 Therefore, the effect of increasing the electricity consumption by $1$ MWh on the productivity in 1000 \euro/day is $2 \cdot 203.822 = 1607.644$, the effect of increasing the electricity consumption by $2$ MWh on the productivity in 1000\euro/day is $2 \cdot \frac{203.822}{2^3} = 200.95$ and so on. The more we increase the electricity consumption, the less is the effect on the productivity.
-
-%TODO: interpreter par rapport à notre modèle.
 
 \begin{center}\rule{6cm}{0.4pt}\end{center}
 

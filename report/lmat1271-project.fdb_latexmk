@@ -1,9 +1,9 @@
 # Fdb version 3
-["pdflatex"] 1652964477 "/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex" "lmat1271-project.pdf" "lmat1271-project" 1652964477
+["pdflatex"] 1652970824 "/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex" "lmat1271-project.pdf" "lmat1271-project" 1652970824
   "../header.tex" 1652963830 4964 da330464b9dda5fde8ef65a3b0bc81f2 ""
   "../preamble-exercice.tex" 1652941286 289 02f205a17076d6aea83a7567f3e7d62e ""
   "/Users/mathieu/Lab/company-electricity-statistical-analysis/report/lmat1271-project.tex" 1652941281 390 51ccb320038d0110dac94faf32273ee1 ""
-  "/dev/null" 1652964463 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "/dev/null" 1652970808 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecbi0900.tfm" 1136768653 3072 7ff1a6294a418a0283ec56a11878dc2c ""
@@ -422,15 +422,15 @@
   "figures/png/reciprocal_model_analysis.png" 1652904075 130338 5c362da63bddd77ff8f3ad321d32edca ""
   "figures/png/reciprocal_scatter_plot.png" 1652904081 54309 94c753f86f9b23b98f2061856d0ae4e6 ""
   "figures/png/special_formula_comparison.png" 1652904089 41757 b4bbc237d608f41f83699ee004ba8647 ""
-  "lmat1271-project.aux" 1652964477 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
+  "lmat1271-project.aux" 1652970824 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
   "lmat1271-project.out" 0 -1 0 "pdflatex"
   "lmat1271-project.tex" 1652941281 390 51ccb320038d0110dac94faf32273ee1 ""
   "sections/appendix.tex" 1652964452 15548 b9d62ee899aa0dbab92660c3745b3dd0 ""
   "sections/cover-page.tex" 1652950223 645 a8177b344f431910c91747e692c1443a ""
-  "sections/point-estimation.tex" 1652950735 19095 2bd2454136e1bea372618ae01a2b0bc8 ""
-  "sections/regression.tex" 1652963894 7945 61fe4db92ba01b660b90028c0e5e7178 ""
+  "sections/point-estimation.tex" 1652970450 19008 16e40155f323f3b789af9d3646c7b5ea ""
+  "sections/regression.tex" 1652970800 7902 a463232ccc4088f8d07fa7577be67901 ""
   (generated)
-  "lmat1271-project.aux"
   "lmat1271-project.out"
+  "lmat1271-project.aux"
   "lmat1271-project.log"
   "lmat1271-project.pdf"
