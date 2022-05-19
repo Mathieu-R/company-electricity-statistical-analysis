@@ -1,0 +1,90 @@
+library(tidyverse)
+
+setwd("/Users/mathieu/Lab/company-electricity-statistical-analysis/src/")
+df <- read.csv2(file = "electricity_consumption_dataset.txt", sep = ";", dec = ".")
+head(df)
+
+df <- rename(df, electricity_consumption = X, productivity = Y)
+
+ggplot(df, aes(x = electricity_consumption, y = productivity)) +
+  geom_jitter() +
+  geom_smooth() +
+  ggtitle("Productivity vs Electricity consumption") +
+  xlab("Electricity consumption (MWh)") +
+  ylab("Productivity (1000 euros / day)") +
+  theme(plot.title = element_text(hjust = 0.5))
+
+simple_lm <- lm(productivity ~ electricity_consumption, data = df)
+
+par(mfrow = c(2,2))
+plot(simple_lm)
+
+summary(simple_lm)
+
+ggplot(df, aes(electricity_consumption)) +
+  geom_histogram()
+
+ggplot(df, aes(productivity)) +
+  geom_histogram()
+
+# square root transformation
+square_root_lm <- lm(productivity ~ sqrt(electricity_consumption), data = df)
+summary(square_root_lm)
+
+par(mfrow = c(2,2))
+plot(square_root_lm)
+
+ggplot(df, aes(x = electricity_consumption, y = productivity)) +
+  geom_point(alpha = 0.7) +
+  geom_point(aes(x = electricity_consumption, y = square_root_lm$fitted.values), color = "red", alpha = 0.5) +
+  geom_segment(aes(xend = electricity_consumption, yend = square_root_lm$fitted.values), color = "red", alpha = 0.25, linetype = "dashed")
+
+ggplot(df, aes(x = electricity_consumption, y = productivity)) +
+  geom_point(alpha = 0.75) +
+  geom_smooth(method = "lm", formula = y ~ sqrt(x), color = "red")
+
+# log transformation
+log_lm <- lm(productivity ~ log(electricity_consumption), data = df)
+summary(log_lm)
+
+par(mfrow = c(2,2))
+plot(log_lm)
+
+ggplot(df, aes(x = electricity_consumption, y = productivity)) +
+  geom_point(alpha = 0.7) +
+  geom_point(aes(x = electricity_consumption, y = log_lm$fitted.values), color = "red", alpha = 0.5) +
+  geom_segment(aes(xend = electricity_consumption, yend = log_lm$fitted.values), color = "red", alpha = 0.25, linetype = "dashed")
+
+ggplot(df, aes(x = electricity_consumption, y = productivity)) +
+  geom_point(alpha = 0.75) +
+  geom_smooth(method = "lm", formula = y ~ log(x), color = "red")
+
+ggplot(df, aes(x = log(electricity_consumption), y = productivity)) +
+  geom_point(alpha = 0.75) +
+  geom_smooth(method = "lm", color = "red")
+
+ggplot(df, aes(x = log(electricity_consumption))) +
+  geom_histogram()
+
+# reciprocal transformation
+reciprocal_lm <- lm(productivity ~ I(1 / electricity_consumption^2), data = df)
+summary(reciprocal_lm)
+
+par(mfrow = c(2,2))
+plot(reciprocal_lm)
+
+ggplot(df, aes(x = electricity_consumption, y = productivity)) +
+  geom_point(alpha = 0.7) +
+  geom_point(aes(x = electricity_consumption, y = reciprocal_lm$fitted.values), color = "red", alpha = 0.5) +
+  geom_segment(aes(xend = electricity_consumption, yend = reciprocal_lm$fitted.values), color = "red", alpha = 0.25, linetype = "dashed")
+
+ggplot(df, aes(x = electricity_consumption, y = productivity)) +
+  geom_point(alpha = 0.75) +
+  geom_smooth(method = "lm", formula = y ~ I(1/x^2), color = "red")
+
+ggplot(df, aes(x = 1 / (electricity_consumption)^2, y = productivity)) +
+  geom_point(alpha = 0.75) +
+  geom_smooth(method = "lm", color = "red")
+
+ggplot(df, aes(x = 1 / electricity_consumption)) +
+  geom_histogram()
