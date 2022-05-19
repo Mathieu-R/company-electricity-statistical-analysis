@@ -29,6 +29,7 @@ set.seed(42)
 rv_vector <- inverse_transform_sampling(n = 20, inv_cdf = inv_cdf)
 
 # plot an histogram of the random variable vector
+par(mfrow = c(1,1))
 hist(rv_vector, breaks = 50, freq = FALSE, xlab = "X", main = "random sample")
 
 # compute Gini coefficients
@@ -41,6 +42,9 @@ We then want to repeat the data generating process for $N = 1000$ times (still w
 We get a sample of size $N = 1000$ of these estimators of the Gini coefficient.
 We can make a **histogram** and a **boxplot** of these two samples.
 ```{r}
+# set a seed for reproductability
+set.seed(42)
+
 # Generate N = 1000 times the sample
 x <- sim(N = 1000, n = 20, f = inverse_transform_sampling, inv_cdf)
 
@@ -49,39 +53,47 @@ gini_mme_sample <- x["gini-mme-sample", ]
 
 # histogram of gini samples
 par(mfrow = c(1, 2))
-hist(gini_mle_sample, breaks = 50, main = "", xlab = "Gini MLE sample", col = "darkorange")
+hist(gini_mle_sample, breaks = 50, main = "", xlab = TeX(r"($\hat{G}_{\textrm{MLE}}$)"), col = "darkorange")
 abline(v = gini_theoretical(theta_1), col = "darkgreen", lty = 2)
-hist(gini_mme_sample, breaks = 50, main = "", xlab = "Gini MME sample", col = "steelblue")
+hist(gini_mme_sample, breaks = 50, main = "", xlab = TeX(r"($\hat{G}_{\textrm{MME}}$)"), col = "steelblue")
 abline(v = gini_theoretical(theta_1), col = "darkgreen", lty = 2)
 legend("topright", c("Gini MLE", "Gini MME", "True Gini"), fill = c("darkorange", "steelblue", "darkgreen"))
 
 # boxplot of gini samples
 par(mfrow = c(1, 2))
-boxplot(gini_mle_sample, col = "grey")
+boxplot(gini_mle_sample, col = "grey", ylab = TeX(r"($\hat{G}_{\textrm{MLE}}$)"))
 abline(h = gini_theoretical(theta_1), col = "darkgreen", lty = 2)
-boxplot(gini_mme_sample, col = "grey")
+boxplot(gini_mme_sample, col = "grey", ylab = TeX(r"($\hat{G}_{\textrm{MME}}$)"))
 abline(h = gini_theoretical(theta_1), col = "darkgreen", lty = 2)
 ```
 
 We use these samples to estimate the **bias**, the **variance** and the **mean squared error (MSE)** of both estimators.
 ```{r}
-bias_mle <- bias(sample = gini_mle_sample, theoretical = gini_theoretical(theta_1))
-bias_mme <- bias(sample = gini_mme_sample, theoretical = gini_theoretical(theta_1))
+bias_mle <- bias(estimator_sample = gini_mle_sample, theoretical_value = gini_theoretical(theta_1))
+bias_mme <- bias(estimator_sample = gini_mme_sample, theoretical_value = gini_theoretical(theta_1))
 
 variance_mle <- var(gini_mle_sample)
 variance_mme <- var(gini_mme_sample)
 
-mse_mle <- mse(sample = gini_mle_sample, theoretical = gini_theoretical(theta_1))
-mse_mme <- mse(sample = gini_mme_sample, theoretical = gini_theoretical(theta_1))
+mse_mle <- mse(estimator_sample = gini_mle_sample, theoretical_value = gini_theoretical(theta_1))
+mse_mme <- mse(estimator_sample = gini_mme_sample, theoretical_value = gini_theoretical(theta_1))
 
-print(bias_mle, variance_mle, mse_mle)
-print(bias_mme, variance_mme, mse_mme)
+print(bias_mle)
+print(variance_mle)
+print(mse_mle)
+
+print(bias_mme)
+print(variance_mme)
+print(mse_mme)
 ```
 
 We repeat the simulation $N = 1000$ times to generate multiple samples of the gini estimators based on a sample of sizes $n = 20, 40, 60, 80, 100, 150, 200, 300, 400, 500$ generated from the density function using inverse transform sampling.
 
 We can then compare the the **bias**, the **variance** and the **mean squared error (MSE)** of both estimators for the different sample sizes via a separate plot for each quantity as a function of $n$.
 ```{r}
+# set a seed for reproductability
+set.seed(42)
+
 sample_sizes <- c(20, 40, 60, 80, 100, 150, 200, 300, 400, 500) 
 
 statistical_quantities <- c("gini-bias-mle", "gini-bias-mme", "gini-variance-mle", "gini-variance-mme", "gini-mse-mle", "gini-mse-mme")
@@ -97,14 +109,14 @@ for (n in sample_sizes) {
   gini_mle_sample <- x["gini-mle-sample", ]
   gini_mme_sample <- x["gini-mme-sample", ]
 
-  bias_mle <- bias(sample = gini_mle_sample, theoretical = gini_theoretical(theta_1))
-  bias_mme <- bias(sample = gini_mme_sample, theoretical = gini_theoretical(theta_1))
+  bias_mle <- bias(estimator_sample = gini_mle_sample, theoretical_value = gini_theoretical(theta_1))
+  bias_mme <- bias(estimator_sample = gini_mme_sample, theoretical_value = gini_theoretical(theta_1))
 
   variance_mle <- var(gini_mle_sample)
   variance_mme <- var(gini_mme_sample)
 
-  mse_mle <- mse(sample = gini_mle_sample, theoretical = gini_theoretical(theta_1))
-  mse_mme <- mse(sample = gini_mme_sample, theoretical = gini_theoretical(theta_1))
+  mse_mle <- mse(estimator_sample = gini_mle_sample, theoretical_value = gini_theoretical(theta_1))
+  mse_mme <- mse(estimator_sample = gini_mme_sample, theoretical_value = gini_theoretical(theta_1))
 
   matrix[, as.character(n)] <- c(bias_mle, bias_mme, variance_mle, variance_mme, mse_mle, mse_mme)
 }
@@ -115,22 +127,19 @@ var_df <- data.frame(n = sample_sizes, mle = matrix["gini-variance-mle", ], mme 
 mse_df <- data.frame(n = sample_sizes, mle = matrix["gini-mse-mle", ], mme = matrix["gini-mse-mme", ])
 
 # converting to long format for easier plotting
-# https://statisticsglobe.com/r-draw-multiple-lines-to-same-ggplot2-plot
 bias_df <- melt(bias_df, id = "n")
 var_df <- melt(var_df, id = "n")
 mse_df <- melt(mse_df, id = "n")
 
 par(mfrow = c(1,1))
 
-# we compate the gini estimators through a plot as a function of n
+# we compare the gini estimators through a plot as a function of n
 ggplot(bias_df, aes(x = n, y = value, color = variable)) +
   geom_point() + 
   geom_line() +
   labs(x = "n", y = "bias") +
   scale_fill_hue(labels = c("Gini MLE bias", "Gini MME bias")) +
   theme(legend.title = element_blank())
-
-ggsave("../report/figures/gini_bias_plot.pdf")
 
 ggplot(var_df, aes(x = n, y = value, color = variable)) +
   geom_point() + 
@@ -139,16 +148,12 @@ ggplot(var_df, aes(x = n, y = value, color = variable)) +
   scale_fill_hue(labels = c("Gini MLE: variance", "Gini MME: variance")) +
   theme(legend.title = element_blank())
 
-ggsave("../report/figures/gini_var_plot.pdf")
-
 ggplot(mse_df, aes(x = n, y = value, color = variable)) +
   geom_point() + 
   geom_line() +
   labs(x = "n", y = "mean squared error") + 
   scale_fill_hue(labels = c("Gini MLE: mse", "Gini MME: mse")) +
   theme(legend.title = element_blank())
-
-ggsave("../report/figures/gini_mse_plot.pdf")
 ```
 
 Finally, we create an histogram of $\sqrt{n}(\hat{G}_{\text{MLE}} - G_{\theta_1^0, \theta_2^0})$ for $n = 20$, $n = 100$ and $n = 100$ and compare them.

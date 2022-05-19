@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel} % traduction
 \usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage[hang, small, labelfont=bf, up, textfont=it]{caption} % custom caption under figures
 %\usepackage{bookmark} 
 \usepackage{booktabs} % beautiful tables
 %\usepackage[thicklines]{cancel} % cancel terms in equation
@@ -30,17 +31,13 @@
 \usepackage{units} % Non-stacked fractions and better unit spacing
 \usepackage{xspace} % prints a trailing space in a smart way.
 \usepackage{minted} % print code 
-\usepackage[clean]{svg} % svg
-\usepackage{subcaption}
+%\usepackage[clean]{svg} % svg
+%\usepackage[off]{svg-extract}
+\usepackage{relsize}
+%\usepackage{subcaption}
+\usepackage{eurosym} % euro currency
 
 \usemintedstyle{monokay}
-
-\usetikzlibrary{calc,patterns,angles,quotes}
-\usetikzlibrary{hobby} % random curves with tikz
-
-\tikzset{circ/.style = {fill, circle, inner sep = 0, minimum size = 3}}
-\tikzset{scirc/.style = {fill, circle, inner sep = 0, minimum size = 1.5}}
-\tikzset{mstate/.style={circle, draw, blue, text=black, minimum width=0.7cm}}
 
 % \titlespacing*{\section}{0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}
 % \titlespacing*{\subsection}{0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}
@@ -69,101 +66,6 @@
 
 % Default images settings
 \setkeys{Gin}{width=\linewidth, totalheight=\textheight, keepaspectratio}
-
-\definecolor{blue}{rgb}{0,0,1}
-\definecolor{red}{rgb}{1,0,0}
-
-%------------------
-% Théorèmes,...
-%------------------
-\usepackage{thmtools}
-\usepackage[framemethod=TikZ]{mdframed}
-
-\mdfdefinestyle{mdgreenbox}{%
-	skipabove=8pt,
-	linewidth=2pt,
-	rightline=false,
-	leftline=true,
-	topline=false,
-	bottomline=false,
-	linecolor=ForestGreen,
-	backgroundcolor=ForestGreen!5,
-}
-\declaretheoremstyle[
-	headfont=\bfseries\sffamily\color{ForestGreen!70!black},
-	bodyfont=\normalfont,
-	postheadspace=\newline,
-	spaceabove=2pt,
-	spacebelow=1pt,
-	mdframed={style=mdgreenbox},
-	headpunct={ --- }
-]{thmgreenbox}
-
-\mdfdefinestyle{mdblackbox}{%
-	skipabove=8pt,
-	linewidth=3pt,
-	rightline=false,
-	leftline=true,
-	topline=false,
-	bottomline=false,
-	linecolor=black,
-	backgroundcolor=RedViolet!5!gray!5,
-}
-\declaretheoremstyle[
-	headfont=\bfseries,
-	bodyfont=\normalfont\small,
-	spaceabove=0pt,
-	spacebelow=0pt,
-	mdframed={style=mdblackbox},
-	postheadspace=\newline
-]{thmblackbox}
-
-\mdfdefinestyle{mdbluebox}{%
-	roundcorner=10pt,
-	linewidth=1pt,
-	skipabove=12pt,
-	innerbottommargin=9pt,
-	skipbelow=1pt,
-	nobreak=true,
-	linecolor=blue,
-	backgroundcolor=TealBlue!5,
-}
-\declaretheoremstyle[
-	headfont=\sffamily\bfseries\color{MidnightBlue},
-	mdframed={style=mdbluebox},
-	headpunct={\\[3pt]}
-]{thmbluebox}
-
-\mdfdefinestyle{mdredbox}{%
-	linewidth=0.5pt,
-	skipabove=12pt,
-	frametitleaboveskip=5pt,
-	frametitlebelowskip=0pt,
-	skipbelow=2pt,
-	frametitlefont=\bfseries,
-	innertopmargin=4pt,
-	innerbottommargin=8pt,
-	nobreak=true,
-	linecolor=RawSienna,
-	backgroundcolor=Salmon!5,
-}
-\declaretheoremstyle[
-	headfont=\bfseries\color{RawSienna},
-	mdframed={style=mdredbox},
-	headpunct={\\[3pt]}
-]{thmredbox}
-
-\theoremstyle{definition}
-\declaretheorem[name=Théorème,numberwithin=section,style=thmredbox]{theorem}
-\declaretheorem[name=Définition,sibling=theorem,style=thmgreenbox]{definition}
-\declaretheorem[name=Proposition,sibling=theorem,style=thmbluebox]{proposition}
-\declaretheorem[name=Corollaire,sibling=theorem,style=thmbluebox]{corollary}
-\declaretheorem[name=Lemme,sibling=theorem,style=thmbluebox]{lemma}
-\declaretheorem[name=Exemple,sibling=theorem,style=thmblackbox]{example}
-\declaretheorem[name=Question,sibling=theorem,style=thmblackbox]{ques}
-\declaretheorem[name=Exercice,sibling=theorem,style=thmblackbox]{exercise}
-\declaretheorem[name=Remarque,sibling=theorem,style=thmgreenbox]{remark}
-\declaretheorem[name=Etape,style=thmgreenbox]{step}
 
 %---------------------------------------------------
 % BUGGY PACKAGES THAT NEED TO BE LOADED AT THE END

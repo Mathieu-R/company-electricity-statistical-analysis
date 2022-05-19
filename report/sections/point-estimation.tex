@@ -1,0 +1,404 @@
+\section{Point estimation}
+
+\subsection*{Context}
+Our engineering team just landed a consulting contract with a company interested in the electricity consumption of its machines. In a first part, we would like to determine how electricity consumption is evenly distributed across the different machines of the same type. To this end, we use the Gini coefficient. In a nutshell, it is an index ranging from $0$ to $1$ measuring the inequality featured in a distribution. A value of $0$ denotes that all our machines use the same amount of electricity while a value of $1$ means that all the electricity is used by a single machine.
+We assume that all of the $n$ machines operate independently and their daily electricity consumption (in MWh) can be modelled as a random variable $X$ with the following probability density function (PDF),
+
+\begin{equation}
+  f_{\theta_1, \theta_2}(x) = 
+  \begin{cases}
+    \frac{\theta_1 \theta_2^{\theta_1}}{x^{\theta_1 + 1}}, &\quad x \geq \theta_2 \\
+    0,                                                     &\quad \text{otherwise}
+  \end{cases}
+\end{equation}
+
+with $\theta_1 > 2$ and $\theta_2 > 0$. This is the PDF of the \textbf{Pareto distribution}.
+
+\textbf{(a)} Derive the quantile function of $X$
+
+\begin{center}\rule{6cm}{0.4pt}\end{center}
+
+We're looking to solve $P(X \leq x_t) = t$ for $x_t$.
+
+First let's compute the cumulative distribution function (CDFa) $P(X \leq x_t)$, 
+\begin{align*}
+  P(X \leq x_t)
+    &= \int_{-\infty}^{x_t} f_{\theta_1, \theta_2}(x) dx \\
+    &= \int_{\theta_2}^{x_t} \theta_1 \theta_2^{\theta_1} x^{-(\theta_1 + 1)} dx \\
+    &= - \frac{\theta_1 \theta_2^{\theta_1}}{\theta_1} \left[ x^{-\theta_1} \right]_{x=\theta_2}^{x=x_t} \\
+    &= - \theta_2^{\theta_1} \left( x_t^{-\theta_1} - \theta_2^{-\theta_1} \right) \\
+    &= 1 - \left( \frac{\theta_2}{x_t} \right)^{\theta_1}
+\end{align*}
+
+Let's solve $P(X \leq x_t) = t$ for $x_t$,
+\begin{align*}
+  1 - \left( \frac{\theta_2}{x_t} \right)^{\theta_1} = t 
+    &\iff (1 - t)^{1/\theta_1}
+      = \frac{\theta_2}{x_t}\\
+    &\iff x_t 
+      = \frac{\theta_2}{(1 - t)^{1/\theta_1}}
+\end{align*}
+
+Therefore we have, 
+\begin{equation}
+  Q_{\theta_1, \theta_2}(t) = \frac{\theta_2}{(1 - t)^{1/\theta_1}}
+\end{equation}
+
+\textbf{(b)} Derive the Gini coefficient of $X$.
+
+\begin{center}\rule{6cm}{0.4pt}\end{center}
+
+The Gini coefficient is defined as, 
+\begin{equation}
+  G_{\theta_1, \theta_2} = 2 \int_{0}^{1} \left( p - \frac{\int_{0}^{p} Q(t) dt}{E(X)} \right) dp
+\end{equation}
+
+Let's first compute the expectation value of $X$,
+\begin{align*}
+  E(X)
+    &= \int_{-\infty}^{+\infty} x \cdot f_{\theta_1, \theta_2}(x) dx \\
+    &= \int_{\theta_2}^{+\infty} x \frac{\theta_1 \theta_2^{\theta_1}}{x^{\theta_1 + 1}} dx \\
+    &= \theta_1 \theta_2^{\theta_1} \int_{\theta_2}^{+\infty} x^{- \theta_1} dx \\
+    &= - \frac{\theta_1 \theta_2^{\theta_1}}{(\theta_1 - 1)} \left[ x^{-(\theta_1 - 1)} \right]_{\theta_2}^{+\infty} \\
+    &= \begin{cases}
+      - \frac{\theta_1 \theta_2^{\theta_1}}{(\theta_1 - 1)} \left( - \frac{1}{\theta_2^{-(\theta_1 - 1)}} \right), &\quad \theta_1 > 1 \\
+      +\infty, &\quad \theta_1 \leq 1
+    \end{cases} \\
+    &= \begin{cases}
+      \frac{\theta_1 \theta_2}{(\theta_1 - 1)}, &\quad \theta_1 > 1 \\
+      +\infty, &\quad \theta_1 \leq 1
+    \end{cases}
+\end{align*}
+
+So the Gini coefficient is defined for $\theta_1 > 1$, 
+\begin{align*}
+  G_{\theta_1, \theta_2}
+    &= 2 \left( \int_{0}^{1} p dp - \int_{0}^{1} \frac{\int_{0}^{p} Q_{\theta_1, \theta_2}(t) dt}{E(X)} dp \right) 
+\end{align*}
+
+We compute each integral separately,
+\begin{align*}
+  \int_0^1 pdp 
+    &= \frac{1}{2}
+\end{align*}
+
+Then,
+\begin{align*}
+  \int_0^p Q_{\theta_1, \theta_2}(t) dt 
+    &= \theta_2 \int_0^p \frac{1}{(1 - t)^{1/\theta_1}}
+\end{align*}
+
+We use the change of variable $u = 1 - t \implies du = -dt$ 
+
+The boundaries becomes, 
+\begin{align*}
+  \begin{cases}
+    t = 0 &\implies u_1 \equiv 1 \\
+    t = p &\implies u_2 \equiv 1 - p
+  \end{cases}
+\end{align*}
+
+Then, 
+\begin{align*}
+  \int_0^p Q_{\theta_1, \theta_2}(t) dt 
+    &= -\theta_2 \int_{u_1}^{u_2} \frac{1}{(u)^{1/\theta_1}} du \\
+    &= -\theta_2 \left[ \frac{(u)^{-(1/\theta_1 - 1)}}{-((1/\theta_1) - 1)} \right]_{u_1}^{u_2} \\
+    &= \frac{\theta_2}{(1/\theta_1) - 1} \left( \frac{1}{(1-p)^{1/\theta_1 - 1}} - \frac{1}{1^{1/\theta_1 - 1}} \right) \\
+    &= \frac{\theta_2}{(1/\theta_1) - 1} \left( \frac{1}{(1-p)^{1/\theta_1 - 1}} - 1 \right)
+\end{align*}
+
+Therefore for $\theta_1 > 1$, 
+\begin{align*}
+  \frac{\int_{0}^{p} Q_{\theta_1, \theta_2}(t) dt}{E(X)}
+    &= \frac{\frac{\theta_2}{(1/\theta_1) - 1} \left( \frac{1}{(1-p)^{1/\theta_1 - 1}} - 1 \right)}{\frac{\theta_1 \theta_2}{(\theta_1 - 1)}} \\
+    &= \frac{\theta_2}{(1/\theta_1) - 1} \left( \frac{1}{(1-p)^{1/\theta_1 - 1}} - 1 \right) \frac{(\theta_1 - 1)}{\theta_1 \theta_2} \\
+    &= \frac{\theta_1(1 - (1/\theta_1))}{((1/\theta_1) - 1)\theta_1} \left( \frac{1}{(1-p)^{1/\theta_1 - 1}} - 1 \right) \\
+    &= - \left( \frac{1}{(1-p)^{(1/\theta_1) - 1}} - 1 \right) \\
+    &= 1 - \frac{1}{(1-p)^{(1/\theta_1) - 1}}
+\end{align*}
+
+Then,
+\begin{align*}
+  \int_{0}^{1} \frac{\int_{0}^{p} Q_{\theta_1, \theta_2}(t) dt}{E(X)} dp 
+    &= \underbrace{\int_0^1 1 dp}_{A} - \underbrace{\int_0^1 \frac{1}{(1-p)^{(1/\theta_1) - 1}} dp}_{B}
+\end{align*}
+
+Computing integral A and B.
+\begin{align*}
+  A = \int_0^1 1 dp = 1
+\end{align*}
+
+\begin{align*}
+  B 
+    &= \int_0^1 \frac{1}{(1-p)^{(1/\theta_1) - 1}} dp
+\end{align*}
+
+We use the change of variable $u = 1 - p \implies du = -dp$. 
+
+The boundaries become, 
+\begin{align*}
+  \begin{cases}
+    p = 0 &\implies u_1 \equiv 1 \\
+    p = 1 &\implies u_2 \equiv 0
+  \end{cases}
+\end{align*}
+
+Then, 
+\begin{align*}
+  \int_0^1 \frac{1}{(1-p)^{(1/\theta_1) - 1}} dp
+    &= - \int_{u_1}^{u_2} \frac{1}{(u)^{(1/\theta_1) - 1}} du \\
+    &= - \int_{u_1}^{u_2} u^{-((1/\theta_1) - 1)} du \\
+    &= \frac{1}{((1/\theta_1) - 1) - 1} \left[ (u)^{((1/\theta_1) - 1 - 1)} \right]_1^0 \\
+    &= -\frac{1}{(1/\theta_1) - 2} \\
+    &= \frac{1}{2 - (1/\theta1)}
+\end{align*}
+
+Eventually the Gini coefficient is (for $\theta_1 > 0$),
+\begin{align*}
+  G_{\theta_1, \theta_2} 
+    &= 2 \left( \frac{1}{2} - \frac{1}{2 - (1/\theta1)} \right) \\
+    &= 2 \left( \frac{1}{2} \left[ 1 - \frac{1}{1 - (1/2\theta_1)} \right] \right) \\
+    &= 1 - \frac{1}{1 - (1/2\theta_1)} \\
+    &= \frac{1/2\theta_1}{1 - (1/2\theta_1} \\
+    &= \frac{1}{2\theta_1 \left( 1 - \frac{1}{2\theta_1} \right)} \\
+    &= \frac{1}{2\theta_1 - 1}
+\end{align*}
+
+\textbf{(c)} Derive the maximum likelihood estimator (MLE) of $G_{\theta_1, \theta_2}$. Call this estimator $\hat{G}_{\text{MLE}}$
+
+\begin{center}\rule{6cm}{0.4pt}\end{center}
+
+Let's first compute the likelihood function $L(\theta_1, \theta_2)$,
+\begin{align*}
+  L(\theta_1, \theta_2) 
+    &:= \Pi_{i=1}^{n} f_{\theta_1, \theta_2} (x) \\
+    &= \Pi_{i=1}^{n} \frac{\theta_1 \theta_2^{\theta_1}}{x^{\theta_1 + 1}} \cdot I(X_i \geq \theta_2 > 0) \\
+    &= \theta_1^n \theta_2^{n\theta_1} \frac{1}{\Pi_{i=1}^{n} X_i^{\theta_1 + 1}} \cdot I(X_{(1)} \geq \theta_2 > 0) 
+\end{align*}
+
+where $X_{(1)} \equiv \min{(X_1,...,X_n)}$.
+
+We notice that $L(\theta_1, \theta_2)$ is not continuous along $\theta_2$ and then not differentiable in $\theta_2$. However, we observe that $L(\theta_1, \theta_2)$ increase with $\theta_2$. Therefore, we have to take $\theta_2$ the largest possible in order to maximize $L(\theta_1, \theta_2)$ respecting the condition $X_{(1)} \leq \theta_2 > 0$ otherwise we would have $L(\theta_1, \theta_2) = 0$, 
+
+\begin{equation*}
+  \hat{\theta}_2 = X_{(1)}
+\end{equation*}
+
+For $\hat{\theta}_1$ we can compute the log-likelihood function $l(\theta_1, \theta_2)$, 
+\begin{align*}
+  l(\theta_1, \theta_2) 
+    &:= \ln(L(\theta_1, \theta_2)) \\
+    &= \ln(\theta_1^n) +  \ln(\theta_2^{n\theta_1}) + \ln(1) - \ln(\pi_{i=1}^{n} X_i^{(\theta_1 + 1)}) \\
+    &= n\ln(\theta_1) + n\theta_1 \ln(\theta_2) - (\sum_{i=1}^{n} \ln(X_i^{(\theta_1 + 1)})) \\
+    &= n\ln(\theta_1) + n\theta_1 \ln(\theta_2) - \sum_{i=1}^{n} (\theta_1 + 1))\ln(X_i)
+\end{align*}
+
+We differentiate with respect to $\theta_1$ in order to find the maximum,
+\begin{align*}
+  \pdv{l(\theta_1, \theta_2)}{\theta_1} 
+    &= \frac{n}{\theta_1} + n\ln(\theta_2) - \sum_{i=1}^{n} \ln(X_i)
+\end{align*}
+
+Then, 
+\begin{align*}
+  \pdv{l(\theta_1, \theta_2)}{\theta_1} = 0 
+    \iff \hat{\theta}_1 &= \frac{n}{\sum_{i=1}^{n} (\ln(X_i)) - n\ln(\hat{\theta}_2)} \\
+                        &= \frac{n}{\sum_{i=1}^{n} (\ln(X_i) - \ln(X_{(1)}))} \\
+                        &= \frac{n}{\sum_{i=1}^{n} \ln \left(\frac{X_i}{X_{(1)}} \right)} \\
+\end{align*}
+
+Now we can compute $\hat{G}_{\text{MLE}}$,
+\begin{align*}
+  \hat{G}_{\text{MLE}}
+    &:= G_{\hat{\theta}_1, \hat{\theta}_2} \\
+    &= \frac{1}{2\hat{\theta}_1 - 1} \\
+    &= \frac{1}{\left( \frac{2n}{\sum_{i=1}^{n} \ln \left(\frac{X_i}{X_{(1)}} \right)} \right) - 1} 
+\end{align*}
+
+\textbf{(d)} Propose a method of moment estimator of $G_{\theta_1, \theta_2}$. Call this estimator $\hat{G}_{\text{MME}}$
+
+\begin{center}\rule{6cm}{0.4pt}\end{center}
+
+We already have computed the expectation value of $X$,
+\begin{equation*}
+  E(X) = 
+    \begin{cases}
+      \frac{\theta_1 \theta_2}{(\theta_1 - 1)}, &\quad \theta_1 > 1 \\
+      +\infty, &\quad \theta_1 \leq 1
+    \end{cases}
+\end{equation*}
+
+We know that, 
+\begin{equation*}
+  \bar{X} = \frac{1}{n} \sum_{i=1}^n X_i \equiv E(X)
+\end{equation*}
+
+Let's solve for $\theta_1$,
+\begin{align*}
+  \bar{X} = \frac{\hat{\theta}_1 \hat{\theta}_2}{(\hat{\theta}_1 - 1)} 
+    \iff \bar{X} \hat{\theta}_1 - \bar{X} &= \hat{\theta}_1 \hat{\theta}_2 \\
+    \iff \hat{\theta}_1 (\bar{X} - \hat{\theta}_2) &= \bar{X} \\
+    \iff \hat{\theta}_1 &= \frac{\bar{X}}{(\bar{X} - \hat{\theta}_2)}
+\end{align*}
+
+In order to estimate $\hat{\theta}_2$ we know that the CDF is given by,
+\begin{equation*}
+  F_{\theta_1 \theta_2}(x) = P(X \leq x) = 1 - \left( \frac{\theta_2}{x} \right)^{\theta_1}
+\end{equation*}
+
+Therefore, 
+\begin{align*}
+  P(X > x) 
+    &= 1 - P(X \leq x) \\
+    &= \left( \frac{\theta_2}{x} \right)^{\theta_1}
+\end{align*}
+
+The probability that all random variables $(X_1, \dots, X_n)$ are greater than $x$ is, 
+\begin{align*}
+  P((X_1, \dots, X_n) > x) 
+    &= \Pi_{i=1}^{n} P(X > x) \\
+    &= \left( \frac{\theta_2}{x} \right)^{n \theta_1}
+\end{align*}
+
+Then, the probability that the minimum random variable $X_{(1)} \equiv \min(X_1,\dots,X_n)$ is greater than $x$ is also, 
+\begin{align*}
+  P(X_{(1)} > x) 
+    &= \left( \frac{\theta_2}{x} \right)^{n \theta_1}
+\end{align*}
+
+Therefore, 
+\begin{align*}
+  P(X_{(1)} \leq x) 
+    &= 1 - \left( \frac{\theta_2}{x} \right)^{n \theta_1}
+\end{align*}
+
+The corresponding probability density function is,
+\begin{align*}
+  f_{\theta_1, \theta_2}(x) 
+    &= F'_{\theta_1, \theta_2}(x) \\
+    &= \odv{}{x}\left(1 - \left( \frac{\theta_2}{x} \right)^{n \theta_1} \right) \\
+    &= - \theta_2^{n\theta_1} \odv{}{x} \left( x^{-n\theta_1} \right) \\
+    &= n\theta_1 \theta_2^{n\theta_1} x^{-(n\theta_1 + 1)} \\
+    &= \frac{n\theta_1 \theta_2^{n\theta_1}}{x^{(n\theta_1 + 1)}}, \quad x \geq \theta_2
+\end{align*}
+
+The corresponding expectation value is,
+\begin{align*}
+  E(X) 
+    &= \int_{\theta_2}^{+\infty} x \cdot f_{\theta_1, \theta_2}(x) dx \\
+    &= \int_{\theta_2}^{+\infty} x \cdot \frac{n\theta_1 \theta_2^{n\theta_1}}{x^{(n\theta_1 + 1)}} dx \\
+    &= n\theta_1 \theta_2^{n\theta_1} \int_{\theta_2}^{+\infty} x^{(-n\theta_1)} dx \\
+    &= \frac{n\theta_1 \theta_2^{n\theta_1}}{-(n\theta_1 - 1)} \left( - \frac{1}{\theta_2^{-(n\theta_1 - 1)}} \right) \\
+    &= \frac{n\theta_1 \theta_2}{(n\theta_1 - 1)}
+\end{align*}
+
+Setting expectation value $E(X)$ to be equal the minimum random variable $X_{(1)}$,
+\begin{align*}
+  X_{(1)} = \frac{n\theta_1 \theta_2}{(n\theta_1 - 1)} 
+    \iff \hat{\theta}_2 = X_{(1)} \frac{(n \hat{\theta}_1 - 1)}{n\hat{\theta}_1} 
+\end{align*}
+
+Therefore, 
+\begin{align*}
+  \hat{\theta}_1 
+    &= \frac{\bar{X}}{(\bar{X} - \hat{\theta}_2)} \\
+    &= \frac{\bar{X}}{\bar{X} - X_{(1)}\frac{(n\bar{\theta}_1 - 1)}{n\hat{\theta}_1}} \\
+  \iff \bar{X} 
+    &= \hat{\theta}_1 \left( \bar{X} - X_{(1)}\frac{(n\bar{\theta}_1 - 1)}{n\hat{\theta}_1} \right) \\
+    &=\hat{\theta}_1 \bar{X} - \hat{\theta}_1 X_{(1)}\frac{(n\bar{\theta}_1}{n\hat{\theta}_1} + \hat{\theta}_1 X_{(1)}\frac{1)}{n\hat{\theta}_1} \\
+    &= \hat{\theta}_1 \left( \bar{X} - X_{(1)} \right) + \frac{X_{(1)}}{n} \\
+  \iff \hat{\theta}_1 
+    &= \frac{\bar{X} - (X_{(1)}/n)}{(\bar{X} - X_{(1)})} \\
+    &= \frac{n\bar{X} - X_{(1)}}{n(\bar{X} - X_{(1)})}
+\end{align*}
+
+Now we can compute $\hat{G}_{\text{MME}}$,
+\begin{align*}
+  \hat{G}_{\text{MME}}
+    &:= G_{\hat{\theta}_1, \hat{\theta}_2} \\
+    &= \frac{1}{2\hat{\theta}_1 - 1} \\
+    &= \frac{1}{\left( \frac{2(n\bar{X} - X_{(1)})}{n(\bar{X} - X_{(1)})} \right) - 1}
+\end{align*}
+
+\textbf{(e)} Set $\theta_1^0 = 3$ and $\theta_2^0 = 1$. Generate an i.i.d sample of size $n = 20$ from the density $f_{\theta_1^0, \theta_2^0}$. In order to achieve this, you can make use of the inverse transform sampling. Using this sample, compute $\hat{G}_{\text{MLE}}$ and $\hat{G}_{\text{MME}}$.
+
+\begin{center}\rule{6cm}{0.4pt}\end{center}
+
+We have,
+\begin{equation*}
+  f_{\theta_1^0, \theta_2^0} = 
+  \begin{cases}
+    \frac{3 \cdot 1^{3}}{x^{3 + 1}} = \frac{3}{x^4}, &\quad x \geq 1 \\
+    0,                                &\quad \text{otherwise}
+  \end{cases}
+\end{equation*}
+
+We compute the CDF of $X$,
+\begin{align*}
+  F_{\theta_1, \theta_2}(x) = \int_{1}^{x} \frac{3}{t^4} dt 
+    &= 3 \left[ \frac{t^{-3}}{-3} \right]_1^{x} \\
+    &= - \left( \frac{1}{x^3} - \frac{1}{1^3} \right) \\
+    &= 1 - \frac{1}{x^3}
+\end{align*}
+
+The inverse is, 
+\begin{align*}
+  F^{-1}_{\theta_1, \theta_2}(y) 
+    &= \frac{1}{(1-y)^{1/3}}
+\end{align*}
+
+We get the following estimations,
+\begin{equation}
+  \begin{array}{rl}
+    \hat{G}_{\text{MLE}} = 0.2516462 \quad ; \quad \hat{G}_{\text{MME}} = 0.235356
+  \end{array}
+\end{equation}
+
+We these estimations, we can notice that the electricity consumption is not evenly distributed among all the computers. 
+
+\textbf{(f)} Repeat this data generating process $N = 1000$ times (with the same sample size $n = 20$ and the same ($\theta_1^0$, $\theta_2^0$)). Hence, you obtain a sample of size $N$ of each estimator of $G_{\theta_1, \theta_2}$. Make a \textbf{histogram} and a \textbf{boxplot} of these two samples. What can you conclude ?
+
+\begin{center}\rule{6cm}{0.4pt}\end{center}
+
+As we can see on the \autoref{fig:gini-sample-histogram-N=1000} and \autoref{fig:gini-sample-boxplot-N=1000}, the most presents values of these Gini coefficients for the two methods of estimation are pretty close to the exact value of the Gini coefficient. In fact, on the boxplot (\autoref{fig:gini-sample-boxplot-N=1000}), we see that the median value of these sample is a little bit lower than the exact of value of the Gini coefficient and in particular the median value of $\hat{G}_{\text{MME}}$ is almost identical to the exact value $G$. The samples distributions are close to a normal distribution even more true for the sample generated by the maximum likelihood method. For the two distributions, we observe some outliers on the right of the distribution.
+
+Finally, we can conclude that the median value of the Gini sample estimated through the method of moment is closer to the exact value of the Gini coefficient than the median value estimated through the method of maximum likelihood. Furthermore, the Gini sample estimated through the method of moment is less scattered. However, there seems to have more outliers in this last one compared to the one estimated through the maximum likelihood method.
+
+\textbf{(g)} Use the samples obtained in (f) to estimate the \textbf{bias}, the \textbf{variance} and the \textbf{mean squared error (MSE)} of both estimators What can you conclude ?
+
+\begin{center}\rule{6cm}{0.4pt}\end{center}
+
+Using the samples obtained in (f) and computing the different asked quantities, we get
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{cccc} \toprule
+    Estimator                      & Bias                     & Variance               & Mean Squared Error \\\hline
+    $\hat{G}_{\text{MLE}}$         & $-0.00913594$            & $0.002571429$          & $0.002652323$ \\
+    $\hat{G}_{\text{MME}}$         & $-0.003834601$           & $0.00286779$           & $0.002879627$ \\\hline       
+  \end{tabular}
+  \caption{Bias, variance and mean squared error of the estimators $\hat{G}_{\text{MLE}}$ and $\hat{G}_{\text{MME}}$ for $N = 1000$ simulations and a sample size of $n = 20$}
+  \label{tab:gini_estimator_statistical_quantities}
+\end{table}
+
+We notice that the bias of $\hat{G}_{\text{MLE}} < \hat{G}_{\text{MME}}$. $\hat{G}_{\text{MME}}$ being closer to zero confirms that this estimator is better in estimating the exact value of the Gini coefficient. A negative bias confirms that we tend to underestimate the value of that coefficient. 
+
+However, despite $\hat{G}_{\text{MLE}}$ being more biased, its variance and its mean squared error is lower than the variance of $\hat{G}_{\text{MME}}$. So the coefficient estimated by the method of maximum likelihood seems preferable. 
+
+Finally, obviously, the MSE for the two methods is not zero zero meaning that we do not predicts the exact value of the Gini coefficient with perfect accuracy. 
+
+\textbf{(h)} Repeat the calculations in (f) for $n = 20$, $40$, $60$, $80$, $100$, $150$, $200$, $300$, $400$, $500$. Compare the \textbf{biases}, the \textbf{variances} and the \textbf{mean squared errors} of both estimators graphically (make a separate plot for each quantity as a function of $n$). What can you conclude ? Which estimator is the best ? Justify your answer.
+
+\begin{center}\rule{6cm}{0.4pt}\end{center}
+
+Looking at \autoref{fig:gini-estimators-bias-plot}, \autoref{fig:gini-estiamtors-variance-plot} and \autoref{fig:gini-estimators-mse-plot}
+
+The more we increase the sample size $n$, the less biased are the estimators. For a sample size of $n = 500$, we see that $\hat{G}_{\text{MME}}$ is \textbf{unbiased} whereas $\hat{G}_{\text{MLE}}$ is a tiny bit (positively) \textbf{biased} meaning that it is overpredicting a tiny bit the exact value of the Gini coefficient. 
+
+We notice that the variance and mean squared error of the two estimators are converging toward $0$ but as we saw in (g), these two statistical quantities are still lower for $\hat{G}_{\text{MLE}}$ so that last one estimator is preferable.
+
+\textbf{(i)} Create an histogram for $\sqrt{n}(\hat{G}_{\text{MLE}} - G_{\theta_1^0, \theta_2^0})$, for $n = 20$, $n = 100$ and $n = 500$. What can you conclude ?
+
+\begin{center}\rule{6cm}{0.4pt}\end{center}
+
+If we check \autoref{fig:special-formula-sample-size-comparison}, as we increase the sample size $n$, the distribution of $\sqrt{n}(\hat{G}_{\text{MLE}} - G_{\theta_1^0, \theta_2^0})$ tends more and more toward a standard normal distribution $\mathcal{N}(0, 1)$ meaning that $\hat{G}_{\text{MLE}}$ converges toward an exact estimation of the Gini coefficient as we increase the sample size.

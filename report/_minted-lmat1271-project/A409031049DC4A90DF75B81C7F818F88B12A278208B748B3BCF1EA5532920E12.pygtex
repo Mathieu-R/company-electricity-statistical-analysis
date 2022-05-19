@@ -1,0 +1,135 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nf}{library}\PYG{p}{(}\PYG{n}{tidyverse}\PYG{p}{)}
+\PYG{n+nf}{library}\PYG{p}{(}\PYG{n}{reshape2}\PYG{p}{)}
+\PYG{n+nf}{library}\PYG{p}{(}\PYG{n}{latex2exp}\PYG{p}{)}
+
+\PYG{n+nf}{setwd}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}/Users/mathieu/Lab/company\PYGZhy{}electricity\PYGZhy{}statistical\PYGZhy{}analysis/src/\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nf}{source}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}utils.r\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} set a seed for reproductability}
+\PYG{n+nf}{set.seed}\PYG{p}{(}\PYG{l+m}{42}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Generate sample of size n = 20 by using inverse transform sampling}
+\PYG{n}{rv\PYGZus{}vector} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{inverse\PYGZus{}transform\PYGZus{}sampling}\PYG{p}{(}\PYG{n}{n} \PYG{o}{=} \PYG{l+m}{20}\PYG{p}{,} \PYG{n}{inv\PYGZus{}cdf} \PYG{o}{=} \PYG{n}{inv\PYGZus{}cdf}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} plot an histogram of the random variable vector}
+\PYG{n+nf}{par}\PYG{p}{(}\PYG{n}{mfrow} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{,}\PYG{l+m}{1}\PYG{p}{))}
+\PYG{n+nf}{hist}\PYG{p}{(}\PYG{n}{rv\PYGZus{}vector}\PYG{p}{,} \PYG{n}{breaks} \PYG{o}{=} \PYG{l+m}{50}\PYG{p}{,} \PYG{n}{freq} \PYG{o}{=} \PYG{k+kc}{FALSE}\PYG{p}{,} \PYG{n}{xlab} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}X\PYGZdq{}}\PYG{p}{,} \PYG{n}{main} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}random sample\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} compute Gini coefficients}
+\PYG{n+nf}{gini\PYGZus{}mle}\PYG{p}{(}\PYG{n}{rv\PYGZus{}vector} \PYG{o}{=} \PYG{n}{rv\PYGZus{}vector}\PYG{p}{,} \PYG{n}{n} \PYG{o}{=} \PYG{l+m}{20}\PYG{p}{)}
+\PYG{n+nf}{gini\PYGZus{}mme}\PYG{p}{(}\PYG{n}{rv\PYGZus{}vector} \PYG{o}{=} \PYG{n}{rv\PYGZus{}vector}\PYG{p}{,} \PYG{n}{n} \PYG{o}{=} \PYG{l+m}{20}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Generate N = 1000 times the sample}
+\PYG{n}{x} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{sim}\PYG{p}{(}\PYG{n}{N} \PYG{o}{=} \PYG{l+m}{1000}\PYG{p}{,} \PYG{n}{n} \PYG{o}{=} \PYG{l+m}{20}\PYG{p}{,} \PYG{n}{f} \PYG{o}{=} \PYG{n}{inverse\PYGZus{}transform\PYGZus{}sampling}\PYG{p}{,} \PYG{n}{inv\PYGZus{}cdf}\PYG{p}{)}
+
+\PYG{n}{gini\PYGZus{}mle\PYGZus{}sample} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{x}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}gini\PYGZhy{}mle\PYGZhy{}sample\PYGZdq{}}\PYG{p}{,} \PYG{p}{]}
+\PYG{n}{gini\PYGZus{}mme\PYGZus{}sample} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{x}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}gini\PYGZhy{}mme\PYGZhy{}sample\PYGZdq{}}\PYG{p}{,} \PYG{p}{]}
+
+\PYG{c+c1}{\PYGZsh{} histogram of gini samples}
+\PYG{n+nf}{par}\PYG{p}{(}\PYG{n}{mfrow} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{))}
+\PYG{n+nf}{hist}\PYG{p}{(}\PYG{n}{gini\PYGZus{}mle\PYGZus{}sample}\PYG{p}{,} \PYG{n}{breaks} \PYG{o}{=} \PYG{l+m}{50}\PYG{p}{,} \PYG{n}{main} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{,} \PYG{n}{xlab} \PYG{o}{=} \PYG{n+nf}{TeX}\PYG{p}{(}\PYG{n}{r}\PYG{l+s}{\PYGZdq{}(\PYGZdl{}\PYGZbs{}hat\PYGZob{}G\PYGZcb{}\PYGZus{}\PYGZob{}\PYGZbs{}textrm\PYGZob{}MLE\PYGZcb{}\PYGZcb{}\PYGZdl{})\PYGZdq{}}\PYG{p}{),} \PYG{n}{col} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}darkorange\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nf}{abline}\PYG{p}{(}\PYG{n}{v} \PYG{o}{=} \PYG{n+nf}{gini\PYGZus{}theoretical}\PYG{p}{(}\PYG{n}{theta\PYGZus{}1}\PYG{p}{),} \PYG{n}{col} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}darkgreen\PYGZdq{}}\PYG{p}{,} \PYG{n}{lty} \PYG{o}{=} \PYG{l+m}{2}\PYG{p}{)}
+\PYG{n+nf}{hist}\PYG{p}{(}\PYG{n}{gini\PYGZus{}mme\PYGZus{}sample}\PYG{p}{,} \PYG{n}{breaks} \PYG{o}{=} \PYG{l+m}{50}\PYG{p}{,} \PYG{n}{main} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{,} \PYG{n}{xlab} \PYG{o}{=} \PYG{n+nf}{TeX}\PYG{p}{(}\PYG{n}{r}\PYG{l+s}{\PYGZdq{}(\PYGZdl{}\PYGZbs{}hat\PYGZob{}G\PYGZcb{}\PYGZus{}\PYGZob{}\PYGZbs{}textrm\PYGZob{}MME\PYGZcb{}\PYGZcb{}\PYGZdl{})\PYGZdq{}}\PYG{p}{),} \PYG{n}{col} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}steelblue\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nf}{abline}\PYG{p}{(}\PYG{n}{v} \PYG{o}{=} \PYG{n+nf}{gini\PYGZus{}theoretical}\PYG{p}{(}\PYG{n}{theta\PYGZus{}1}\PYG{p}{),} \PYG{n}{col} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}darkgreen\PYGZdq{}}\PYG{p}{,} \PYG{n}{lty} \PYG{o}{=} \PYG{l+m}{2}\PYG{p}{)}
+\PYG{n+nf}{legend}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}topright\PYGZdq{}}\PYG{p}{,} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Gini MLE\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}Gini MME\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}True Gini\PYGZdq{}}\PYG{p}{),} \PYG{n}{fill} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}darkorange\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}steelblue\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}darkgreen\PYGZdq{}}\PYG{p}{))}
+
+\PYG{c+c1}{\PYGZsh{} boxplot of gini samples}
+\PYG{n+nf}{par}\PYG{p}{(}\PYG{n}{mfrow} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{,} \PYG{l+m}{2}\PYG{p}{))}
+\PYG{n+nf}{boxplot}\PYG{p}{(}\PYG{n}{gini\PYGZus{}mle\PYGZus{}sample}\PYG{p}{,} \PYG{n}{col} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}grey\PYGZdq{}}\PYG{p}{,} \PYG{n}{ylab} \PYG{o}{=} \PYG{n+nf}{TeX}\PYG{p}{(}\PYG{n}{r}\PYG{l+s}{\PYGZdq{}(\PYGZdl{}\PYGZbs{}hat\PYGZob{}G\PYGZcb{}\PYGZus{}\PYGZob{}\PYGZbs{}textrm\PYGZob{}MLE\PYGZcb{}\PYGZcb{}\PYGZdl{})\PYGZdq{}}\PYG{p}{))}
+\PYG{n+nf}{abline}\PYG{p}{(}\PYG{n}{h} \PYG{o}{=} \PYG{n+nf}{gini\PYGZus{}theoretical}\PYG{p}{(}\PYG{n}{theta\PYGZus{}1}\PYG{p}{),} \PYG{n}{col} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}darkgreen\PYGZdq{}}\PYG{p}{,} \PYG{n}{lty} \PYG{o}{=} \PYG{l+m}{2}\PYG{p}{)}
+\PYG{n+nf}{boxplot}\PYG{p}{(}\PYG{n}{gini\PYGZus{}mme\PYGZus{}sample}\PYG{p}{,} \PYG{n}{col} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}grey\PYGZdq{}}\PYG{p}{,} \PYG{n}{ylab} \PYG{o}{=} \PYG{n+nf}{TeX}\PYG{p}{(}\PYG{n}{r}\PYG{l+s}{\PYGZdq{}(\PYGZdl{}\PYGZbs{}hat\PYGZob{}G\PYGZcb{}\PYGZus{}\PYGZob{}\PYGZbs{}textrm\PYGZob{}MME\PYGZcb{}\PYGZcb{}\PYGZdl{})\PYGZdq{}}\PYG{p}{))}
+\PYG{n+nf}{abline}\PYG{p}{(}\PYG{n}{h} \PYG{o}{=} \PYG{n+nf}{gini\PYGZus{}theoretical}\PYG{p}{(}\PYG{n}{theta\PYGZus{}1}\PYG{p}{),} \PYG{n}{col} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}darkgreen\PYGZdq{}}\PYG{p}{,} \PYG{n}{lty} \PYG{o}{=} \PYG{l+m}{2}\PYG{p}{)}
+
+\PYG{n}{bias\PYGZus{}mle} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{bias}\PYG{p}{(}\PYG{n}{sample} \PYG{o}{=} \PYG{n}{gini\PYGZus{}mle\PYGZus{}sample}\PYG{p}{,} \PYG{n}{theoretical} \PYG{o}{=} \PYG{n+nf}{gini\PYGZus{}theoretical}\PYG{p}{(}\PYG{n}{theta\PYGZus{}1}\PYG{p}{))}
+\PYG{n}{bias\PYGZus{}mme} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{bias}\PYG{p}{(}\PYG{n}{sample} \PYG{o}{=} \PYG{n}{gini\PYGZus{}mme\PYGZus{}sample}\PYG{p}{,} \PYG{n}{theoretical} \PYG{o}{=} \PYG{n+nf}{gini\PYGZus{}theoretical}\PYG{p}{(}\PYG{n}{theta\PYGZus{}1}\PYG{p}{))}
+
+\PYG{n}{variance\PYGZus{}mle} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{var}\PYG{p}{(}\PYG{n}{gini\PYGZus{}mle\PYGZus{}sample}\PYG{p}{)}
+\PYG{n}{variance\PYGZus{}mme} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{var}\PYG{p}{(}\PYG{n}{gini\PYGZus{}mme\PYGZus{}sample}\PYG{p}{)}
+
+\PYG{n}{mse\PYGZus{}mle} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{mse}\PYG{p}{(}\PYG{n}{sample} \PYG{o}{=} \PYG{n}{gini\PYGZus{}mle\PYGZus{}sample}\PYG{p}{,} \PYG{n}{theoretical} \PYG{o}{=} \PYG{n+nf}{gini\PYGZus{}theoretical}\PYG{p}{(}\PYG{n}{theta\PYGZus{}1}\PYG{p}{))}
+\PYG{n}{mse\PYGZus{}mme} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{mse}\PYG{p}{(}\PYG{n}{sample} \PYG{o}{=} \PYG{n}{gini\PYGZus{}mme\PYGZus{}sample}\PYG{p}{,} \PYG{n}{theoretical} \PYG{o}{=} \PYG{n+nf}{gini\PYGZus{}theoretical}\PYG{p}{(}\PYG{n}{theta\PYGZus{}1}\PYG{p}{))}
+
+\PYG{n+nf}{print}\PYG{p}{(}\PYG{n}{bias\PYGZus{}mle}\PYG{p}{)}
+\PYG{n+nf}{print}\PYG{p}{(}\PYG{n}{variance\PYGZus{}mle}\PYG{p}{)}
+\PYG{n+nf}{print}\PYG{p}{(}\PYG{n}{mse\PYGZus{}mle}\PYG{p}{)}
+
+\PYG{n+nf}{print}\PYG{p}{(}\PYG{n}{bias\PYGZus{}mme}\PYG{p}{)}
+\PYG{n+nf}{print}\PYG{p}{(}\PYG{n}{variance\PYGZus{}mme}\PYG{p}{)}
+\PYG{n+nf}{print}\PYG{p}{(}\PYG{n}{mse\PYGZus{}mme}\PYG{p}{)}
+
+\PYG{n}{sample\PYGZus{}sizes} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{20}\PYG{p}{,} \PYG{l+m}{40}\PYG{p}{,} \PYG{l+m}{60}\PYG{p}{,} \PYG{l+m}{80}\PYG{p}{,} \PYG{l+m}{100}\PYG{p}{,} \PYG{l+m}{150}\PYG{p}{,} \PYG{l+m}{200}\PYG{p}{,} \PYG{l+m}{300}\PYG{p}{,} \PYG{l+m}{400}\PYG{p}{,} \PYG{l+m}{500}\PYG{p}{)}
+
+\PYG{n}{statistical\PYGZus{}quantities} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}gini\PYGZhy{}bias\PYGZhy{}mle\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}gini\PYGZhy{}bias\PYGZhy{}mme\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}gini\PYGZhy{}variance\PYGZhy{}mle\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}gini\PYGZhy{}variance\PYGZhy{}mme\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}gini\PYGZhy{}mse\PYGZhy{}mle\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}gini\PYGZhy{}mse\PYGZhy{}mme\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n}{matrix} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{matrix}\PYG{p}{(}\PYG{k+kc}{NA}\PYG{p}{,} \PYG{n}{nrow} \PYG{o}{=} \PYG{n+nf}{length}\PYG{p}{(}\PYG{n}{statistical\PYGZus{}quantities}\PYG{p}{),} \PYG{n}{ncol} \PYG{o}{=} \PYG{n+nf}{length}\PYG{p}{(}\PYG{n}{sample\PYGZus{}sizes}\PYG{p}{))}
+\PYG{n+nf}{rownames}\PYG{p}{(}\PYG{n}{matrix}\PYG{p}{)} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{statistical\PYGZus{}quantities}
+\PYG{n+nf}{colnames}\PYG{p}{(}\PYG{n}{matrix}\PYG{p}{)} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{sample\PYGZus{}sizes}
+
+\PYG{c+c1}{\PYGZsh{} create the different samples, one for each sample size n}
+\PYG{n+nf}{for }\PYG{p}{(}\PYG{n}{n} \PYG{n}{in} \PYG{n}{sample\PYGZus{}sizes}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n}{x} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{sim}\PYG{p}{(}\PYG{n}{N} \PYG{o}{=} \PYG{l+m}{1000}\PYG{p}{,} \PYG{n}{n} \PYG{o}{=} \PYG{n}{n}\PYG{p}{,} \PYG{n}{f} \PYG{o}{=} \PYG{n}{inverse\PYGZus{}transform\PYGZus{}sampling}\PYG{p}{,} \PYG{n}{inv\PYGZus{}cdf}\PYG{p}{)}
+
+  \PYG{n}{gini\PYGZus{}mle\PYGZus{}sample} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{x}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}gini\PYGZhy{}mle\PYGZhy{}sample\PYGZdq{}}\PYG{p}{,} \PYG{p}{]}
+  \PYG{n}{gini\PYGZus{}mme\PYGZus{}sample} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{x}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}gini\PYGZhy{}mme\PYGZhy{}sample\PYGZdq{}}\PYG{p}{,} \PYG{p}{]}
+
+  \PYG{n}{bias\PYGZus{}mle} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{bias}\PYG{p}{(}\PYG{n}{sample} \PYG{o}{=} \PYG{n}{gini\PYGZus{}mle\PYGZus{}sample}\PYG{p}{,} \PYG{n}{theoretical} \PYG{o}{=} \PYG{n+nf}{gini\PYGZus{}theoretical}\PYG{p}{(}\PYG{n}{theta\PYGZus{}1}\PYG{p}{))}
+  \PYG{n}{bias\PYGZus{}mme} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{bias}\PYG{p}{(}\PYG{n}{sample} \PYG{o}{=} \PYG{n}{gini\PYGZus{}mme\PYGZus{}sample}\PYG{p}{,} \PYG{n}{theoretical} \PYG{o}{=} \PYG{n+nf}{gini\PYGZus{}theoretical}\PYG{p}{(}\PYG{n}{theta\PYGZus{}1}\PYG{p}{))}
+
+  \PYG{n}{variance\PYGZus{}mle} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{var}\PYG{p}{(}\PYG{n}{gini\PYGZus{}mle\PYGZus{}sample}\PYG{p}{)}
+  \PYG{n}{variance\PYGZus{}mme} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{var}\PYG{p}{(}\PYG{n}{gini\PYGZus{}mme\PYGZus{}sample}\PYG{p}{)}
+
+  \PYG{n}{mse\PYGZus{}mle} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{mse}\PYG{p}{(}\PYG{n}{sample} \PYG{o}{=} \PYG{n}{gini\PYGZus{}mle\PYGZus{}sample}\PYG{p}{,} \PYG{n}{theoretical} \PYG{o}{=} \PYG{n+nf}{gini\PYGZus{}theoretical}\PYG{p}{(}\PYG{n}{theta\PYGZus{}1}\PYG{p}{))}
+  \PYG{n}{mse\PYGZus{}mme} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{mse}\PYG{p}{(}\PYG{n}{sample} \PYG{o}{=} \PYG{n}{gini\PYGZus{}mme\PYGZus{}sample}\PYG{p}{,} \PYG{n}{theoretical} \PYG{o}{=} \PYG{n+nf}{gini\PYGZus{}theoretical}\PYG{p}{(}\PYG{n}{theta\PYGZus{}1}\PYG{p}{))}
+
+  \PYG{n}{matrix}\PYG{p}{[,} \PYG{n+nf}{as.character}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)]} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{c}\PYG{p}{(}\PYG{n}{bias\PYGZus{}mle}\PYG{p}{,} \PYG{n}{bias\PYGZus{}mme}\PYG{p}{,} \PYG{n}{variance\PYGZus{}mle}\PYG{p}{,} \PYG{n}{variance\PYGZus{}mme}\PYG{p}{,} \PYG{n}{mse\PYGZus{}mle}\PYG{p}{,} \PYG{n}{mse\PYGZus{}mme}\PYG{p}{)}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{\PYGZsh{} create dataframes}
+\PYG{n}{bias\PYGZus{}df} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{data.frame}\PYG{p}{(}\PYG{n}{n} \PYG{o}{=} \PYG{n}{sample\PYGZus{}sizes}\PYG{p}{,} \PYG{n}{mle} \PYG{o}{=} \PYG{n}{matrix}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}gini\PYGZhy{}bias\PYGZhy{}mle\PYGZdq{}}\PYG{p}{,} \PYG{p}{],} \PYG{n}{mme} \PYG{o}{=} \PYG{n}{matrix}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}gini\PYGZhy{}bias\PYGZhy{}mme\PYGZdq{}}\PYG{p}{,} \PYG{p}{])}
+\PYG{n}{var\PYGZus{}df} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{data.frame}\PYG{p}{(}\PYG{n}{n} \PYG{o}{=} \PYG{n}{sample\PYGZus{}sizes}\PYG{p}{,} \PYG{n}{mle} \PYG{o}{=} \PYG{n}{matrix}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}gini\PYGZhy{}variance\PYGZhy{}mle\PYGZdq{}}\PYG{p}{,} \PYG{p}{],} \PYG{n}{mme} \PYG{o}{=} \PYG{n}{matrix}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}gini\PYGZhy{}variance\PYGZhy{}mme\PYGZdq{}}\PYG{p}{,} \PYG{p}{])}
+\PYG{n}{mse\PYGZus{}df} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{data.frame}\PYG{p}{(}\PYG{n}{n} \PYG{o}{=} \PYG{n}{sample\PYGZus{}sizes}\PYG{p}{,} \PYG{n}{mle} \PYG{o}{=} \PYG{n}{matrix}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}gini\PYGZhy{}mse\PYGZhy{}mle\PYGZdq{}}\PYG{p}{,} \PYG{p}{],} \PYG{n}{mme} \PYG{o}{=} \PYG{n}{matrix}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}gini\PYGZhy{}mse\PYGZhy{}mme\PYGZdq{}}\PYG{p}{,} \PYG{p}{])}
+
+\PYG{c+c1}{\PYGZsh{} converting to long format for easier plotting}
+\PYG{n}{bias\PYGZus{}df} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{melt}\PYG{p}{(}\PYG{n}{bias\PYGZus{}df}\PYG{p}{,} \PYG{n}{id} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}n\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{var\PYGZus{}df} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{melt}\PYG{p}{(}\PYG{n}{var\PYGZus{}df}\PYG{p}{,} \PYG{n}{id} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}n\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{mse\PYGZus{}df} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{melt}\PYG{p}{(}\PYG{n}{mse\PYGZus{}df}\PYG{p}{,} \PYG{n}{id} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}n\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n+nf}{par}\PYG{p}{(}\PYG{n}{mfrow} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{,}\PYG{l+m}{1}\PYG{p}{))}
+
+\PYG{c+c1}{\PYGZsh{} we compare the gini estimators through a plot as a function of n}
+\PYG{n+nf}{ggplot}\PYG{p}{(}\PYG{n}{bias\PYGZus{}df}\PYG{p}{,} \PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{n}{n}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{n}{value}\PYG{p}{,} \PYG{n}{color} \PYG{o}{=} \PYG{n}{variable}\PYG{p}{))} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}point}\PYG{p}{()} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}line}\PYG{p}{()} \PYG{o}{+}
+  \PYG{n+nf}{labs}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}n\PYGZdq{}}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}bias\PYGZdq{}}\PYG{p}{)} \PYG{o}{+}
+  \PYG{n+nf}{scale\PYGZus{}fill\PYGZus{}hue}\PYG{p}{(}\PYG{n}{labels} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Gini MLE bias\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}Gini MME bias\PYGZdq{}}\PYG{p}{))} \PYG{o}{+}
+  \PYG{n+nf}{theme}\PYG{p}{(}\PYG{n}{legend.title} \PYG{o}{=} \PYG{n+nf}{element\PYGZus{}blank}\PYG{p}{())}
+
+\PYG{n+nf}{ggplot}\PYG{p}{(}\PYG{n}{var\PYGZus{}df}\PYG{p}{,} \PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{n}{n}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{n}{value}\PYG{p}{,} \PYG{n}{color} \PYG{o}{=} \PYG{n}{variable}\PYG{p}{))} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}point}\PYG{p}{()} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}line}\PYG{p}{()} \PYG{o}{+}
+  \PYG{n+nf}{labs}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}n\PYGZdq{}}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}variance\PYGZdq{}}\PYG{p}{)} \PYG{o}{+}
+  \PYG{n+nf}{scale\PYGZus{}fill\PYGZus{}hue}\PYG{p}{(}\PYG{n}{labels} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Gini MLE: variance\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}Gini MME: variance\PYGZdq{}}\PYG{p}{))} \PYG{o}{+}
+  \PYG{n+nf}{theme}\PYG{p}{(}\PYG{n}{legend.title} \PYG{o}{=} \PYG{n+nf}{element\PYGZus{}blank}\PYG{p}{())}
+
+\PYG{n+nf}{ggplot}\PYG{p}{(}\PYG{n}{mse\PYGZus{}df}\PYG{p}{,} \PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{n}{n}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{n}{value}\PYG{p}{,} \PYG{n}{color} \PYG{o}{=} \PYG{n}{variable}\PYG{p}{))} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}point}\PYG{p}{()} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}line}\PYG{p}{()} \PYG{o}{+}
+  \PYG{n+nf}{labs}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}n\PYGZdq{}}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}mean squared error\PYGZdq{}}\PYG{p}{)} \PYG{o}{+}
+  \PYG{n+nf}{scale\PYGZus{}fill\PYGZus{}hue}\PYG{p}{(}\PYG{n}{labels} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Gini MLE: mse\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}Gini MME: mse\PYGZdq{}}\PYG{p}{))} \PYG{o}{+}
+  \PYG{n+nf}{theme}\PYG{p}{(}\PYG{n}{legend.title} \PYG{o}{=} \PYG{n+nf}{element\PYGZus{}blank}\PYG{p}{())}
+
+\PYG{n}{sim\PYGZus{}n20} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{sim}\PYG{p}{(}\PYG{n}{N} \PYG{o}{=} \PYG{l+m}{1000}\PYG{p}{,} \PYG{n}{n} \PYG{o}{=} \PYG{l+m}{20}\PYG{p}{,} \PYG{n}{f} \PYG{o}{=} \PYG{n}{inverse\PYGZus{}transform\PYGZus{}sampling}\PYG{p}{,} \PYG{n}{inv\PYGZus{}cdf}\PYG{p}{)}
+\PYG{n}{result\PYGZus{}n20} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{sqrt}\PYG{p}{(}\PYG{l+m}{20}\PYG{p}{)} \PYG{o}{*} \PYG{p}{(}\PYG{n}{sim\PYGZus{}n20}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}gini\PYGZhy{}mle\PYGZhy{}sample\PYGZdq{}}\PYG{p}{,} \PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n+nf}{gini\PYGZus{}theoretical}\PYG{p}{(}\PYG{n}{theta\PYGZus{}1}\PYG{p}{))}
+
+\PYG{n}{sim\PYGZus{}n100} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{sim}\PYG{p}{(}\PYG{n}{N} \PYG{o}{=} \PYG{l+m}{1000}\PYG{p}{,} \PYG{n}{n} \PYG{o}{=} \PYG{l+m}{100}\PYG{p}{,} \PYG{n}{f} \PYG{o}{=} \PYG{n}{inverse\PYGZus{}transform\PYGZus{}sampling}\PYG{p}{,} \PYG{n}{inv\PYGZus{}cdf}\PYG{p}{)}
+\PYG{n}{result\PYGZus{}n100} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{sqrt}\PYG{p}{(}\PYG{l+m}{100}\PYG{p}{)} \PYG{o}{*} \PYG{p}{(}\PYG{n}{sim\PYGZus{}n100}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}gini\PYGZhy{}mle\PYGZhy{}sample\PYGZdq{}}\PYG{p}{,} \PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n+nf}{gini\PYGZus{}theoretical}\PYG{p}{(}\PYG{n}{theta\PYGZus{}1}\PYG{p}{))}
+
+\PYG{n}{sim\PYGZus{}n500} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{sim}\PYG{p}{(}\PYG{n}{N} \PYG{o}{=} \PYG{l+m}{1000}\PYG{p}{,} \PYG{n}{n} \PYG{o}{=} \PYG{l+m}{500}\PYG{p}{,} \PYG{n}{f} \PYG{o}{=} \PYG{n}{inverse\PYGZus{}transform\PYGZus{}sampling}\PYG{p}{,} \PYG{n}{inv\PYGZus{}cdf}\PYG{p}{)}
+\PYG{n}{result\PYGZus{}n500} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{sqrt}\PYG{p}{(}\PYG{l+m}{500}\PYG{p}{)} \PYG{o}{*} \PYG{p}{(}\PYG{n}{sim\PYGZus{}n500}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}gini\PYGZhy{}mle\PYGZhy{}sample\PYGZdq{}}\PYG{p}{,} \PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n+nf}{gini\PYGZus{}theoretical}\PYG{p}{(}\PYG{n}{theta\PYGZus{}1}\PYG{p}{))}
+
+\PYG{n+nf}{par}\PYG{p}{(}\PYG{n}{mfrow} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{,} \PYG{l+m}{3}\PYG{p}{))}
+\PYG{n+nf}{hist}\PYG{p}{(}\PYG{n}{result\PYGZus{}n20}\PYG{p}{,} \PYG{n}{breaks} \PYG{o}{=} \PYG{l+m}{50}\PYG{p}{,} \PYG{n}{main} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}sample size: n = 20\PYGZdq{}}\PYG{p}{,} \PYG{n}{xlab} \PYG{o}{=} \PYG{n+nf}{TeX}\PYG{p}{(}\PYG{n}{r}\PYG{l+s}{\PYGZdq{}(\PYGZdl{}\PYGZbs{}sqrt\PYGZob{}n\PYGZcb{}(\PYGZbs{}hat\PYGZob{}G\PYGZcb{}\PYGZus{}\PYGZob{}\PYGZbs{}textrm\PYGZob{}MLE\PYGZcb{}\PYGZcb{} \PYGZhy{} G\PYGZus{}\PYGZob{}\PYGZbs{}theta\PYGZus{}1\PYGZca{}0, \PYGZbs{}theta\PYGZus{}2\PYGZca{}0\PYGZcb{})\PYGZdl{})\PYGZdq{}}\PYG{p}{),} \PYG{n}{col} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}coral\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nf}{hist}\PYG{p}{(}\PYG{n}{result\PYGZus{}n100}\PYG{p}{,} \PYG{n}{breaks} \PYG{o}{=} \PYG{l+m}{50}\PYG{p}{,} \PYG{n}{main} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}sample size: n = 100\PYGZdq{}}\PYG{p}{,} \PYG{n}{xlab} \PYG{o}{=} \PYG{n+nf}{TeX}\PYG{p}{(}\PYG{n}{r}\PYG{l+s}{\PYGZdq{}(\PYGZdl{}\PYGZbs{}sqrt\PYGZob{}n\PYGZcb{}(\PYGZbs{}hat\PYGZob{}G\PYGZcb{}\PYGZus{}\PYGZob{}\PYGZbs{}textrm\PYGZob{}MLE\PYGZcb{}\PYGZcb{} \PYGZhy{} G\PYGZus{}\PYGZob{}\PYGZbs{}theta\PYGZus{}1\PYGZca{}0, \PYGZbs{}theta\PYGZus{}2\PYGZca{}0\PYGZcb{})\PYGZdl{})\PYGZdq{}}\PYG{p}{),} \PYG{n}{col} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}aquamarine3\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nf}{hist}\PYG{p}{(}\PYG{n}{result\PYGZus{}n500}\PYG{p}{,} \PYG{n}{breaks} \PYG{o}{=} \PYG{l+m}{50}\PYG{p}{,} \PYG{n}{main} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}sample size: n = 500\PYGZdq{}}\PYG{p}{,} \PYG{n}{xlab} \PYG{o}{=} \PYG{n+nf}{TeX}\PYG{p}{(}\PYG{n}{r}\PYG{l+s}{\PYGZdq{}(\PYGZdl{}\PYGZbs{}sqrt\PYGZob{}n\PYGZcb{}(\PYGZbs{}hat\PYGZob{}G\PYGZcb{}\PYGZus{}\PYGZob{}\PYGZbs{}textrm\PYGZob{}MLE\PYGZcb{}\PYGZcb{} \PYGZhy{} G\PYGZus{}\PYGZob{}\PYGZbs{}theta\PYGZus{}1\PYGZca{}0, \PYGZbs{}theta\PYGZus{}2\PYGZca{}0\PYGZcb{})\PYGZdl{})\PYGZdq{}}\PYG{p}{),} \PYG{n}{col} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}steelblue\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

@@ -1,0 +1,92 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nf}{library}\PYG{p}{(}\PYG{n}{tidyverse}\PYG{p}{)}
+
+\PYG{n+nf}{setwd}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}/Users/mathieu/Lab/company\PYGZhy{}electricity\PYGZhy{}statistical\PYGZhy{}analysis/src/\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{df} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{read.csv2}\PYG{p}{(}\PYG{n}{file} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}electricity\PYGZus{}consumption\PYGZus{}dataset.txt\PYGZdq{}}\PYG{p}{,} \PYG{n}{sep} \PYG{o}{=} \PYG{l+s}{\PYGZdq{};\PYGZdq{}}\PYG{p}{,} \PYG{n}{dec} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}.\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nf}{head}\PYG{p}{(}\PYG{n}{df}\PYG{p}{)}
+
+\PYG{n}{df} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{rename}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n}{electricity\PYGZus{}consumption} \PYG{o}{=} \PYG{n}{X}\PYG{p}{,} \PYG{n}{productivity} \PYG{o}{=} \PYG{n}{Y}\PYG{p}{)}
+
+\PYG{n+nf}{ggplot}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{n}{productivity}\PYG{p}{))} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}jitter}\PYG{p}{()} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}smooth}\PYG{p}{()} \PYG{o}{+}
+  \PYG{n+nf}{ggtitle}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Productivity vs Electricity consumption\PYGZdq{}}\PYG{p}{)} \PYG{o}{+}
+  \PYG{n+nf}{xlab}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Electricity consumption (MWh)\PYGZdq{}}\PYG{p}{)} \PYG{o}{+}
+  \PYG{n+nf}{ylab}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Productivity (1000 euros / day)\PYGZdq{}}\PYG{p}{)} \PYG{o}{+}
+  \PYG{n+nf}{theme}\PYG{p}{(}\PYG{n}{plot.title} \PYG{o}{=} \PYG{n+nf}{element\PYGZus{}text}\PYG{p}{(}\PYG{n}{hjust} \PYG{o}{=} \PYG{l+m}{0.5}\PYG{p}{))}
+
+\PYG{n}{simple\PYGZus{}lm} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{lm}\PYG{p}{(}\PYG{n}{productivity} \PYG{o}{\PYGZti{}} \PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{,} \PYG{n}{data} \PYG{o}{=} \PYG{n}{df}\PYG{p}{)}
+
+\PYG{n+nf}{par}\PYG{p}{(}\PYG{n}{mfrow} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{2}\PYG{p}{,}\PYG{l+m}{2}\PYG{p}{))}
+\PYG{n+nf}{plot}\PYG{p}{(}\PYG{n}{simple\PYGZus{}lm}\PYG{p}{)}
+
+\PYG{n+nf}{summary}\PYG{p}{(}\PYG{n}{simple\PYGZus{}lm}\PYG{p}{)}
+
+\PYG{n+nf}{ggplot}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{))} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}histogram}\PYG{p}{()}
+
+\PYG{n+nf}{ggplot}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{productivity}\PYG{p}{))} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}histogram}\PYG{p}{()}
+
+\PYG{c+c1}{\PYGZsh{} square root transformation}
+\PYG{n}{square\PYGZus{}root\PYGZus{}lm} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{lm}\PYG{p}{(}\PYG{n}{productivity} \PYG{o}{\PYGZti{}} \PYG{n+nf}{sqrt}\PYG{p}{(}\PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{),} \PYG{n}{data} \PYG{o}{=} \PYG{n}{df}\PYG{p}{)}
+\PYG{n+nf}{summary}\PYG{p}{(}\PYG{n}{square\PYGZus{}root\PYGZus{}lm}\PYG{p}{)}
+
+\PYG{n+nf}{par}\PYG{p}{(}\PYG{n}{mfrow} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{2}\PYG{p}{,}\PYG{l+m}{2}\PYG{p}{))}
+\PYG{n+nf}{plot}\PYG{p}{(}\PYG{n}{square\PYGZus{}root\PYGZus{}lm}\PYG{p}{)}
+
+\PYG{n+nf}{ggplot}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{n}{productivity}\PYG{p}{))} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}point}\PYG{p}{(}\PYG{n}{alpha} \PYG{o}{=} \PYG{l+m}{0.7}\PYG{p}{)} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}point}\PYG{p}{(}\PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{n}{square\PYGZus{}root\PYGZus{}lm}\PYG{o}{\PYGZdl{}}\PYG{n}{fitted.values}\PYG{p}{),} \PYG{n}{color} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}red\PYGZdq{}}\PYG{p}{,} \PYG{n}{alpha} \PYG{o}{=} \PYG{l+m}{0.5}\PYG{p}{)} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}segment}\PYG{p}{(}\PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{xend} \PYG{o}{=} \PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{,} \PYG{n}{yend} \PYG{o}{=} \PYG{n}{square\PYGZus{}root\PYGZus{}lm}\PYG{o}{\PYGZdl{}}\PYG{n}{fitted.values}\PYG{p}{),} \PYG{n}{color} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}red\PYGZdq{}}\PYG{p}{,} \PYG{n}{alpha} \PYG{o}{=} \PYG{l+m}{0.25}\PYG{p}{,} \PYG{n}{linetype} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}dashed\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n+nf}{ggplot}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{n}{productivity}\PYG{p}{))} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}point}\PYG{p}{(}\PYG{n}{alpha} \PYG{o}{=} \PYG{l+m}{0.75}\PYG{p}{)} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}smooth}\PYG{p}{(}\PYG{n}{method} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}lm\PYGZdq{}}\PYG{p}{,} \PYG{n}{formula} \PYG{o}{=} \PYG{n}{y} \PYG{o}{\PYGZti{}} \PYG{n+nf}{sqrt}\PYG{p}{(}\PYG{n}{x}\PYG{p}{),} \PYG{n}{color} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}red\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} log transformation}
+\PYG{n}{log\PYGZus{}lm} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{lm}\PYG{p}{(}\PYG{n}{productivity} \PYG{o}{\PYGZti{}} \PYG{n+nf}{log}\PYG{p}{(}\PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{),} \PYG{n}{data} \PYG{o}{=} \PYG{n}{df}\PYG{p}{)}
+\PYG{n+nf}{summary}\PYG{p}{(}\PYG{n}{log\PYGZus{}lm}\PYG{p}{)}
+
+\PYG{n+nf}{par}\PYG{p}{(}\PYG{n}{mfrow} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{2}\PYG{p}{,}\PYG{l+m}{2}\PYG{p}{))}
+\PYG{n+nf}{plot}\PYG{p}{(}\PYG{n}{log\PYGZus{}lm}\PYG{p}{)}
+
+\PYG{n+nf}{ggplot}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{n}{productivity}\PYG{p}{))} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}point}\PYG{p}{(}\PYG{n}{alpha} \PYG{o}{=} \PYG{l+m}{0.7}\PYG{p}{)} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}point}\PYG{p}{(}\PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{n}{log\PYGZus{}lm}\PYG{o}{\PYGZdl{}}\PYG{n}{fitted.values}\PYG{p}{),} \PYG{n}{color} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}red\PYGZdq{}}\PYG{p}{,} \PYG{n}{alpha} \PYG{o}{=} \PYG{l+m}{0.5}\PYG{p}{)} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}segment}\PYG{p}{(}\PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{xend} \PYG{o}{=} \PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{,} \PYG{n}{yend} \PYG{o}{=} \PYG{n}{log\PYGZus{}lm}\PYG{o}{\PYGZdl{}}\PYG{n}{fitted.values}\PYG{p}{),} \PYG{n}{color} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}red\PYGZdq{}}\PYG{p}{,} \PYG{n}{alpha} \PYG{o}{=} \PYG{l+m}{0.25}\PYG{p}{,} \PYG{n}{linetype} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}dashed\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n+nf}{ggplot}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{n}{productivity}\PYG{p}{))} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}point}\PYG{p}{(}\PYG{n}{alpha} \PYG{o}{=} \PYG{l+m}{0.75}\PYG{p}{)} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}smooth}\PYG{p}{(}\PYG{n}{method} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}lm\PYGZdq{}}\PYG{p}{,} \PYG{n}{formula} \PYG{o}{=} \PYG{n}{y} \PYG{o}{\PYGZti{}} \PYG{n+nf}{log}\PYG{p}{(}\PYG{n}{x}\PYG{p}{),} \PYG{n}{color} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}red\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n+nf}{ggplot}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{n+nf}{log}\PYG{p}{(}\PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{),} \PYG{n}{y} \PYG{o}{=} \PYG{n}{productivity}\PYG{p}{))} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}point}\PYG{p}{(}\PYG{n}{alpha} \PYG{o}{=} \PYG{l+m}{0.75}\PYG{p}{)} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}smooth}\PYG{p}{(}\PYG{n}{method} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}lm\PYGZdq{}}\PYG{p}{,} \PYG{n}{color} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}red\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n+nf}{ggplot}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{n+nf}{log}\PYG{p}{(}\PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{)))} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}histogram}\PYG{p}{()}
+
+\PYG{c+c1}{\PYGZsh{} reciprocal transformation}
+\PYG{n}{reciprocal\PYGZus{}lm} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n+nf}{lm}\PYG{p}{(}\PYG{n}{productivity} \PYG{o}{\PYGZti{}} \PYG{n+nf}{I}\PYG{p}{(}\PYG{l+m}{1} \PYG{o}{/} \PYG{n}{electricity\PYGZus{}consumption}\PYG{o}{\PYGZca{}}\PYG{l+m}{2}\PYG{p}{),} \PYG{n}{data} \PYG{o}{=} \PYG{n}{df}\PYG{p}{)}
+\PYG{n+nf}{summary}\PYG{p}{(}\PYG{n}{reciprocal\PYGZus{}lm}\PYG{p}{)}
+
+\PYG{n+nf}{par}\PYG{p}{(}\PYG{n}{mfrow} \PYG{o}{=} \PYG{n+nf}{c}\PYG{p}{(}\PYG{l+m}{2}\PYG{p}{,}\PYG{l+m}{2}\PYG{p}{))}
+\PYG{n+nf}{plot}\PYG{p}{(}\PYG{n}{reciprocal\PYGZus{}lm}\PYG{p}{)}
+
+\PYG{n+nf}{ggplot}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{n}{productivity}\PYG{p}{))} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}point}\PYG{p}{(}\PYG{n}{alpha} \PYG{o}{=} \PYG{l+m}{0.7}\PYG{p}{)} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}point}\PYG{p}{(}\PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{n}{reciprocal\PYGZus{}lm}\PYG{o}{\PYGZdl{}}\PYG{n}{fitted.values}\PYG{p}{),} \PYG{n}{color} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}red\PYGZdq{}}\PYG{p}{,} \PYG{n}{alpha} \PYG{o}{=} \PYG{l+m}{0.5}\PYG{p}{)} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}segment}\PYG{p}{(}\PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{xend} \PYG{o}{=} \PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{,} \PYG{n}{yend} \PYG{o}{=} \PYG{n}{reciprocal\PYGZus{}lm}\PYG{o}{\PYGZdl{}}\PYG{n}{fitted.values}\PYG{p}{),} \PYG{n}{color} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}red\PYGZdq{}}\PYG{p}{,} \PYG{n}{alpha} \PYG{o}{=} \PYG{l+m}{0.25}\PYG{p}{,} \PYG{n}{linetype} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}dashed\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n+nf}{ggplot}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{n}{productivity}\PYG{p}{))} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}point}\PYG{p}{(}\PYG{n}{alpha} \PYG{o}{=} \PYG{l+m}{0.75}\PYG{p}{)} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}smooth}\PYG{p}{(}\PYG{n}{method} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}lm\PYGZdq{}}\PYG{p}{,} \PYG{n}{formula} \PYG{o}{=} \PYG{n}{y} \PYG{o}{\PYGZti{}} \PYG{n+nf}{I}\PYG{p}{(}\PYG{l+m}{1}\PYG{o}{/}\PYG{n}{x}\PYG{o}{\PYGZca{}}\PYG{l+m}{2}\PYG{p}{),} \PYG{n}{color} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}red\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n+nf}{ggplot}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{l+m}{1} \PYG{o}{/} \PYG{p}{(}\PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{)}\PYG{o}{\PYGZca{}}\PYG{l+m}{2}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{n}{productivity}\PYG{p}{))} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}point}\PYG{p}{(}\PYG{n}{alpha} \PYG{o}{=} \PYG{l+m}{0.75}\PYG{p}{)} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}smooth}\PYG{p}{(}\PYG{n}{method} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}lm\PYGZdq{}}\PYG{p}{,} \PYG{n}{color} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}red\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n+nf}{ggplot}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n+nf}{aes}\PYG{p}{(}\PYG{n}{x} \PYG{o}{=} \PYG{l+m}{1} \PYG{o}{/} \PYG{n}{electricity\PYGZus{}consumption}\PYG{p}{))} \PYG{o}{+}
+  \PYG{n+nf}{geom\PYGZus{}histogram}\PYG{p}{()}
+\end{Verbatim}

@@ -20,24 +20,25 @@ inverse_transform_sampling <- function(n, inv_cdf) {
 
 # maximum likelihood method for gini coefficient estimator
 gini_mle <- function(rv_vector, n) {
-  return(1 / ((2 * n) / (sum(log(rv_vector / min(rv_vector)))) - 1))
+  return(1 / (( (2 * n) / (sum(log(rv_vector / min(rv_vector)))) ) - 1))
 }
 
 # method of moment for gini coefficient estimator
 gini_mme <- function(rv_vector, n) {
-  return(1 / ((2 * (n) * mean(rv_vector) - min(rv_vector)) / (n * (mean(rv_vector) - min(rv_vector))) - 1))
+  return(1 / (( (2 * ((n * mean(rv_vector)) - min(rv_vector))) / (n * (mean(rv_vector) - min(rv_vector))) ) - 1))
 }
 
 gini_theoretical <- function(theta_1) {
   return(1 / ((2 * theta_1) - 1))
 }
 
-bias <- function(sample, theoretical) {
-  mean(sample) - theoretical
+bias <- function(estimator_sample, theoretical_value) {
+  mean(estimator_sample) - theoretical_value
 }
 
-mse <- function(sample, theoretical) {
-  mean((sample - theoretical)^2)
+mse <- function(estimator_sample, theoretical_value) {
+  #bias(estimator_sample, theoretical_value)^2 + var(estimator_sample)
+  mean((estimator_sample - theoretical_value)^2)
 }
 
 # x: simulation of sample size n
